@@ -6,6 +6,8 @@ from currency_converter import CurrencyConverter
 from progress.bar import Bar
 import gspread
 import pickle
+import sched
+import time
 
 # Service client credential from oauth2client
 from oauth2client.service_account import ServiceAccountCredentials
@@ -75,147 +77,163 @@ def form_hh_url(wordlist, notlist):
     return url
 
 
-# Определение параметров подключения по http
-# (User-Agent, включить проверку сертификатов)
-user_agent = {'user-agent': 'Mozilla/5.0 (Windows NT 6.3; rv:36.0) ..'}
-http = urllib3.PoolManager(cert_reqs='CERT_REQUIRED',
-                           ca_certs=certifi.where(),
-                           headers=user_agent)
+def main(sc):
+    # Определение параметров подключения по http
+    # (User-Agent, включить проверку сертификатов)
+    user_agent = {'user-agent': 'Mozilla/5.0 (Windows NT 6.3; rv:36.0) ..'}
+    http = urllib3.PoolManager(cert_reqs='CERT_REQUIRED',
+                               ca_certs=certifi.where(),
+                               headers=user_agent)
 
-# Запросить первый (i=0) лист данных от HH
-url = form_hh_url(wordlist, notlist)
-response = http.request('GET', url+str(0))
-# Разобрать врзвращенный JSON
-data = json.loads(response.data.decode('utf-8'))
-# Определить количество доступных листов
-pages = data['pages']
-print("Found " + str(data['found']) + " vacancies")
-
-items = data['items']
-# Запросить все оставшиеся листы из доступных (1..pages-1)
-print("Запрос оставшихся " + str(pages-1) + " листов вакансий")
-# Собрать все ответы в одном списке items
-for i in range(1, pages):
-    response = http.request('GET', url+str(i))
+    # Запросить первый (i=0) лист данных от HH
+    url = form_hh_url(wordlist, notlist)
+    response = http.request('GET', url+str(0))
+    # Разобрать врзвращенный JSON
     data = json.loads(response.data.decode('utf-8'))
-    items.extend(data['items'])
+    # Определить количество доступных листов
+    pages = data['pages']
+    print("Found " + str(data['found']) + " vacancies")
 
-# Преобразователь валют
-c = CurrencyConverter()
+    items = data['items']
+    # Запросить все оставшиеся листы из доступных (1..pages-1)
+    print("Запрос оставшихся " + str(pages-1) + " листов вакансий")
+    # Собрать все ответы в одном списке items
+    for i in range(1, pages):
+        response = http.request('GET', url+str(i))
+        data = json.loads(response.data.decode('utf-8'))
+        items.extend(data['items'])
 
-print("Запрос расширенных данных, преобразование и фильтрация")
-filtered_items = []
-select_list = ['id']
-# progress bar, так как операция - долгая
-bar = Bar('Processing', max=len(items), suffix='%(percent).1f%% - %(eta)ds')
-for item in items:
+    # Преобразователь валют
+    c = CurrencyConverter()
 
-    # Быстрая фильтрация по списку работодателей
-    if item['employer']['name'] in banned_employers:
-        bar.next()
-        continue
+    print("Запрос расширенных данных, преобразование и фильтрация")
+    filtered_items = []
+    select_list = ['id']
+    # progress bar, так как операция - долгая
+    bar = Bar('Processing', max=len(items), suffix='%(percent).1f%% - %(eta)ds')
+    for item in items:
 
-    # Быстрая фильтрация по ключевым словам в названии вакансии
-    if not not_banned_item(item):
-        bar.next()
-        continue
+        # Быстрая фильтрация по списку работодателей
+        if item['employer']['name'] in banned_employers:
+            bar.next()
+            continue
 
-    temp = list(set(select_list).intersection(item))
-    res = [item[i] for i in temp]
+        # Быстрая фильтрация по ключевым словам в названии вакансии
+        if not not_banned_item(item):
+            bar.next()
+            continue
 
-    # Получение подробной информации о каждой вакансии
-    response = http.request('GET', 'https://api.hh.ru/vacancies/'+item['id'])
-    data = json.loads(response.data.decode('utf-8'))
+        temp = list(set(select_list).intersection(item))
+        res = [item[i] for i in temp]
 
-    # Обработка зарплат
-    t1 = data['salary']['from']
-    t2 = data['salary']['to']
+        # Получение подробной информации о каждой вакансии
+        response = http.request('GET', 'https://api.hh.ru/vacancies/'+item['id'])
+        data = json.loads(response.data.decode('utf-8'))
 
-    # Преобразование None в числа - сомнительно, поэтому дальше проверки на None оставлены
-    if t1 is None:
-        t1 = 0
-    if t2 is None:
-        t2 = t1
-    # Преобразовать валюту в рубли
-    if data['salary']['currency'] != 'RUR':
+        # Обработка зарплат
+        t1 = data['salary']['from']
+        t2 = data['salary']['to']
+
+        # Преобразование None в числа - сомнительно, поэтому дальше проверки на None оставлены
+        if t1 is None:
+            t1 = 0
+        if t2 is None:
+            t2 = t1
+        # Преобразовать валюту в рубли
+        if data['salary']['currency'] != 'RUR':
+            if t1 is not None:
+                t1 = c.convert(t1, data['salary']['currency'], 'RUB')
+            if t2 is not None:
+                t2 = c.convert(t2, data['salary']['currency'], 'RUB')
+
+        # Коррекция зарплаты, указанной как "на руки" в "до вычета налогов" (gross)
+        ndfl = 0.13
+        gross = data['salary']['gross']
+        if not gross:
+            if t1 is not None:
+                t1 = t1/(1-ndfl)
+            if t2 is not None:
+                t2 = t2/(1-ndfl)
+
+        # Округление зарплат до целых тысяч
         if t1 is not None:
-            t1 = c.convert(t1, data['salary']['currency'], 'RUB')
+            t1 = round(round(t1, -3))
         if t2 is not None:
-            t2 = c.convert(t2, data['salary']['currency'], 'RUB')
+            t2 = round(round(t2, -3))
 
-    # Коррекция зарплаты, указанной как "на руки" в "до вычета налогов" (gross)
-    ndfl = 0.13
-    gross = data['salary']['gross']
-    if not gross:
-        if t1 is not None:
-            t1 = t1/(1-ndfl)
-        if t2 is not None:
-            t2 = t2/(1-ndfl)
+        # Преобразование key_skills в строку, разделенную запятыми
+        skills = ''
+        for cc, skill in enumerate(data['key_skills']):
+            if cc != 0:
+                skills = skills + ', '
+            skills = skills + skill['name']
 
-    # Округление зарплат до целых тысяч
-    if t1 is not None:
-        t1 = round(round(t1, -3))
-    if t2 is not None:
-        t2 = round(round(t2, -3))
+        # Определение типа вакансии
+        vac_type = get_vac_type(item)
 
-    # Преобразование key_skills в строку, разделенную запятыми
-    skills = ''
-    for cc, skill in enumerate(data['key_skills']):
-        if cc != 0:
-            skills = skills + ', '
-        skills = skills + skill['name']
+        # Добавление информации в словарь
+        temp.extend(['name', 'url', 'vac_type', 'from', 'to', 'employer_name', 'schedule',
+                    'employment', 'experience', 'key_skills'])
+        res.extend([item['name'], item['alternate_url'], vac_type, t1, t2, data['employer']['name'], data['schedule']['name'],
+                    data['employment']['name'], data['experience']['name'],
+                    skills])
+        filtered_items.append(dict(zip(temp, res)))
+        bar.next()
 
-    # Определение типа вакансии
-    vac_type = get_vac_type(item)
+    bar.finish()
+    print("После фильтрации по работодателям и словам осталось "
+          + str(len(filtered_items)) + " вакансий")
+    # print("Фильтрация записей по значениям")
+    # filtered_items2 = list(filter(not_banned_item, filtered_items))
+    # print("Осталось " + str(len(filtered_items2)) + " вакансий")
 
-    # Добавление информации в словарь
-    temp.extend(['name', 'url', 'vac_type', 'from', 'to', 'employer_name', 'schedule',
-                 'employment', 'experience', 'key_skills'])
-    res.extend([item['name'], item['alternate_url'], vac_type, t1, t2, data['employer']['name'], data['schedule']['name'],
-                data['employment']['name'], data['experience']['name'],
-                skills])
-    filtered_items.append(dict(zip(temp, res)))
-    bar.next()
+    old_items = {}
+    try:
+        with open('data.pickle', 'rb') as f:
+            print('Загружаем старые записи')
+            old_items = pickle.load(f)
+            print('Загружено '+str(len(old_items))+" старых вакансий")
+    except FileNotFoundError:
+        print("Старые записи не найдены, начинаем новую жизнь")
 
-bar.finish()
-print("После фильтрации по работодателям и словам осталось "
-      + str(len(filtered_items)) + " вакансий")
-# print("Фильтрация записей по значениям")
-# filtered_items2 = list(filter(not_banned_item, filtered_items))
-# print("Осталось " + str(len(filtered_items2)) + " вакансий")
+    # Выполнить очистку по актуальным правилам
+    old_items = {k: v for k, v in old_items.items() if v['employer_name'] not in banned_employers}
+    old_items = {k: v for k, v in old_items.items() if not_banned_item(v)}
 
-old_items = {}
-try:
-    with open('data.pickle', 'rb') as f:
-        print('Загружаем старые записи')
-        old_items = pickle.load(f)
-        print('Загружено '+str(len(old_items))+" старых вакансий")
-except FileNotFoundError:
-    print("Старые записи не найдены, начинаем новую жизнь")
+    print("После фильтрации по актуальным правилам осталось "+str(len(old_items))+" старых вакансий")
 
-# Выполнить очистку по актуальным правилам
-old_items = {k: v for k, v in old_items.items() if v['employer_name'] not in banned_employers}
-old_items = {k: v for k, v in old_items.items() if not_banned_item(v)}
+    # Объединить старые и новые вакансии
+    for item in filtered_items:
+        old_items[item['id']] = item
 
-print("После фильтрации по актуальным правилам осталось "+str(len(old_items))+" старых вакансий")
+    print("После объединения получилось " + str(len(old_items)) + " вакансий")
 
-# Объединить старые и новые вакансии
-for item in filtered_items:
-    old_items[item['id']] = item
+    with open('data.pickle', 'wb') as f:
+        pickle.dump(old_items, f, pickle.HIGHEST_PROTOCOL)
 
-print("После объединения получилось " + str(len(old_items)) + " вакансий")
+    filtered_items = old_items.values()
 
-with open('data.pickle', 'wb') as f:
-    pickle.dump(old_items, f, pickle.HIGHEST_PROTOCOL)
+    print("Экспорт в csv")
+    # Экспортировать список в csv
+    save_to_csv('hhvacdata.csv', filtered_items)
+    # save_to_csv('hhvacdata_unfilt.csv', filtered_items)
 
-filtered_items = old_items.values()
+    print("Экспорт в google - быстрый, через загрузку нашего cvs!")
+    save_to_google(filtered_items)
 
-print("Экспорт в csv")
-# Экспортировать список в csv
-csvdata = save_to_csv('hhvacdata.csv', filtered_items)
-# save_to_csv('hhvacdata_unfilt.csv', filtered_items)
+    print("Done!")
 
-print("Экспорт в google - быстрый, через загрузку нашего cvs!")
-save_to_google(filtered_items)
+    # Reschedule the main function
+    delay = 3600  # once per our
+    print('Reschedule main after '+str(delay)+' seconds')
+    s.enter(delay, 1, main, (sc,))
 
-print("Done!")
+
+if __name__ == '__main__':
+    # main()
+    # sched is used to schedule main function every 30 seconds.
+    # for that once main function executes in end,
+    # we again schedule it to run in 30 seconds
+    s = sched.scheduler(time.time, time.sleep)
+    s.enter(1, 1, main, (s,))
+    s.run()
