@@ -1,8 +1,6 @@
-~$Книга1.xlsx
-Книга1.xlsx
-Книга5.xlsx
-Книга3.xlsx
 hhvacdata — копия.csv
 hhvacdata_unfilt.csv
 hhvacdata.csv
 venv/
+.vscode/
+__pycache__/
