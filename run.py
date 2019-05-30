@@ -5,15 +5,15 @@ import csv
 from currency_converter import CurrencyConverter
 from progress.bar import Bar
 import gspread
-import pickle
 import sched
 import time
-
 # Service client credential from oauth2client
 from oauth2client.service_account import ServiceAccountCredentials
-
 # Слова для поиска определены в words.py
 from words import wordlist, notlist, banned_employers, banned_jobs, vac_types
+
+
+DEBUG_RUN = True
 
 
 def get_vac_type(item):
@@ -35,9 +35,9 @@ def not_banned_item(item):
     return True
 
 
-def save_to_csv(filename, listname):
+def save_to_tsv(filename, listname):
     with open(filename, 'w', newline='', encoding='utf-8') as employ_data:
-        csvwriter = csv.writer(employ_data, dialect='excel', delimiter=';')
+        csvwriter = csv.writer(employ_data, dialect='excel', delimiter='\t')
         count = 0
         for vac in listname:
             if count == 0:
@@ -45,6 +45,22 @@ def save_to_csv(filename, listname):
                 csvwriter.writerow(header)
                 count += 1
             csvwriter.writerow(vac.values())
+
+
+def load_from_tsv(filename):
+    with open(filename, 'r', newline='', encoding='utf-8') as employ_data:
+        old_items = {}
+        csvreader = csv.reader(employ_data, dialect='excel', delimiter='\t')
+        count = 0
+        for vac in csvreader:
+            if count == 0:
+                header = vac
+                count += 1
+            else:
+                row = dict(zip(header, vac))
+                ID = row['id']
+                old_items[ID] = row
+        return old_items
 
 
 def save_to_google(listname):
@@ -56,9 +72,9 @@ def save_to_google(listname):
     client = gspread.authorize(creds)
     # Now will can access our google sheets we call client.open on StartupName
     # sheet = client.open('Вакансии HH 3.0').sheet1
-    content = open('hhvacdata.csv', 'r', newline='', encoding='utf-8').read()
+    content = open('hhvacdata.tsv', 'r', newline='', encoding='utf-8').read()
     # Google не поддерживает разделитель ';', но зато всё ок с Tab
-    content = content.replace(";", '\t')
+    # content = content.replace(";", '\t')
     client.import_csv('1zNsxWevX9FZxz2CJws9Pjd21KlQBy7KYo6HHSWUhHH8', content.encode('utf-8'))
 
 
@@ -98,6 +114,10 @@ def main(sc):
     # Запросить все оставшиеся листы из доступных (1..pages-1)
     print("Запрос оставшихся " + str(pages-1) + " листов вакансий")
     # Собрать все ответы в одном списке items
+    # Для отладки ограничимся одним листом данных
+    if DEBUG_RUN:
+        pages = 0
+
     for i in range(1, pages):
         response = http.request('GET', url+str(i))
         data = json.loads(response.data.decode('utf-8'))
@@ -189,10 +209,9 @@ def main(sc):
 
     old_items = {}
     try:
-        with open('data.pickle', 'rb') as f:
-            print('Загружаем старые записи')
-            old_items = pickle.load(f)
-            print('Загружено '+str(len(old_items))+" старых вакансий")
+        print('Загружаем старые записи')
+        old_items = load_from_tsv('hhvacdata.tsv')
+        print('Загружено '+str(len(old_items))+" старых вакансий")
     except FileNotFoundError:
         print("Старые записи не найдены, начинаем новую жизнь")
 
@@ -208,15 +227,11 @@ def main(sc):
 
     print("После объединения получилось " + str(len(old_items)) + " вакансий")
 
-    with open('data.pickle', 'wb') as f:
-        pickle.dump(old_items, f, pickle.HIGHEST_PROTOCOL)
-
     filtered_items = old_items.values()
 
-    print("Экспорт в csv")
+    print("Экспорт в tsv")
     # Экспортировать список в csv
-    save_to_csv('hhvacdata.csv', filtered_items)
-    # save_to_csv('hhvacdata_unfilt.csv', filtered_items)
+    save_to_tsv('hhvacdata.tsv', filtered_items)
 
     print("Экспорт в google - быстрый, через загрузку нашего cvs!")
     save_to_google(filtered_items)
