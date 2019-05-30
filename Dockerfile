@@ -13,5 +13,5 @@ RUN pip install -r requirements.txt
 # Run the application:
 COPY *.py ./
 COPY *.json ./
-COPY *.pickle ./
+COPY *.tsv ./
 CMD ["python", "run.py"]

@@ -269,7 +269,7 @@ id	name	url	vac_type	from	to	employer_name	schedule	employment	experience	key_sk
 31411258	Python Developer / Senior Python Developer	https://hh.ru/vacancy/31411258	Python	0	0	БАРС Груп	Полный день	Полная занятость	От 1 года до 3 лет		
 28712535	Старший разработчик на python	https://hh.ru/vacancy/28712535	Python	0	0	Positive Technologies	Полный день	Полная занятость	От 3 до 6 лет		
 31397618	Разработчик Python	https://hh.ru/vacancy/31397618	Python	0	0	Инновационный Центр Карьерного Роста	Полный день	Полная занятость	От 1 года до 3 лет	Python, Linux, JavaScript, MongoDB, Django Framework	
-31205491	Junior Python developer	https://hh.ru/vacancy/31205491	Python	0	0	FutureComes	Полный день	Полная занятость	От 3 до 6 лет		
+31205491	Junior Python developer	https://hh.ru/vacancy/31205491	Python	0	0	FutureComes	Полный день	Полная занятость	От 1 года до 3 лет		
 31067015	Senior Python developer	https://hh.ru/vacancy/31067015	Python	0	0	EPAM Systems, Inc.	Гибкий график	Полная занятость	От 3 до 6 лет	Python, Machine learning, JavaScript, Django Framework, MongoDB	
 31553719	Senior Python Developer	https://hh.ru/vacancy/31553719	Python	0	0	the_covert	Полный день	Полная занятость	Нет опыта	Python, MySQL, Node.js, Django Framework	
 31153711	Программист Python	https://hh.ru/vacancy/31153711	Python	0	0	SEMrush	Полный день	Полная занятость	От 3 до 6 лет	Python, JavaScript, React	
@@ -885,3 +885,9 @@ id	name	url	vac_type	from	to	employer_name	schedule	employment	experience	key_sk
 29677912	Архитектор по системам автоматизированного рабочего места (SAP)	https://hh.ru/vacancy/29677912		0	0	МегаФон	Полный день	Полная занятость	Более 6 лет		
 31681292	DevOps инженер	https://hh.ru/vacancy/31681292	DevOps	0	0	ИнфоТеКС	Полный день	Полная занятость	От 1 года до 3 лет		
 30940277	Product Owner e-commerce проекта	https://hh.ru/vacancy/30940277		0	0	Webimatic	Полный день	Полная занятость	От 3 до 6 лет	Управление интернет-проектами, Проектный менеджмент, Запуск новых продуктов, Оптимизация бизнес-процессов, Бизнес-планирование, Бизнес-анализ, Стратегическое планирование, Менеджмент	
+31400006	Реверс-инженер	https://hh.ru/vacancy/31400006	Инженер	0	0	ЖУЙЭРСЫ	Полный день	Полная занятость	От 1 года до 3 лет		
+30872364	Principal Software Engineer (Continuous Engineering team, XIO)	https://hh.ru/vacancy/30872364	Team lead	0	0	Dell EMC	Полный день	Полная занятость	Более 6 лет		
+31691850	Data Architect	https://hh.ru/vacancy/31691850		0	0	Группа компаний eLama	Полный день	Полная занятость	От 1 года до 3 лет		
+31594205	3D-моделлер	https://hh.ru/vacancy/31594205		0	0	Plamee	Полный день	Полная занятость	От 1 года до 3 лет		
+31342143	Начальник отдела ОМТС	https://hh.ru/vacancy/31342143	Начальник отдела/лаборатории	0	0	ИЦ Буревестник	Полный день	Полная занятость	От 3 до 6 лет		
+31444391	Начальник отдела морской транспортировки СПГ	https://hh.ru/vacancy/31444391	Начальник отдела/лаборатории	0	0	Газпром флот	Полный день	Полная занятость	От 3 до 6 лет		
