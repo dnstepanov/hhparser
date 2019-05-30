@@ -13,7 +13,9 @@ from oauth2client.service_account import ServiceAccountCredentials
 from words import wordlist, notlist, banned_employers, banned_jobs, vac_types
 
 
-DEBUG_RUN = True
+DEBUG_RUN = False
+if DEBUG_RUN:
+    print('ВНИМАНИЕ! ВКЛЮЧЕНА ОТЛАДКА, ЗАГРУЗИТСЯ ОДИН ЛИСТ!')
 
 
 def get_vac_type(item):
@@ -35,7 +37,7 @@ def not_banned_item(item):
     return True
 
 
-def save_to_tsv(filename, listname):
+def save_vaclist_to_tsv(filename, listname):
     with open(filename, 'w', newline='', encoding='utf-8') as employ_data:
         csvwriter = csv.writer(employ_data, dialect='excel', delimiter='\t')
         count = 0
@@ -47,7 +49,13 @@ def save_to_tsv(filename, listname):
             csvwriter.writerow(vac.values())
 
 
-def load_from_tsv(filename):
+def save_list_to_file(filename, listname):
+    with open(filename, 'w', newline='', encoding='utf-8') as employ_data:
+        for item in listname:
+            employ_data.write("%s\n" % item)
+
+
+def load_vaclist_from_tsv(filename):
     with open(filename, 'r', newline='', encoding='utf-8') as employ_data:
         old_items = {}
         csvreader = csv.reader(employ_data, dialect='excel', delimiter='\t')
@@ -61,6 +69,18 @@ def load_from_tsv(filename):
                 ID = row['id']
                 old_items[ID] = row
         return old_items
+
+
+def load_badlist_from_tsv(filename):
+    lst = []
+    try:
+        with open(filename, 'r', newline='', encoding='utf-8') as employ_data:
+            csvreader = csv.reader(employ_data, dialect='excel', delimiter='\n')
+            for vac in csvreader:
+                lst.extend(vac)
+    except FileNotFoundError:
+        print('Файл плохих вакансий не найден')
+    return lst
 
 
 def save_to_google(listname):
@@ -78,6 +98,31 @@ def save_to_google(listname):
     client.import_csv('1zNsxWevX9FZxz2CJws9Pjd21KlQBy7KYo6HHSWUhHH8', content.encode('utf-8'))
 
 
+def load_from_google():
+    # Create scope
+    scope = ['https://www.googleapis.com/auth/drive']
+    # create some credential using that scope and content of startup_funding.json
+    creds = ServiceAccountCredentials.from_json_keyfile_name('My First Project-53694cf60e96.json', scope)
+    # create gspread authorize using that credential
+    client = gspread.authorize(creds)
+    # Now will can access our google sheets we call client.open on StartupName
+    sheet = client.open('Вакансии HH 3.0').sheet1
+    list_of_lists = sheet.get_all_values()
+
+    old_items = {}
+    count = 0
+    for vac in list_of_lists:
+        if count == 0:
+            header = vac
+            count += 1
+        else:
+            row = dict(zip(header, vac))
+            ID = row['id']
+            old_items[ID] = row
+
+    return old_items
+
+
 def form_hh_url(wordlist, notlist):
     baseurl = 'https://api.hh.ru/vacancies?area=2&text=('
     for i, wrd in enumerate(wordlist):
@@ -89,7 +134,7 @@ def form_hh_url(wordlist, notlist):
         if i > 0:
             baseurl = baseurl + "+OR+"
         baseurl = baseurl + wrd
-    url = baseurl + ")&only_with_salary=true&per_page=100&page="
+    url = baseurl + ")&only_with_salary=false&per_page=100&page="
     return url
 
 
@@ -150,36 +195,39 @@ def main(sc):
         response = http.request('GET', 'https://api.hh.ru/vacancies/'+item['id'])
         data = json.loads(response.data.decode('utf-8'))
 
-        # Обработка зарплат
-        t1 = data['salary']['from']
-        t2 = data['salary']['to']
+        t1 = 0
+        t2 = 0
+        if data['salary'] is not None:
+            # Обработка зарплат
+            t1 = data['salary']['from']
+            t2 = data['salary']['to']
 
-        # Преобразование None в числа - сомнительно, поэтому дальше проверки на None оставлены
-        if t1 is None:
-            t1 = 0
-        if t2 is None:
-            t2 = t1
-        # Преобразовать валюту в рубли
-        if data['salary']['currency'] != 'RUR':
+            # Преобразование None в числа - сомнительно, поэтому дальше проверки на None оставлены
+            if t1 is None:
+                t1 = 0
+            if t2 is None:
+                t2 = t1
+            # Преобразовать валюту в рубли
+            if data['salary']['currency'] != 'RUR':
+                if t1 is not None:
+                    t1 = c.convert(t1, data['salary']['currency'], 'RUB')
+                if t2 is not None:
+                    t2 = c.convert(t2, data['salary']['currency'], 'RUB')
+
+            # Коррекция зарплаты, указанной как "на руки" в "до вычета налогов" (gross)
+            ndfl = 0.13
+            gross = data['salary']['gross']
+            if not gross:
+                if t1 is not None:
+                    t1 = t1/(1-ndfl)
+                if t2 is not None:
+                    t2 = t2/(1-ndfl)
+
+            # Округление зарплат до целых тысяч
             if t1 is not None:
-                t1 = c.convert(t1, data['salary']['currency'], 'RUB')
+                t1 = round(round(t1, -3))
             if t2 is not None:
-                t2 = c.convert(t2, data['salary']['currency'], 'RUB')
-
-        # Коррекция зарплаты, указанной как "на руки" в "до вычета налогов" (gross)
-        ndfl = 0.13
-        gross = data['salary']['gross']
-        if not gross:
-            if t1 is not None:
-                t1 = t1/(1-ndfl)
-            if t2 is not None:
-                t2 = t2/(1-ndfl)
-
-        # Округление зарплат до целых тысяч
-        if t1 is not None:
-            t1 = round(round(t1, -3))
-        if t2 is not None:
-            t2 = round(round(t2, -3))
+                t2 = round(round(t2, -3))
 
         # Преобразование key_skills в строку, разделенную запятыми
         skills = ''
@@ -193,32 +241,40 @@ def main(sc):
 
         # Добавление информации в словарь
         temp.extend(['name', 'url', 'vac_type', 'from', 'to', 'employer_name', 'schedule',
-                    'employment', 'experience', 'key_skills'])
+                    'employment', 'experience', 'key_skills', 'bad'])
         res.extend([item['name'], item['alternate_url'], vac_type, t1, t2, data['employer']['name'], data['schedule']['name'],
                     data['employment']['name'], data['experience']['name'],
-                    skills])
+                    skills, ''])
         filtered_items.append(dict(zip(temp, res)))
         bar.next()
 
     bar.finish()
     print("После фильтрации по работодателям и словам осталось "
           + str(len(filtered_items)) + " вакансий")
-    # print("Фильтрация записей по значениям")
-    # filtered_items2 = list(filter(not_banned_item, filtered_items))
-    # print("Осталось " + str(len(filtered_items2)) + " вакансий")
 
     old_items = {}
     try:
         print('Загружаем старые записи')
-        old_items = load_from_tsv('hhvacdata.tsv')
+        # old_items = load_from_tsv('hhvacdata.tsv')
+        old_items = load_from_google()
         print('Загружено '+str(len(old_items))+" старых вакансий")
     except FileNotFoundError:
         print("Старые записи не найдены, начинаем новую жизнь")
 
+    # Обновить список плохих вакансий (bad = True)
+    print('Обновление списка ID плохих вакансий')
+    bad_vac = load_badlist_from_tsv('badvac.tsv')
+    for k, v in old_items.items():
+        if v['bad'] == 'TRUE':
+            bad_vac.append(k)
+    # Удалить дубликаты ID плохих вакансий
+    bad_vac = list(dict.fromkeys(bad_vac))
+    save_list_to_file('badvac.tsv', bad_vac)
+    print('В списке плохих вакансий ' + str(len(bad_vac)) + ' вакансий')
+
     # Выполнить очистку по актуальным правилам
     old_items = {k: v for k, v in old_items.items() if v['employer_name'] not in banned_employers}
     old_items = {k: v for k, v in old_items.items() if not_banned_item(v)}
-
     print("После фильтрации по актуальным правилам осталось "+str(len(old_items))+" старых вакансий")
 
     # Объединить старые и новые вакансии
@@ -227,11 +283,16 @@ def main(sc):
 
     print("После объединения получилось " + str(len(old_items)) + " вакансий")
 
+    # Фильтрация по списку ID плохих вакансий
+    cnt = len(old_items)
+    old_items = {k: v for k, v in old_items.items() if k not in bad_vac}
+    print('По ID удалено ' + str(cnt - len(old_items)) + ' плохих вакансий')
+
     filtered_items = old_items.values()
 
     print("Экспорт в tsv")
     # Экспортировать список в csv
-    save_to_tsv('hhvacdata.tsv', filtered_items)
+    save_vaclist_to_tsv('hhvacdata.tsv', filtered_items)
 
     print("Экспорт в google - быстрый, через загрузку нашего cvs!")
     save_to_google(filtered_items)
