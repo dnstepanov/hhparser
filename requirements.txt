@@ -1,6 +1,0 @@
-urllib3
-certifi
-gspread
-currencyconverter
-progress
-oauth2client

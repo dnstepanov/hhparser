@@ -1,14 +1,10 @@
 FROM python:3.7-alpine
-# RUN apt-get update && apt-get install \
-#   -y --no-install-recommends python3 python3-virtualenv
-
-# ENV VIRTUAL_ENV=/opt/venv
-# RUN python3 -m virtualenv --python=/usr/bin/python3 $VIRTUAL_ENV
-# ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 # Install dependencies:
-COPY requirements.txt .
-RUN pip install -r requirements.txt
+RUN pip install pipenv
+COPY Pipfile ./
+COPY Pipfile.lock ./
+RUN pipenv install --system --deploy --ignore-pipfile
 
 # Run the application:
 COPY *.py ./
