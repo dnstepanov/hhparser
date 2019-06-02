@@ -7,18 +7,39 @@ from progress.bar import Bar
 import gspread
 import sched
 import time
+import os
+from shutil import copyfile
 # Service client credential from oauth2client
 from oauth2client.service_account import ServiceAccountCredentials
 # Слова для поиска определены в words.py
 from words import wordlist, notlist, banned_employers, banned_jobs, vac_types
 
-
+# Configuration
 DEBUG_RUN = False
 if DEBUG_RUN:
     print('ВНИМАНИЕ! ВКЛЮЧЕНА ОТЛАДКА, ЗАГРУЗИТСЯ ОДИН ЛИСТ!')
 
+# Проверка начальной настройки и определение наличия docker
+if os.path.isdir('/cfg'):
+    in_docker = True
+    bad_vac_fname = '/cfg/badvac.tsv'
+    # Проверить, что настройка выполнена, и файл помещен в /cfg
+    exists = os.path.isfile(bad_vac_fname)
+    if not exists:
+        copyfile('badvac.tsv', bad_vac_fname)
+else:
+    in_docker = False
+    bad_vac_fname = 'badvac.tsv'
+
+vac_data_fname = 'hhvacdata.tsv'
+vac_base_url = 'https://api.hh.ru/vacancies/'
+delay = 3600  # once per our
+# Преобразователь валют
+c = CurrencyConverter()
+
 
 def get_vac_type(item):
+    """ Возвращает тип вакансии в соответствии со словарем вакансий"""
     for vc in vac_types:
         for kw in vc[1]:
             if kw.lower() in item['name'].lower():
@@ -27,6 +48,7 @@ def get_vac_type(item):
 
 
 def not_banned_item(item):
+    """ Проверяет, что вакансия не исключена по списку запрещенных слов """
     # Фильтрация по работодателям реализована ранее, до запроса
     # for bname in banned_employers:
     #     if bname.lower() in item['employer_name'].lower():
@@ -38,6 +60,7 @@ def not_banned_item(item):
 
 
 def save_vaclist_to_tsv(filename, listname):
+    """ Сохранение списка вакансий listname в файл типа tsv """
     with open(filename, 'w', newline='', encoding='utf-8') as employ_data:
         csvwriter = csv.writer(employ_data, dialect='excel', delimiter='\t')
         count = 0
@@ -50,12 +73,14 @@ def save_vaclist_to_tsv(filename, listname):
 
 
 def save_list_to_file(filename, listname):
+    """ Сохраняет списко в файл (одна запись - одна строка) """
     with open(filename, 'w', newline='', encoding='utf-8') as employ_data:
         for item in listname:
             employ_data.write("%s\n" % item)
 
 
 def load_vaclist_from_tsv(filename):
+    """ Загружает список вакансий из tab-separated file """
     with open(filename, 'r', newline='', encoding='utf-8') as employ_data:
         old_items = {}
         csvreader = csv.reader(employ_data, dialect='excel', delimiter='\t')
@@ -72,6 +97,7 @@ def load_vaclist_from_tsv(filename):
 
 
 def load_badlist_from_tsv(filename):
+    """ Загружает список запрещенных слов для вакансий из файла """
     lst = []
     try:
         with open(filename, 'r', newline='', encoding='utf-8') as employ_data:
@@ -83,7 +109,8 @@ def load_badlist_from_tsv(filename):
     return lst
 
 
-def save_to_google(listname):
+def save_to_google(filename):
+    """ Выгружает список вакансий в google-таблицу с известным ID, полностью затирая таблицу """
     # Create scope
     scope = ['https://www.googleapis.com/auth/drive']
     # create some credential using that scope and content of startup_funding.json
@@ -92,13 +119,14 @@ def save_to_google(listname):
     client = gspread.authorize(creds)
     # Now will can access our google sheets we call client.open on StartupName
     # sheet = client.open('Вакансии HH 3.0').sheet1
-    content = open('hhvacdata.tsv', 'r', newline='', encoding='utf-8').read()
+    content = open(filename, 'r', newline='', encoding='utf-8').read()
     # Google не поддерживает разделитель ';', но зато всё ок с Tab
     # content = content.replace(";", '\t')
     client.import_csv('1zNsxWevX9FZxz2CJws9Pjd21KlQBy7KYo6HHSWUhHH8', content.encode('utf-8'))
 
 
 def load_from_google():
+    """ Загружает список вакансий из таблицы """
     # Create scope
     scope = ['https://www.googleapis.com/auth/drive']
     # create some credential using that scope and content of startup_funding.json
@@ -124,6 +152,7 @@ def load_from_google():
 
 
 def form_hh_url(wordlist, notlist):
+    """ формирует правильный url для запроса HH API из списка слов для OR и NOT """
     baseurl = 'https://api.hh.ru/vacancies?area=2&text=('
     for i, wrd in enumerate(wordlist):
         if i > 0:
@@ -168,9 +197,6 @@ def main(sc):
         data = json.loads(response.data.decode('utf-8'))
         items.extend(data['items'])
 
-    # Преобразователь валют
-    c = CurrencyConverter()
-
     print("Запрос расширенных данных, преобразование и фильтрация")
     filtered_items = []
     select_list = ['id']
@@ -192,7 +218,7 @@ def main(sc):
         res = [item[i] for i in temp]
 
         # Получение подробной информации о каждой вакансии
-        response = http.request('GET', 'https://api.hh.ru/vacancies/'+item['id'])
+        response = http.request('GET', vac_base_url+item['id'])
         data = json.loads(response.data.decode('utf-8'))
 
         t1 = 0
@@ -240,9 +266,11 @@ def main(sc):
         vac_type = get_vac_type(item)
 
         # Добавление информации в словарь
-        temp.extend(['name', 'url', 'vac_type', 'from', 'to', 'employer_name', 'schedule',
-                    'employment', 'experience', 'key_skills', 'bad'])
-        res.extend([item['name'], item['alternate_url'], vac_type, t1, t2, data['employer']['name'], data['schedule']['name'],
+        temp.extend(['name', 'url', 'vac_type', 'from', 'to', 'employer_name',
+                     'schedule', 'employment', 'experience', 'key_skills',
+                     'bad'])
+        res.extend([item['name'], item['alternate_url'], vac_type, t1, t2,
+                    data['employer']['name'], data['schedule']['name'],
                     data['employment']['name'], data['experience']['name'],
                     skills, ''])
         filtered_items.append(dict(zip(temp, res)))
@@ -253,29 +281,14 @@ def main(sc):
           + str(len(filtered_items)) + " вакансий")
 
     old_items = {}
-    try:
-        print('Загружаем старые записи')
-        # old_items = load_from_tsv('hhvacdata.tsv')
-        old_items = load_from_google()
-        print('Загружено '+str(len(old_items))+" старых вакансий")
-    except FileNotFoundError:
-        print("Старые записи не найдены, начинаем новую жизнь")
-
-    # Обновить список плохих вакансий (bad = True)
-    print('Обновление списка ID плохих вакансий')
-    bad_vac = load_badlist_from_tsv('badvac.tsv')
-    for k, v in old_items.items():
-        if v['bad'] == 'TRUE':
-            bad_vac.append(k)
-    # Удалить дубликаты ID плохих вакансий
-    bad_vac = list(dict.fromkeys(bad_vac))
-    save_list_to_file('badvac.tsv', bad_vac)
-    print('В списке плохих вакансий ' + str(len(bad_vac)) + ' вакансий')
-
-    # Выполнить очистку по актуальным правилам
+    print('Загружаем старые записи')
+    old_items = load_from_google()
+    print('Загружено '+str(len(old_items))+" старых вакансий")
+    # Выполнить очистку старых вакансий по актуальным правилам
     old_items = {k: v for k, v in old_items.items() if v['employer_name'] not in banned_employers}
     old_items = {k: v for k, v in old_items.items() if not_banned_item(v)}
-    print("После фильтрации по актуальным правилам осталось "+str(len(old_items))+" старых вакансий")
+    print("После фильтрации по актуальным правилам осталось " +
+          str(len(old_items))+" старых вакансий")
 
     # Объединить старые и новые вакансии
     for item in filtered_items:
@@ -283,7 +296,20 @@ def main(sc):
 
     print("После объединения получилось " + str(len(old_items)) + " вакансий")
 
-    # Фильтрация по списку ID плохих вакансий
+    # Обновить список плохих вакансий (bad = True)
+    print('Обновление списка ID плохих вакансий')
+    # Загрузка старого списка плохих вакансий
+    bad_vac = load_badlist_from_tsv(bad_vac_fname)
+    for k, v in old_items.items():
+        if v['bad'] == 'TRUE':
+            bad_vac.append(k)
+    # Удалить дубликаты ID плохих вакансий
+    bad_vac = list(dict.fromkeys(bad_vac))
+    # Сохранить обновленный список
+    save_list_to_file(bad_vac_fname, bad_vac)
+    print('В списке плохих вакансий ' + str(len(bad_vac)) + ' вакансий')
+
+    # Фильтрация объединенного перечня по списку ID плохих вакансий
     cnt = len(old_items)
     old_items = {k: v for k, v in old_items.items() if k not in bad_vac}
     print('По ID удалено ' + str(cnt - len(old_items)) + ' плохих вакансий')
@@ -291,16 +317,14 @@ def main(sc):
     filtered_items = old_items.values()
 
     print("Экспорт в tsv")
-    # Экспортировать список в csv
-    save_vaclist_to_tsv('hhvacdata.tsv', filtered_items)
-
-    print("Экспорт в google - быстрый, через загрузку нашего cvs!")
-    save_to_google(filtered_items)
+    # Экспортировать список в csv и в google-таблицу
+    save_vaclist_to_tsv(vac_data_fname, filtered_items)
+    print("Экспорт в google через загрузку нашего tvs!")
+    save_to_google(vac_data_fname)
 
     print("Done!")
 
     # Reschedule the main function
-    delay = 3600  # once per our
     print('Reschedule main after '+str(delay)+' seconds')
     s.enter(delay, 1, main, (sc,))
 
