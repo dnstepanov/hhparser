@@ -350,7 +350,7 @@ def main(sc):
         bad_vac = bad_vac_google
 
     for k, v in old_items.items():
-        if v['bad'] == 'TRUE':
+        if v['bad'] != '':
             bad_vac.append(k)
     # Удалить дубликаты ID плохих вакансий
     bad_vac = list(dict.fromkeys(bad_vac))
