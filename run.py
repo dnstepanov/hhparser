@@ -57,7 +57,7 @@ if not gapiok:
     # TODO: Написать инструкцию
     print('Необходимо создать файл для доступа к Google API:' + gapijson)
     print('Файл может быть помещен в папку проекта или в /cfg (при работе в Docker)')
-    print('https://gitlab.com/IntellectualRobotics/ziv/hhparser/wikis/%D0%9F%D0%B0%D1%80%D1%81%D0%B5%D1%80-%D0%B2%D0%B0%D0%BA%D0%B0%D0%BD%D1%81%D0%B8%D0%B9-HeadHunter')
+    print('https://gitlab.com/dnstepanov/hhparser/blob/master/README.md')
     sys.exit(1)
 
 
