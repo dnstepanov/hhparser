@@ -13,7 +13,7 @@ from shutil import copyfile
 from oauth2client.service_account import ServiceAccountCredentials
 # Слова для поиска определены в words.py
 from words import wordlist, notlist, banned_employers, banned_jobs, vac_types
-from gspread_formatting import *
+from gspread_formatting import set_frozen
 
 # Configuration
 DEBUG_RUN = False
@@ -32,6 +32,9 @@ else:
     in_docker = False
     bad_vac_fname = 'badvac.tsv'
 
+gapijson = 'gapi_auth.json'
+google_table_name = 'Вакансии HH 3.0'
+google_table_id = '1zNsxWevX9FZxz2CJws9Pjd21KlQBy7KYo6HHSWUhHH8'
 vac_data_fname = 'hhvacdata.tsv'
 vac_base_url = 'https://api.hh.ru/vacancies/'
 delay = 3600  # once per our
@@ -115,14 +118,15 @@ def save_to_google(filename):
     # Create scope
     scope = ['https://www.googleapis.com/auth/drive']
     # create some credential using that scope and content of startup_funding.json
-    creds = ServiceAccountCredentials.from_json_keyfile_name('My First Project-53694cf60e96.json', scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_name(gapijson, scope)
     # create gspread authorize using that credential
     client = gspread.authorize(creds)
     # Now will can access our google sheets we call client.open on StartupName
     content = open(filename, 'r', newline='', encoding='utf-8').read()
     # Google не поддерживает разделитель ';', но зато всё ок с Tab
     # content = content.replace(";", '\t')
-    client.import_csv('1zNsxWevX9FZxz2CJws9Pjd21KlQBy7KYo6HHSWUhHH8', content.encode('utf-8'))
+    client.import_csv(google_table_id, content.encode('utf-8'))
+    # Закрепить первую строку, иначе сортировка и фильтрация будут ломать таблицу
     sheet = client.open('Вакансии HH 3.0').sheet1
     set_frozen(sheet, rows=1)
 
@@ -132,11 +136,11 @@ def load_from_google():
     # Create scope
     scope = ['https://www.googleapis.com/auth/drive']
     # create some credential using that scope and content of startup_funding.json
-    creds = ServiceAccountCredentials.from_json_keyfile_name('My First Project-53694cf60e96.json', scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_name(gapijson, scope)
     # create gspread authorize using that credential
     client = gspread.authorize(creds)
     # Now will can access our google sheets we call client.open on StartupName
-    sheet = client.open('Вакансии HH 3.0').sheet1
+    sheet = client.open(google_table_name).sheet1
     list_of_lists = sheet.get_all_values()
 
     old_items = {}
