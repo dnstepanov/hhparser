@@ -14,6 +14,7 @@ gspread = "*"
 currencyconverter = "*"
 progress = "*"
 oauth2client = "*"
+gspread-formatting = "*"
 
 [requires]
 python_version = "3.7"

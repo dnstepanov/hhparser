@@ -13,6 +13,7 @@ from shutil import copyfile
 from oauth2client.service_account import ServiceAccountCredentials
 # Слова для поиска определены в words.py
 from words import wordlist, notlist, banned_employers, banned_jobs, vac_types
+from gspread_formatting import *
 
 # Configuration
 DEBUG_RUN = False
@@ -118,11 +119,12 @@ def save_to_google(filename):
     # create gspread authorize using that credential
     client = gspread.authorize(creds)
     # Now will can access our google sheets we call client.open on StartupName
-    # sheet = client.open('Вакансии HH 3.0').sheet1
     content = open(filename, 'r', newline='', encoding='utf-8').read()
     # Google не поддерживает разделитель ';', но зато всё ок с Tab
     # content = content.replace(";", '\t')
     client.import_csv('1zNsxWevX9FZxz2CJws9Pjd21KlQBy7KYo6HHSWUhHH8', content.encode('utf-8'))
+    sheet = client.open('Вакансии HH 3.0').sheet1
+    set_frozen(sheet, rows=1)
 
 
 def load_from_google():
