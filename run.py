@@ -21,14 +21,11 @@ DEBUG_RUN = False
 if DEBUG_RUN:
     print('ВНИМАНИЕ! ВКЛЮЧЕНА ОТЛАДКА, ЗАГРУЗИТСЯ ОДИН ЛИСТ!')
 
-# TODO: Определять наличие файла gapi_auth.json в текущей папке (моё окружение)
-# или в папке /cfg (чужое, развернуто через докер)
-# загружать соответствующий файл
 gapijson = 'gapi_auth.json'
 google_table_name = 'Вакансии HH 3.0'
 vac_data_fname = 'hhvacdata.tsv'
 vac_base_url = 'https://api.hh.ru/vacancies/'
-delay = 3600  # once per our
+delay = 3600  # once per hour
 # Преобразователь валют
 c = CurrencyConverter()
 
