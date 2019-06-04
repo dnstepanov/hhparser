@@ -1,10 +1,4 @@
-hhvacdata — копия.csv
-hhvacdata_unfilt.csv
-hhvacdata.csv
-**/venv/
-**/.vscode/
-**/__pycache__/
-.vscode/settings.json
-__pycache__/words.cpython-37.pyc
-__pycache__/words.cpython-37.pyc
+hhvacdata.tsv
+**/.vscode
+**/__pycache__
 gapi_auth.json
