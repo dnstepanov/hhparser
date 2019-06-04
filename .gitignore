@@ -7,3 +7,4 @@ hhvacdata.csv
 .vscode/settings.json
 __pycache__/words.cpython-37.pyc
 __pycache__/words.cpython-37.pyc
+gapi_auth.json

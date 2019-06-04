@@ -8,6 +8,7 @@ import gspread
 import sched
 import time
 import os
+import sys
 from shutil import copyfile
 # Service client credential from oauth2client
 from oauth2client.service_account import ServiceAccountCredentials
@@ -20,26 +21,47 @@ DEBUG_RUN = False
 if DEBUG_RUN:
     print('ВНИМАНИЕ! ВКЛЮЧЕНА ОТЛАДКА, ЗАГРУЗИТСЯ ОДИН ЛИСТ!')
 
-# Проверка начальной настройки и определение наличия docker
-if os.path.isdir('/cfg'):
-    in_docker = True
-    bad_vac_fname = '/cfg/badvac.tsv'
-    # Проверить, что настройка выполнена, и файл помещен в /cfg
-    exists = os.path.isfile(bad_vac_fname)
-    if not exists:
-        copyfile('badvac.tsv', bad_vac_fname)
-else:
-    in_docker = False
-    bad_vac_fname = 'badvac.tsv'
-
+# TODO: Определять наличие файла gapi_auth.json в текущей папке (моё окружение)
+# или в папке /cfg (чужое, развернуто через докер)
+# загружать соответствующий файл
 gapijson = 'gapi_auth.json'
 google_table_name = 'Вакансии HH 3.0'
-google_table_id = '1zNsxWevX9FZxz2CJws9Pjd21KlQBy7KYo6HHSWUhHH8'
 vac_data_fname = 'hhvacdata.tsv'
 vac_base_url = 'https://api.hh.ru/vacancies/'
 delay = 3600  # once per our
 # Преобразователь валют
 c = CurrencyConverter()
+
+# Проверка начальной настройки и определение наличия docker
+gapiok = False
+if os.path.isdir('/cfg'):
+    bad_vac_fname = '/cfg/badvac.tsv'
+    # Проверить, что настройка выполнена, и файл помещен в /cfg
+    exists = os.path.isfile(bad_vac_fname)
+    if not exists:
+        copyfile('badvac.tsv', bad_vac_fname)
+    exists = os.path.isfile('/cfg' + gapijson)
+    if exists:
+        gapiok = True
+        # Использовать авторизационный файл из /cfg
+        gapijson = '/cfg' + gapijson
+    else:
+        exists = os.path.isfile(gapijson)
+        if exists:
+            # План Б - использовать файл, приложенный в контейнере
+            gapiok = True
+else:
+    bad_vac_fname = 'badvac.tsv'
+    exists = os.path.isfile(gapijson)
+    if exists:
+        gapiok = True
+
+if not gapiok:
+    # TODO: Написать инструкцию
+    print('Необходимо создать файл для доступа к Google API:' + gapijson)
+    print('Файл может быть помещен в папку проекта или в /cfg (при работе в Docker)')
+    print('https://gitlab.com/IntellectualRobotics/ziv/hhparser/wikis/%D0%9F%D0%B0%D1%80%D1%81%D0%B5%D1%80-%D0%B2%D0%B0%D0%BA%D0%B0%D0%BD%D1%81%D0%B8%D0%B9-HeadHunter')
+    sys.exit(1)
 
 
 def get_vac_type(item):
@@ -113,7 +135,7 @@ def load_badlist_from_tsv(filename):
     return lst
 
 
-def save_to_google(filename):
+def save_to_google(filename, bad_list=[]):
     """ Выгружает список вакансий в google-таблицу с известным ID, полностью затирая таблицу """
     # Create scope
     scope = ['https://www.googleapis.com/auth/drive']
@@ -123,12 +145,22 @@ def save_to_google(filename):
     client = gspread.authorize(creds)
     # Now will can access our google sheets we call client.open on StartupName
     content = open(filename, 'r', newline='', encoding='utf-8').read()
-    # Google не поддерживает разделитель ';', но зато всё ок с Tab
-    # content = content.replace(";", '\t')
-    client.import_csv(google_table_id, content.encode('utf-8'))
+    sh = client.open(google_table_name)
+    client.import_csv(sh.id, content.encode('utf-8'))
     # Закрепить первую строку, иначе сортировка и фильтрация будут ломать таблицу
-    sheet = client.open('Вакансии HH 3.0').sheet1
+    sheet = sh.sheet1
     set_frozen(sheet, rows=1)
+
+    worksheet = sh.add_worksheet(title="Bad", rows=len(bad_list), cols="1")
+    start_letter = 'A'
+    start_row = 1
+    end_letter = 'A'
+    end_row = len(bad_list)
+    crange = "%s%d:%s%d" % (start_letter, start_row, end_letter, end_row)
+    cell_list = worksheet.range(crange)
+    for i, val in enumerate(bad_list):
+        cell_list[i].value = val
+    worksheet.update_cells(cell_list)
 
 
 def load_from_google():
@@ -140,9 +172,9 @@ def load_from_google():
     # create gspread authorize using that credential
     client = gspread.authorize(creds)
     # Now will can access our google sheets we call client.open on StartupName
-    sheet = client.open(google_table_name).sheet1
+    sh = client.open(google_table_name)
+    sheet = sh.sheet1
     list_of_lists = sheet.get_all_values()
-
     old_items = {}
     count = 0
     for vac in list_of_lists:
@@ -154,7 +186,12 @@ def load_from_google():
             ID = row['id']
             old_items[ID] = row
 
-    return old_items
+    try:
+        sheet = sh.worksheet("Bad")
+        bad_list = sheet.col_values(1)
+    except gspread.exceptions.WorksheetNotFound:
+        bad_list = []
+    return old_items, bad_list
 
 
 def form_hh_url(wordlist, notlist):
@@ -288,7 +325,7 @@ def main(sc):
 
     old_items = {}
     print('Загружаем старые записи')
-    old_items = load_from_google()
+    old_items, bad_vac_google = load_from_google()
     print('Загружено '+str(len(old_items))+" старых вакансий")
     # Выполнить очистку старых вакансий по актуальным правилам
     old_items = {k: v for k, v in old_items.items() if v['employer_name'] not in banned_employers}
@@ -305,7 +342,11 @@ def main(sc):
     # Обновить список плохих вакансий (bad = True)
     print('Обновление списка ID плохих вакансий')
     # Загрузка старого списка плохих вакансий
-    bad_vac = load_badlist_from_tsv(bad_vac_fname)
+    if len(bad_vac_google) == 0:
+        bad_vac = load_badlist_from_tsv(bad_vac_fname)
+    else:
+        bad_vac = bad_vac_google
+    
     for k, v in old_items.items():
         if v['bad'] == 'TRUE':
             bad_vac.append(k)
@@ -326,7 +367,7 @@ def main(sc):
     # Экспортировать список в csv и в google-таблицу
     save_vaclist_to_tsv(vac_data_fname, filtered_items)
     print("Экспорт в google через загрузку нашего tvs!")
-    save_to_google(vac_data_fname)
+    save_to_google(vac_data_fname, bad_vac)
 
     print("Done!")
 
