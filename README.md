@@ -6,3 +6,6 @@ https://gspread.readthedocs.io/en/latest/oauth2.html
 
 При запуске контейнера Docker необходимо задавать расположение папки данных /cfg, например, так:
 docker run -v c:/temp:/cfg -it dnstepanov/hhparser
+
+Репозиторий с актуальным докер-контейнером:
+https://hub.docker.com/r/dnstepanov/hhparser
