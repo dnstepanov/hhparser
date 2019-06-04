@@ -17,7 +17,7 @@ from words import wordlist, notlist, banned_employers, banned_jobs, vac_types
 from gspread_formatting import set_frozen
 
 # Configuration
-DEBUG_RUN = False
+DEBUG_RUN = True
 if DEBUG_RUN:
     print('ВНИМАНИЕ! ВКЛЮЧЕНА ОТЛАДКА, ЗАГРУЗИТСЯ ОДИН ЛИСТ!')
 
@@ -349,17 +349,18 @@ def main(sc):
     else:
         bad_vac = bad_vac_google
 
+    print('Загружено ' + str(len(bad_vac)) + ' плохих вакансий')
     for k, v in old_items.items():
         if v['bad'] != '':
             bad_vac.append(k)
+    print('После проверки столбца bad стало ' + str(len(bad_vac)) + ' плохих вакансий')
     # Удалить дубликаты ID плохих вакансий
     bad_vac = list(dict.fromkeys(bad_vac))
     # Сохранить обновленный список
     save_list_to_file(bad_vac_fname, bad_vac)
-    print('В списке плохих вакансий ' + str(len(bad_vac)) + ' вакансий')
+    print('После удаления дубликатов в списке плохих вакансий ' + str(len(bad_vac)) + ' вакансий')
 
     # Фильтрация объединенного перечня по списку ID плохих вакансий
-    cnt = len(old_items)
     old_items = {k: v for k, v in old_items.items() if k not in bad_vac}
     print('По ID удалено ' + str(cnt - len(old_items)) + ' плохих вакансий')
 
