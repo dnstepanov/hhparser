@@ -8,6 +8,7 @@ RUN pipenv install --system --deploy --ignore-pipfile
 
 # Run the application:
 COPY *.py ./
-COPY *.json ./
+# Don't add secrets )
+# COPY *.json ./
 COPY *.tsv ./
 CMD ["python", "run.py"]

@@ -21,33 +21,37 @@ DEBUG_RUN = False
 if DEBUG_RUN:
     print('ВНИМАНИЕ! ВКЛЮЧЕНА ОТЛАДКА, ЗАГРУЗИТСЯ ОДИН ЛИСТ!')
 
-gapijson = 'gapi_auth.json'
-google_table_name = 'Вакансии HH 3.0'
-vac_data_fname = 'hhvacdata.tsv'
-vac_base_url = 'https://api.hh.ru/vacancies/'
-delay = 3600  # once per hour
-# Преобразователь валют
-c = CurrencyConverter()
+gapijson = 'gapi_auth.json'  # Имя файла для авторизации в Google API
+google_table_name = 'Вакансии HH 3.0'  # Название таблицы в Google Docs
+vac_data_fname = 'hhvacdata.tsv'    # Имя файла для промежуточного хранения списка вакансий в tsv
+vac_base_url = 'https://api.hh.ru/vacancies/'  # Базовый URL для запросов данных по вакансиям
+delay = 3600  # Перезапускать скрипт раз в час
+ndfl = 0.13   # Величина НДФЛ
+c = CurrencyConverter()  # Преобразователь валют
 
 # Проверка начальной настройки и определение наличия docker
 gapiok = False
-if os.path.isdir('/cfg'):
-    bad_vac_fname = '/cfg/badvac.tsv'
+perm_stor = '/cfg/'
+if os.path.isdir(perm_stor):  # Предполагаем, что запущены в контейнере, и при запуске прописан путь к persistent storage /cfg
+    bad_vac_fname = perm_stor + 'badvac.tsv'
     # Проверить, что настройка выполнена, и файл помещен в /cfg
     exists = os.path.isfile(bad_vac_fname)
     if not exists:
         copyfile('badvac.tsv', bad_vac_fname)
-    exists = os.path.isfile('/cfg' + gapijson)
+    exists = os.path.isfile(perm_stor + gapijson)
     if exists:
         gapiok = True
         # Использовать авторизационный файл из /cfg
-        gapijson = '/cfg' + gapijson
+        gapijson = perm_stor + gapijson
     else:
         exists = os.path.isfile(gapijson)
         if exists:
             # План Б - использовать файл, приложенный в контейнере
+            copyfile(gapijson, perm_stor + gapijson)
+            gapijson = perm_stor + gapijson
             gapiok = True
 else:
+    perm_stor = ''
     bad_vac_fname = 'badvac.tsv'
     exists = os.path.isfile(gapijson)
     if exists:
@@ -261,39 +265,40 @@ def main(sc):
         response = http.request('GET', vac_base_url+item['id'])
         data = json.loads(response.data.decode('utf-8'))
 
-        t1 = 0
-        t2 = 0
         if data['salary'] is not None:
             # Обработка зарплат
-            t1 = data['salary']['from']
-            t2 = data['salary']['to']
+            salary_from = data['salary']['from']
+            salary_to = data['salary']['to']
 
-            # Преобразование None в числа - сомнительно, поэтому дальше проверки на None оставлены
-            if t1 is None:
-                t1 = 0
-            if t2 is None:
-                t2 = t1
+            # Преобразование None в ''
+            if salary_from is None:
+                salary_from = ''
+            if salary_to is None:
+                salary_to = ''
+                # salary_to = salary_from
             # Преобразовать валюту в рубли
             if data['salary']['currency'] != 'RUR':
-                if t1 is not None:
-                    t1 = c.convert(t1, data['salary']['currency'], 'RUB')
-                if t2 is not None:
-                    t2 = c.convert(t2, data['salary']['currency'], 'RUB')
+                if salary_from != '':
+                    salary_from = c.convert(salary_from, data['salary']['currency'], 'RUB')
+                if salary_to != '':
+                    salary_to = c.convert(salary_to, data['salary']['currency'], 'RUB')
 
             # Коррекция зарплаты, указанной как "на руки" в "до вычета налогов" (gross)
-            ndfl = 0.13
             gross = data['salary']['gross']
             if not gross:
-                if t1 is not None:
-                    t1 = t1/(1-ndfl)
-                if t2 is not None:
-                    t2 = t2/(1-ndfl)
+                if salary_from != '':
+                    salary_from = salary_from/(1-ndfl)
+                if salary_to != '':
+                    salary_to = salary_to/(1-ndfl)
 
             # Округление зарплат до целых тысяч
-            if t1 is not None:
-                t1 = round(round(t1, -3))
-            if t2 is not None:
-                t2 = round(round(t2, -3))
+            if salary_from != '':
+                salary_from = round(round(salary_from, -3))
+            if salary_to != '':
+                salary_to = round(round(salary_to, -3))
+        else:
+            salary_from = ''
+            salary_to = ''
 
         # Преобразование key_skills в строку, разделенную запятыми
         skills = ''
@@ -309,7 +314,7 @@ def main(sc):
         temp.extend(['name', 'url', 'vac_type', 'from', 'to', 'employer_name',
                      'schedule', 'employment', 'experience', 'key_skills',
                      'bad'])
-        res.extend([item['name'], item['alternate_url'], vac_type, t1, t2,
+        res.extend([item['name'], item['alternate_url'], vac_type, salary_from, salary_to,
                     data['employer']['name'], data['schedule']['name'],
                     data['employment']['name'], data['experience']['name'],
                     skills, ''])
@@ -338,12 +343,12 @@ def main(sc):
 
     # Обновить список плохих вакансий (bad = True)
     print('Обновление списка ID плохих вакансий')
-    # Загрузка старого списка плохих вакансий
+    # Загрузка старого списка плохих вакансий (из tsv, если не загружен из таблицы)
     if len(bad_vac_google) == 0:
         bad_vac = load_badlist_from_tsv(bad_vac_fname)
     else:
         bad_vac = bad_vac_google
-    
+
     for k, v in old_items.items():
         if v['bad'] == 'TRUE':
             bad_vac.append(k)
