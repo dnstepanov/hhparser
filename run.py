@@ -17,7 +17,7 @@ from words import wordlist, notlist, banned_employers, banned_jobs, vac_types
 from gspread_formatting import set_frozen
 
 # Configuration
-DEBUG_RUN = True
+DEBUG_RUN = False
 if DEBUG_RUN:
     print('ВНИМАНИЕ! ВКЛЮЧЕНА ОТЛАДКА, ЗАГРУЗИТСЯ ОДИН ЛИСТ!')
 
@@ -97,6 +97,19 @@ def save_vaclist_to_tsv(filename, listname):
                 csvwriter.writerow(header)
                 count += 1
             csvwriter.writerow(vac.values())
+
+
+def get_stats(items):
+    """ Собрать статистику по категориям вакансий"""
+    vac_type_stats_from = {}
+    vac_type_stats_to = {}
+    for v in vac_types:
+        vac_type_stats_from[v[0]] = []
+        vac_type_stats_to[v[0]] = []
+    for item in items:
+        vac_type_stats_from[item['vac_type']].append(item['from'])
+        vac_type_stats_to[item['vac_type']].append(item['to'])
+    return vac_type_stats_from, vac_type_stats_to
 
 
 def save_list_to_file(filename, listname):
@@ -190,7 +203,7 @@ def load_from_google():
     try:
         sheet = sh.worksheet("Bad")
         bad_list = sheet.col_values(1)
-    except gspread.exceptions.WorksheetNotFound:
+    except gspread.exceptions.WorksheetNotFound: # Если листа нет, вернуть пустой список
         bad_list = []
     return old_items, bad_list
 
@@ -335,6 +348,10 @@ def main(sc):
     print("После фильтрации по актуальным правилам осталось " +
           str(len(old_items))+" старых вакансий")
 
+    # Обновить типы старых вакансий по актуальным правилам
+    for item in old_items.values():
+        item['vac_type'] = get_vac_type(item)
+
     # Объединить старые и новые вакансии
     for item in filtered_items:
         old_items[item['id']] = item
@@ -349,9 +366,10 @@ def main(sc):
     else:
         bad_vac = bad_vac_google
 
-    print('Загружено ' + str(len(bad_vac)) + ' плохих вакансий')
+    print('Загружено ' + str(len(bad_vac)) + ' плохих вакансий, поиск новых в таблице')
     for k, v in old_items.items():
         if v['bad'] != '':
+            print(v['id']+"="+v['bad'])
             bad_vac.append(k)
     print('После проверки столбца bad стало ' + str(len(bad_vac)) + ' плохих вакансий')
     # Удалить дубликаты ID плохих вакансий
@@ -360,12 +378,14 @@ def main(sc):
     save_list_to_file(bad_vac_fname, bad_vac)
     print('После удаления дубликатов в списке плохих вакансий ' + str(len(bad_vac)) + ' вакансий')
 
+    cnt = len(old_items)
     # Фильтрация объединенного перечня по списку ID плохих вакансий
     old_items = {k: v for k, v in old_items.items() if k not in bad_vac}
     print('По ID удалено ' + str(cnt - len(old_items)) + ' плохих вакансий')
 
     filtered_items = old_items.values()
 
+    # get_stats(filtered_items)
     print("Экспорт в tsv")
     # Экспортировать список в csv и в google-таблицу
     save_vaclist_to_tsv(vac_data_fname, filtered_items)

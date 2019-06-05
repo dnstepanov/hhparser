@@ -111,7 +111,7 @@ vac_types = [('Тестировщик', ['Тестиров', 'QA', 'качест
              ('Android', ['Android']),
              ('Erlang', ['Erlang']),
              ('Архитектор IT', ['архитект']),
-             ('Frontend', ['React', 'фронт', 'front', 'Angular', 'UX ', 'UI ']),
+             ('Frontend', ['React', 'фронт', 'front', 'Angular', 'UX ', 'UI ', 'UI/UX', 'UX-', 'Magento', 'Web-разработчик']),
              ('Full stack', ['Full', 'фулл']),
              ('golang', ['golang']),
              ('Документация', ['документац', 'защите инф', 'писатель', 'Technical Writer']),
