@@ -15,9 +15,10 @@ from oauth2client.service_account import ServiceAccountCredentials
 # Слова для поиска определены в words.py
 from words import wordlist, notlist, banned_employers, banned_jobs, vac_types
 from gspread_formatting import set_frozen
+from hh_stats import get_stats_type, get_stats_exp
 
-# Configuration
-DEBUG_RUN = False
+# Confiet_suration
+DEBUG_RUN = True
 if DEBUG_RUN:
     print('ВНИМАНИЕ! ВКЛЮЧЕНА ОТЛАДКА, ЗАГРУЗИТСЯ ОДИН ЛИСТ!')
 
@@ -99,19 +100,6 @@ def save_vaclist_to_tsv(filename, listname):
             csvwriter.writerow(vac.values())
 
 
-def get_stats(items):
-    """ Собрать статистику по категориям вакансий"""
-    vac_type_stats_from = {}
-    vac_type_stats_to = {}
-    for v in vac_types:
-        vac_type_stats_from[v[0]] = []
-        vac_type_stats_to[v[0]] = []
-    for item in items:
-        vac_type_stats_from[item['vac_type']].append(item['from'])
-        vac_type_stats_to[item['vac_type']].append(item['to'])
-    return vac_type_stats_from, vac_type_stats_to
-
-
 def save_list_to_file(filename, listname):
     """ Сохраняет списко в файл (одна запись - одна строка) """
     with open(filename, 'w', newline='', encoding='utf-8') as employ_data:
@@ -149,7 +137,7 @@ def load_badlist_from_tsv(filename):
     return lst
 
 
-def save_to_google(filename, bad_list=[]):
+def save_to_google(filename, bad_list, exp_from, exp_to, type_from, type_to):
     """ Выгружает список вакансий в google-таблицу с известным ID, полностью затирая таблицу """
     # Create scope
     scope = ['https://www.googleapis.com/auth/drive']
@@ -175,6 +163,18 @@ def save_to_google(filename, bad_list=[]):
     for i, val in enumerate(bad_list):
         cell_list[i].value = val
     worksheet.update_cells(cell_list)
+
+    worksheet = sh.add_worksheet(title="Stats", rows=4*(len(exp_from['Нет опыта'])+2), cols=len(type_from.keys))
+    # TODO: решить, как записать статистику в лист Stats
+    # start_letter = 'A'
+    # start_row = 1
+    # end_letter = 'A'
+    # end_row = len(bad_list)
+    # crange = "%s%d:%s%d" % (start_letter, start_row, end_letter, end_row)
+    # cell_list = worksheet.range(crange)
+    # for i, val in enumerate(bad_list):
+    #     cell_list[i].value = val
+    # worksheet.update_cells(cell_list)
 
 
 def load_from_google():
@@ -203,7 +203,7 @@ def load_from_google():
     try:
         sheet = sh.worksheet("Bad")
         bad_list = sheet.col_values(1)
-    except gspread.exceptions.WorksheetNotFound: # Если листа нет, вернуть пустой список
+    except gspread.exceptions.WorksheetNotFound:  # Если листа нет, вернуть пустой список
         bad_list = []
     return old_items, bad_list
 
@@ -385,12 +385,15 @@ def main(sc):
 
     filtered_items = old_items.values()
 
-    # get_stats(filtered_items)
+    exp_stats_from, exp_stats_to = get_stats_exp(filtered_items)
+    type_stats_from, type_stats_to = get_stats_type(filtered_items)
     print("Экспорт в tsv")
     # Экспортировать список в csv и в google-таблицу
     save_vaclist_to_tsv(vac_data_fname, filtered_items)
     print("Экспорт в google через загрузку нашего tvs!")
-    save_to_google(vac_data_fname, bad_vac)
+    save_to_google(vac_data_fname, bad_vac,
+                   exp_stats_from, exp_stats_to,
+                   type_stats_from, type_stats_to)
 
     print("Done!")
 

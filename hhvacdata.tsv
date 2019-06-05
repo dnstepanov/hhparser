@@ -107,7 +107,7 @@ id	name	url	vac_type	from	to	employer_name	schedule	employment	experience	key_sk
 31725610	C++ Software Developer	https://hh.ru/vacancy/31725610	C/C++			Релатум	Гибкий график	Полная занятость	От 1 года до 3 лет		
 31329538	Программист C/С++	https://hh.ru/vacancy/31329538	C/C++	69000	115000	Решение	Полный день	Полная занятость	От 1 года до 3 лет		
 28837191	С++ Developer	https://hh.ru/vacancy/28837191	C/C++	161000		Риал Тайм Технологии	Полный день	Полная занятость	От 3 до 6 лет	C++, Linux, Python	
-30915913	Senior C++ Developer	https://hh.ru/vacancy/30915913	C/C++	207000	207000	Риал Тайм Технологии	Полный день	Полная занятость	От 3 до 6 лет	C++, Linux, Python, Git, Docker	
+30915913	Senior C++ Developer	https://hh.ru/vacancy/30915913	C/C++	207000		Риал Тайм Технологии	Полный день	Полная занятость	От 3 до 6 лет	C++, Linux, Python, Git, Docker	
 30843745	Ведущий программист C/C++	https://hh.ru/vacancy/30843745	C/C++			Российская электроника	Полный день	Полная занятость	Более 6 лет	C/C++, SQL, C++, Linux	
 29479760	Программист С++	https://hh.ru/vacancy/29479760	C/C++			Русские базовые информационные технологии, Научно-производственное объединение	Полный день	Полная занятость	От 3 до 6 лет	Linux, C++, Qt, ООП, STL	
 31626566	Программист С++	https://hh.ru/vacancy/31626566	C/C++	115000	115000	РУТОЛЛ	Полный день	Полная занятость	От 1 года до 3 лет		
@@ -267,30 +267,30 @@ id	name	url	vac_type	from	to	employer_name	schedule	employment	experience	key_sk
 31550646	Программист Delphi	https://hh.ru/vacancy/31550646	Delphi	63000	103000	Бизнес Технологии	Удаленная работа	Полная занятость	От 3 до 6 лет		
 31309339	Программист Delphi	https://hh.ru/vacancy/31309339	Delphi	92000	92000	Наука	Полный день	Полная занятость	От 1 года до 3 лет	Delphi, C#, СУБД	
 30949741	Программист - разработчик Delphi	https://hh.ru/vacancy/30949741	Delphi			РосДеньги	Полный день	Полная занятость	От 3 до 6 лет	Delphi, MS SQL	
-31726729	DevOps Engineer	https://hh.ru/vacancy/31726729	DevOps			Axiom Software Laboratories	Полный день	Полная занятость	От 3 до 6 лет		
-24582555	Системный инженер / DevOps Engineer	https://hh.ru/vacancy/24582555	DevOps			Devexperts (Российский бренд Эксперт-Система)	Гибкий график	Полная занятость	От 3 до 6 лет		
-30301442	DevOps Engineer	https://hh.ru/vacancy/30301442	DevOps	138000	138000	Devim	Полный день	Полная занятость	От 1 года до 3 лет		
-31707909	Senior DevOps Engineer	https://hh.ru/vacancy/31707909	DevOps			iX.co	Полный день	Полная занятость	Более 6 лет		
-28654080	Infrastructure/DevOps engineer	https://hh.ru/vacancy/28654080	DevOps	172000	172000	JetBrains	Полный день	Полная занятость	От 3 до 6 лет		
-31446081	DevOps инженер	https://hh.ru/vacancy/31446081	DevOps	120000	120000	KMA.BIZ	Полный день	Полная занятость	От 1 года до 3 лет		
-31730220	Senior DevOps engineer	https://hh.ru/vacancy/31730220	DevOps			Paragon Software	Удаленная работа	Полная занятость	От 3 до 6 лет	Linux, Администрирование серверов Linux, Computer troubleshooting, CentOS, Nginx, Bash	
-31270109	Senior DevOps Engineer	https://hh.ru/vacancy/31270109	DevOps	103000	207000	Spark Equation	Полный день	Полная занятость	От 3 до 6 лет	AWS, Azure, Google Cloud, Python, CI/CD, Scripting, Serverless, Docker	
-30255680	Junior DevOps Engineer	https://hh.ru/vacancy/30255680	DevOps			Sperasoft	Полный день	Полная занятость	От 1 года до 3 лет		
-30255702	Middle DevOps Engineer	https://hh.ru/vacancy/30255702	DevOps			Sperasoft	Полный день	Полная занятость	Более 6 лет		
-31228343	Системный инженер (Linux)	https://hh.ru/vacancy/31228343	DevOps	69000	69000	SPRINTHOST	Сменный график	Полная занятость	От 1 года до 3 лет	Python, MySQL, Apache HTTP Server, Администрирование серверов Linux, Nginx, Bash, Linux, PostgreSQL, KVM, Docker, Ansible, Chef, CentOS, Git, Zabbix, Администрирование сетевого оборудования	
-31591371	DevOps Specialist	https://hh.ru/vacancy/31591371	DevOps		138000	Staff-UP Consulting Group	Гибкий график	Полная занятость	От 1 года до 3 лет		
-31131569	Junior DevOps	https://hh.ru/vacancy/31131569	DevOps			Авито	Полный день	Полная занятость	От 1 года до 3 лет	Linux, JavaScript, Python, Java, Администрирование серверов Linux, Bash, Perl, Zabbix	
-31403336	DevOps - системный инженер	https://hh.ru/vacancy/31403336	DevOps	63000	115000	АКУТА	Полный день	Полная занятость	От 1 года до 3 лет	Git, Linux, Bash, devops	
-31178235	DevOps инженер	https://hh.ru/vacancy/31178235	DevOps			БиАйЭй-Технолоджиз	Полный день	Полная занятость	От 1 года до 3 лет	Linux	
-31681292	DevOps инженер	https://hh.ru/vacancy/31681292	DevOps			ИнфоТеКС	Полный день	Полная занятость	От 1 года до 3 лет		
-25882273	Инженер конфигураций (DevOps)	https://hh.ru/vacancy/25882273	DevOps			НИЦ СПб ЭТУ (Научно-инженерный центр Санкт-Петербургского электротехнического университета)	Полный день	Полная занятость	От 1 года до 3 лет		
-28999878	DevOps инженер (Jenkins Pipelines)	https://hh.ru/vacancy/28999878	DevOps			Новые Облачные Технологии	Полный день	Полная занятость	От 3 до 6 лет		
-31602059	Configuration manager/Build engineer	https://hh.ru/vacancy/31602059	DevOps	115000	138000	НТЦ АРГУС	Гибкий график	Полная занятость	От 1 года до 3 лет	TeamCity, Git, Apache Maven, Linux, docker, Continuous Integration, Ansible	
-31781437	DevOps - инженер	https://hh.ru/vacancy/31781437	DevOps			РТ Лабс	Полный день	Полная занятость	От 1 года до 3 лет		
-31561381	Инженер по внедрению и поддержке Unix-систем	https://hh.ru/vacancy/31561381	DevOps	50000	50000	СевенТест, НТЦ	Гибкий график	Полная занятость	От 1 года до 3 лет		
-31722534	DevOps инженер	https://hh.ru/vacancy/31722534	DevOps			СИГМА	Полный день	Полная занятость	От 1 года до 3 лет		
-31716677	DevOps engineer	https://hh.ru/vacancy/31716677	DevOps			СИГМА	Полный день	Полная занятость	От 1 года до 3 лет		
-30724438	DevOps Engineer (R&D)	https://hh.ru/vacancy/30724438	DevOps			ЦРТ | Группа компаний	Полный день	Полная занятость	От 3 до 6 лет	DevOps, docker, VMware, CI/ CD, TeamCity, build, Continuous Integration, управление конфигурациями	
+31726729	DevOps Engineer	https://hh.ru/vacancy/31726729	DevOps/DBA			Axiom Software Laboratories	Полный день	Полная занятость	От 3 до 6 лет		
+24582555	Системный инженер / DevOps Engineer	https://hh.ru/vacancy/24582555	DevOps/DBA			Devexperts (Российский бренд Эксперт-Система)	Гибкий график	Полная занятость	От 3 до 6 лет		
+30301442	DevOps Engineer	https://hh.ru/vacancy/30301442	DevOps/DBA	138000	138000	Devim	Полный день	Полная занятость	От 1 года до 3 лет		
+31707909	Senior DevOps Engineer	https://hh.ru/vacancy/31707909	DevOps/DBA			iX.co	Полный день	Полная занятость	Более 6 лет		
+28654080	Infrastructure/DevOps engineer	https://hh.ru/vacancy/28654080	DevOps/DBA	172000	172000	JetBrains	Полный день	Полная занятость	От 3 до 6 лет		
+31446081	DevOps инженер	https://hh.ru/vacancy/31446081	DevOps/DBA	120000	120000	KMA.BIZ	Полный день	Полная занятость	От 1 года до 3 лет		
+31730220	Senior DevOps engineer	https://hh.ru/vacancy/31730220	DevOps/DBA			Paragon Software	Удаленная работа	Полная занятость	От 3 до 6 лет	Linux, Администрирование серверов Linux, Computer troubleshooting, CentOS, Nginx, Bash	
+31270109	Senior DevOps Engineer	https://hh.ru/vacancy/31270109	DevOps/DBA	103000	207000	Spark Equation	Полный день	Полная занятость	От 3 до 6 лет	AWS, Azure, Google Cloud, Python, CI/CD, Scripting, Serverless, Docker	
+30255680	Junior DevOps Engineer	https://hh.ru/vacancy/30255680	DevOps/DBA			Sperasoft	Полный день	Полная занятость	От 1 года до 3 лет		
+30255702	Middle DevOps Engineer	https://hh.ru/vacancy/30255702	DevOps/DBA			Sperasoft	Полный день	Полная занятость	Более 6 лет		
+31228343	Системный инженер (Linux)	https://hh.ru/vacancy/31228343	DevOps/DBA	69000		SPRINTHOST	Сменный график	Полная занятость	От 1 года до 3 лет	Python, MySQL, Apache HTTP Server, Администрирование серверов Linux, Nginx, Bash, Linux, PostgreSQL, KVM, Docker, Ansible, Chef, CentOS, Git, Zabbix, Администрирование сетевого оборудования	
+31591371	DevOps Specialist	https://hh.ru/vacancy/31591371	DevOps/DBA		138000	Staff-UP Consulting Group	Гибкий график	Полная занятость	От 1 года до 3 лет		
+31131569	Junior DevOps	https://hh.ru/vacancy/31131569	DevOps/DBA			Авито	Полный день	Полная занятость	От 1 года до 3 лет	Linux, JavaScript, Python, Java, Администрирование серверов Linux, Bash, Perl, Zabbix	
+31403336	DevOps - системный инженер	https://hh.ru/vacancy/31403336	DevOps/DBA	63000	115000	АКУТА	Полный день	Полная занятость	От 1 года до 3 лет	Git, Linux, Bash, devops	
+31178235	DevOps инженер	https://hh.ru/vacancy/31178235	DevOps/DBA			БиАйЭй-Технолоджиз	Полный день	Полная занятость	От 1 года до 3 лет	Linux	
+31681292	DevOps инженер	https://hh.ru/vacancy/31681292	DevOps/DBA			ИнфоТеКС	Полный день	Полная занятость	От 1 года до 3 лет		
+25882273	Инженер конфигураций (DevOps)	https://hh.ru/vacancy/25882273	DevOps/DBA			НИЦ СПб ЭТУ (Научно-инженерный центр Санкт-Петербургского электротехнического университета)	Полный день	Полная занятость	От 1 года до 3 лет		
+28999878	DevOps инженер (Jenkins Pipelines)	https://hh.ru/vacancy/28999878	DevOps/DBA			Новые Облачные Технологии	Полный день	Полная занятость	От 3 до 6 лет		
+31602059	Configuration manager/Build engineer	https://hh.ru/vacancy/31602059	DevOps/DBA	115000	138000	НТЦ АРГУС	Гибкий график	Полная занятость	От 1 года до 3 лет	TeamCity, Git, Apache Maven, Linux, docker, Continuous Integration, Ansible	
+31781437	DevOps - инженер	https://hh.ru/vacancy/31781437	DevOps/DBA			РТ Лабс	Полный день	Полная занятость	От 1 года до 3 лет		
+31561381	Инженер по внедрению и поддержке Unix-систем	https://hh.ru/vacancy/31561381	DevOps/DBA	50000	50000	СевенТест, НТЦ	Гибкий график	Полная занятость	От 1 года до 3 лет		
+31722534	DevOps инженер	https://hh.ru/vacancy/31722534	DevOps/DBA			СИГМА	Полный день	Полная занятость	От 1 года до 3 лет		
+31716677	DevOps engineer	https://hh.ru/vacancy/31716677	DevOps/DBA			СИГМА	Полный день	Полная занятость	От 1 года до 3 лет		
+30724438	DevOps Engineer (R&D)	https://hh.ru/vacancy/30724438	DevOps/DBA			ЦРТ | Группа компаний	Полный день	Полная занятость	От 3 до 6 лет	DevOps, docker, VMware, CI/ CD, TeamCity, build, Continuous Integration, управление конфигурациями	
 31505477	Ведущий devops / системный инженер	https://hh.ru/vacancy/31505477	DevOps/DBA	115000		ASD Technologies	Полный день	Полная занятость	От 3 до 6 лет		
 31828096	Senior Operations/ IT Engineer	https://hh.ru/vacancy/31828096	DevOps/DBA	138000	184000	B-rain Tech	Сменный график	Полная занятость	От 3 до 6 лет	Администрирование серверов Linux, Virtualization, Nagios, Zabbix, TCP/IP, Bash, Python, MySQL, Intermediate English, MongoDB, Redis	
 30446389	DevOps специалист	https://hh.ru/vacancy/30446389	DevOps/DBA			Big Data Technologies	Полный день	Полная занятость	От 1 года до 3 лет		
@@ -378,7 +378,7 @@ id	name	url	vac_type	from	to	employer_name	schedule	employment	experience	key_sk
 31580892	Ведущий JavaScript / Фронтенд-разработчик	https://hh.ru/vacancy/31580892	Java	138000		ASD Technologies	Полный день	Полная занятость	От 3 до 6 лет		
 31480094	Full-stack developer (Node.JS, Java, React.JS)	https://hh.ru/vacancy/31480094	Java			Cybernation	Полный день	Полная занятость	От 1 года до 3 лет		
 29079997	Senior React/Javascript Developer (г. Санкт-Петербург, г. Севастополь)	https://hh.ru/vacancy/29079997	Java	120000	200000	ITGLOBAL.COM	Полный день	Полная занятость	От 3 до 6 лет		
-31730153	JavaScript/TypeScript/React Native разработчик	https://hh.ru/vacancy/31730153	Java			SunStrike Studios	Полный день	Полная занятость	От 1 года до 3 лет		
+31730153	JavaScript/TypeScript/React Native разработчик	https://hh.ru/vacancy/31730153	Java	161000	195000	SunStrike Studios	Полный день	Полная занятость	От 1 года до 3 лет		
 31792252	Full stack (PHP/JavaScript) разработчик	https://hh.ru/vacancy/31792252	Java	92000	138000	IT_Selection	Полный день	Полная занятость	От 1 года до 3 лет	PHP, JavaScript, HTML5, CSS3, Git, jQuery	
 31302127	Full Stack JavaScript Developer	https://hh.ru/vacancy/31302127	Java			Mentalstack	Полный день	Полная занятость	От 3 до 6 лет	Angular, Vue.js, TypeScript, JavaScript, Git, Node.js, Express, MongoDB, MVC, AWS, AWS Lambda	
 30768633	Mobile developer iOS + Android (Swift + Java)	https://hh.ru/vacancy/30768633	Java			ГЕТ бизнес консалтинг	Гибкий график	Полная занятость	От 1 года до 3 лет	Android, Java, iOS, Swift	
@@ -401,7 +401,7 @@ id	name	url	vac_type	from	to	employer_name	schedule	employment	experience	key_sk
 31618240	Middle Java Developer (UFM)	https://hh.ru/vacancy/31618240	Java			Nexign (АО «Петер-Сервис»)	Полный день	Полная занятость	От 1 года до 3 лет	Java SE, Spring Framework, Spring Boot, Couchebase, RabbitMQ, Apache Kafka, Hibernate ORM, Apache Tomcat, Apache Maven, Gradle	
 16272815	Java Developer/Java-разработчик	https://hh.ru/vacancy/16272815	Java			NOVARDIS	Полный день	Полная занятость	От 1 года до 3 лет		
 30173430	Java developer	https://hh.ru/vacancy/30173430	Java	138000		Petshop.ru	Полный день	Полная занятость	От 1 года до 3 лет	Spring Framework, Java EE, PostgreSQL, Java	
-31795524	Senior Java developer / Старший разработчик Java	https://hh.ru/vacancy/31795524	Java	149000		Petshop.ru	Полный день	Полная занятость	От 1 года до 3 лет		
+31795524	Senior Java developer / Старший разработчик Java	https://hh.ru/vacancy/31795524	Java	161000		Petshop.ru	Полный день	Полная занятость	От 1 года до 3 лет		
 31353108	Senior Java Developer	https://hh.ru/vacancy/31353108	Java		287000	Quantum Art	Полный день	Полная занятость	Более 6 лет		
 30248377	Senior JavaScript Software Developer	https://hh.ru/vacancy/30248377	Java	172000	264000	Quest Software	Полный день	Полная занятость	Более 6 лет	JavaScript	
 31415945	Junior JavaScript Developer	https://hh.ru/vacancy/31415945	Java		40000	Quest Software	Гибкий график	Полная занятость	Нет опыта	JavaScript, Linux	
@@ -706,7 +706,7 @@ id	name	url	vac_type	from	to	employer_name	schedule	employment	experience	key_sk
 31375959	Программист MSSQL - Разработчик ERP	https://hh.ru/vacancy/31375959	Базы данных		100000	НВХ РУС	Полный день	Полная занятость	От 1 года до 3 лет	ERP, MS SQL, MS Visual Basic, PowerScript, WMS, MES	
 31726240	Разработчик .Net / MS SQL	https://hh.ru/vacancy/31726240	Базы данных	80000	103000	Нмаркет.ПРО	Полный день	Полная занятость	От 1 года до 3 лет	MS SQL, ADO.NET, SQL, API, WPF	
 31522548	Программист баз данных	https://hh.ru/vacancy/31522548	Базы данных			ОРИМИ ТРЭЙД	Полный день	Полная занятость	От 3 до 6 лет		
-30996704	PL/pgSQL Developer / PostgreSQL DBA	https://hh.ru/vacancy/30996704	Базы данных	184000	184000	Риал Тайм Технологии	Полный день	Полная занятость	От 3 до 6 лет	PostgreSQL, PL/pgSQL, PHP, ClickHouse, Git, Docker	
+30996704	PL/pgSQL Developer / PostgreSQL DBA	https://hh.ru/vacancy/30996704	Базы данных	184000		Риал Тайм Технологии	Полный день	Полная занятость	От 3 до 6 лет	PostgreSQL, PL/pgSQL, PHP, ClickHouse, Git, Docker	
 31688896	Разработчик баз данных	https://hh.ru/vacancy/31688896	Базы данных			Сбербанк	Полный день	Полная занятость	Нет опыта		
 31617377	Разработчик баз данных	https://hh.ru/vacancy/31617377	Базы данных	180000	180000	Сбербанк	Полный день	Полная занятость	От 1 года до 3 лет		
 31818198	Разработчик PL SQL	https://hh.ru/vacancy/31818198	Базы данных			Сбербанк	Полный день	Полная занятость	Нет опыта		
@@ -741,11 +741,10 @@ id	name	url	vac_type	from	to	employer_name	schedule	employment	experience	key_sk
 30951742	Инженер (1 категории)	https://hh.ru/vacancy/30951742	Инженер	40000		Группа промышленных компаний “Корпорация ТИРА”	Полный день	Полная занятость	От 1 года до 3 лет		
 31707714	Ведущий инженер по внедрению и сопровождению ПО	https://hh.ru/vacancy/31707714	Инженер			Екассир	Гибкий график	Полная занятость	От 1 года до 3 лет		
 31400006	Реверс-инженер	https://hh.ru/vacancy/31400006	Инженер			ЖУЙЭРСЫ	Полный день	Полная занятость	От 1 года до 3 лет		
-31824495	Специалист по ведению НСИ (Инженер - Технолог)	https://hh.ru/vacancy/31824495	Инженер		57000	ИндигоСофт	Полный день	Полная занятость	От 1 года до 3 лет	НТД, нормативно-техническая документация, ГОСТ, Чтение чертежей, Контроль качества, Работа с НТД, Пользователь ПК, Работа в команде, Работа с большим объемом информации, ГОСТ Р, ГОСТ ИСО, Инженер, Стандарты, Метрология, Работа с базами данных, НСИ, Нормативно-справочная информация, Ведение классификаторов, Материально-техническое обеспечение, МТР, ТМЦ, МТО, Ведение НСИ, MDM, МДМ, ERP, SAP, ОКПД2	
+31824495	Специалист по ведению НСИ (Инженер)	https://hh.ru/vacancy/31824495	Инженер		57000	ИндигоСофт	Полный день	Полная занятость	От 1 года до 3 лет	НТД, нормативно-техническая документация, ГОСТ, Чтение чертежей, Контроль качества, Работа с НТД, Пользователь ПК, Работа в команде, Работа с большим объемом информации, ГОСТ Р, ГОСТ ИСО, Инженер, Стандарты, Метрология, Работа с базами данных, НСИ, Нормативно-справочная информация, Ведение классификаторов, Материально-техническое обеспечение, МТР, ТМЦ, МТО, Ведение НСИ, MDM, МДМ, ERP, SAP, ОКПД2, сапромат	
 28430586	Ведущий инженер ГИС	https://hh.ru/vacancy/28430586	Инженер	100000		Институт телекоммуникаций	Полный день	Полная занятость	От 3 до 6 лет		
 29412302	Ведущий специалист по инженерному криптоанализу	https://hh.ru/vacancy/29412302	Инженер			ИнфоТеКС	Полный день	Полная занятость	Более 6 лет	Средства криптографической защиты информации, Информационная безопасность, Технические системы и средства безопасности, Анализ кода, Технические средства информационной защиты, сертификационные исследования, Сертификация ФСБ, C/C++, Assembler, C#, Perl, Python, Java, NixOS, Windows Os, Недокументированные возможности	
 31747144	Ведущий инженер	https://hh.ru/vacancy/31747144	Инженер	63000		КБ Арсенал	Полный день	Полная занятость	Более 6 лет	CorelDRAW, C/C++, Проектно-конструкторская деятельность	
-31653868	Инженер-схемотехник	https://hh.ru/vacancy/31653868	Инженер	46000	73000	Корпорация Оборонные технологии	Полный день	Полная занятость	От 1 года до 3 лет	ГОСТ, ЕСКД, Компас-3D, нормативно-техническая документация, Разработка проектной документации, Проектно-конструкторская деятельность, измерительное оборудование, Схемотехника электронного оборудования, Монтаж оборудования	
 31773565	Инженер 1 категории (отдела производственно-технического обеспечения)	https://hh.ru/vacancy/31773565	Инженер	33000	49000	ЛокоТех	Полный день	Полная занятость	От 3 до 6 лет		
 31734444	Ведущий инженер	https://hh.ru/vacancy/31734444	Инженер	36000	53000	ЛокоТех	Полный день	Полная занятость	От 3 до 6 лет		
 31592933	Старший инженер по эксплуатации систем управления и мониторинга	https://hh.ru/vacancy/31592933	Инженер			МегаФон	Полный день	Полная занятость	От 1 года до 3 лет		
@@ -758,7 +757,7 @@ id	name	url	vac_type	from	to	employer_name	schedule	employment	experience	key_sk
 30163414	Инженер (разработка программно-аппаратных комплексов)	https://hh.ru/vacancy/30163414	Инженер			Радар ММС	Полный день	Полная занятость	От 1 года до 3 лет		
 31774937	Инженер-проектировщик	https://hh.ru/vacancy/31774937	Инженер			Русская Трапеза	Полный день	Полная занятость	От 3 до 6 лет		
 31807631	Инженер-моделист	https://hh.ru/vacancy/31807631	Инженер	50000		СимРэйл	Гибкий график	Полная занятость	От 1 года до 3 лет		
-28590458	Инженер	https://hh.ru/vacancy/28590458	Инженер	69000	69000	Специальный Технологический Центр	Полный день	Полная занятость	От 1 года до 3 лет		
+28590458	Инженер	https://hh.ru/vacancy/28590458	Инженер	69000		Специальный Технологический Центр	Полный день	Полная занятость	От 1 года до 3 лет		
 31319600	Инженер-проектировщик АСУ ТП, ГИП	https://hh.ru/vacancy/31319600	Инженер			Технорос	Полный день	Полная занятость	От 3 до 6 лет		
 26068145	Инженер службы эксплуатации	https://hh.ru/vacancy/26068145	Инженер			Триколор	Сменный график	Полная занятость	Нет опыта		
 27623700	Младший инженер по сопровождению OSS/BSS систем	https://hh.ru/vacancy/27623700	Инженер			Триколор	Полный день	Полная занятость	Нет опыта		
@@ -800,9 +799,6 @@ id	name	url	vac_type	from	to	employer_name	schedule	employment	experience	key_sk
 31723892	Ведущий Java разработчик (главный научный сотрудник)	https://hh.ru/vacancy/31723892	Научный сотрудник			НИИАС	Полный день	Полная занятость	От 3 до 6 лет	ОПП, Java, PostgreSQL, Spring Framework, Git, Apache Maven	
 31628120	Алгоритмист/программист (С++)	https://hh.ru/vacancy/31628120	Научный сотрудник	115000	115000	НТЦ Электрозонд	Полный день	Полная занятость	От 3 до 6 лет		
 30930865	Старший научный сотрудник	https://hh.ru/vacancy/30930865	Научный сотрудник			ПОЛИСАН, научно-технологическая фармацевтическая фирма	Полный день	Полная занятость	От 3 до 6 лет		
-31471845	Научный сотрудник	https://hh.ru/vacancy/31471845	Научный сотрудник			Протеиновый контур	Полный день	Полная занятость	От 3 до 6 лет		
-31384950	Младший научный сотрудник (Биохимия)	https://hh.ru/vacancy/31384950	Научный сотрудник			Протеиновый контур	Полный день	Полная занятость	От 3 до 6 лет		
-31368663	Младший научный сотрудник (Цитология)	https://hh.ru/vacancy/31368663	Научный сотрудник			Протеиновый контур	Полный день	Полная занятость	От 3 до 6 лет		
 31289700	Инженер 1-3 категории (разработка математических моделей)	https://hh.ru/vacancy/31289700	Научный сотрудник			Радар ММС	Полный день	Полная занятость	От 1 года до 3 лет		
 31722965	Младший научный сотрудник (разработчик)	https://hh.ru/vacancy/31722965	Научный сотрудник			Российская электроника	Полный день	Полная занятость	Нет опыта		
 31701060	Программист-математик	https://hh.ru/vacancy/31701060	Научный сотрудник			Содружество, Группа компаний	Полный день	Полная занятость	Нет опыта		
@@ -810,11 +806,8 @@ id	name	url	vac_type	from	to	employer_name	schedule	employment	experience	key_sk
 31663081	DSP программист-математик	https://hh.ru/vacancy/31663081	Научный сотрудник	103000	161000	Специальный Технологический Центр	Гибкий график	Полная занятость	От 1 года до 3 лет		
 15606611	Разработчик, исследователь ANDROID/iOS	https://hh.ru/vacancy/15606611	Научный сотрудник	115000		Специальный Технологический Центр	Полный день	Полная занятость	От 3 до 6 лет		
 29669155	Разработчик-исследователь	https://hh.ru/vacancy/29669155	Научный сотрудник			СтарЛайн, Научно-производственное объединение	Полный день	Полная занятость	От 3 до 6 лет	Linux, C++, STL, ROS, OpenCV, математика, компьютерное зрение, машинное обучение	
-31545976	Инженер-исследователь / Ведущий инженер-исследователь	https://hh.ru/vacancy/31545976	Научный сотрудник			Технорос	Полный день	Полная занятость	От 1 года до 3 лет	физика, исследования, НИР	
 30251073	Старший/ведущий научный сотрудник сектора НИОКР	https://hh.ru/vacancy/30251073	Научный сотрудник	57000	69000	Тидекс ( Tydex )	Полный день	Полная занятость	Более 6 лет		
-30211578	Научный сотрудник PostDoc (Молекулярная онкология)	https://hh.ru/vacancy/30211578	Научный сотрудник			Университет ИТМО	Полный день	Полная занятость	От 1 года до 3 лет	Онкология, Биотехнология, молекулярная химия, онкобиология, химия, Выделение клеток	
 31536659	Научный сотрудник (PostDoc, Струйная печать наноматериалов)	https://hh.ru/vacancy/31536659	Научный сотрудник			Университет ИТМО	Полный день	Полная занятость	От 1 года до 3 лет		
-30211622	Научный сотрудник PostDoc (Расчетная химия и материаловедение)	https://hh.ru/vacancy/30211622	Научный сотрудник			Университет ИТМО	Полный день	Полная занятость	От 1 года до 3 лет	химия, расчетная химия, молекулярное моделирование, физическая химия растворов, химия твердого тела, физика, характеризация, координационная химия	
 29816624	Разработчик-исследователь в области искусственного интеллекта / Data Scientist	https://hh.ru/vacancy/29816624	Научный сотрудник	80000		Университет ИТМО	Полный день	Полная занятость	От 1 года до 3 лет	Java, C#, C++, Python, Git, SVN, Design Patterns, Big Data	
 30982039	Разработчик научного ПО/прикладной математик	https://hh.ru/vacancy/30982039	Научный сотрудник	70000	90000	Университет ИТМО	Полный день	Полная занятость	От 1 года до 3 лет		
 29636429	Научный сотрудник (Компьютерное моделирование и прогнозирование в финансовой сфере)	https://hh.ru/vacancy/29636429	Научный сотрудник	100000		Университет ИТМО	Полный день	Полная занятость	От 3 до 6 лет	C++, C#, Simulation, Forecasting, Algorithms analysis, Algorithms design	
@@ -889,15 +882,15 @@ id	name	url	vac_type	from	to	employer_name	schedule	employment	experience	key_sk
 30904618	Начальник отдела формирования заявок	https://hh.ru/vacancy/30904618	Начальник			ТИТАН-2, холдинг	Полный день	Полная занятость	От 1 года до 3 лет	Пользователь ПК, Работа с большим объемом информации, Английский язык, Деловое общение	
 31421720	Начальник отдела реализации проектов (эксплуатация энергокомплексов, сетей)	https://hh.ru/vacancy/31421720	Начальник	86000	115000	ЭНЕРГОДЕТАЛЬ	Полный день	Полная занятость	Более 6 лет		
 31786193	Исполнительный директор	https://hh.ru/vacancy/31786193	Начальник	103000	184000	ЮГ-СЕРВИС	Полный день	Полная занятость	Более 6 лет	1С: Бухгалтерия, Аудит, SAP, Бизнес-планирование, экономика и управление, Руководство коллективом, Автоматизация процессов управления персоналом, Управление финансами, Анализ инвестиционных проектов, Инвестиционное планирование, Оптимизация бизнес-процессов, Оптимизация налогообложения, Оптимизация затрат, Подготовка презентаций, Ведение переговоров, Экономический анализ, Оценка инвестиционных проектов, Ориентация на результат, Амбициозность, Работа в команде, Обучение персонала, Организаторские навыки, Подбор персонала, Бухгалтерская отчетность, MS PowerPoint, Финансовое планирование, Финансовый менеджмент, Мотивация персонала, Управленческий учет, Навыки презентации	
-31440405	Chief Technology Officer (CTO)	https://hh.ru/vacancy/31440405	Начальник отдела/лаборатории		460000	Arloid Group LLC	Полный день	Полная занятость	Более 6 лет	IT Technology, Business Management	
-31351798	Начальник отдела безопасности	https://hh.ru/vacancy/31351798	Начальник отдела/лаборатории			БАНК СГБ	Полный день	Полная занятость	От 3 до 6 лет		
-31444391	Начальник отдела морской транспортировки СПГ	https://hh.ru/vacancy/31444391	Начальник отдела/лаборатории			Газпром флот	Полный день	Полная занятость	От 3 до 6 лет		
-31342143	Начальник отдела ОМТС	https://hh.ru/vacancy/31342143	Начальник отдела/лаборатории			ИЦ Буревестник	Полный день	Полная занятость	От 3 до 6 лет		
-31415054	Заместитель начальника отдела регистрации лекарственных средств	https://hh.ru/vacancy/31415054	Начальник отдела/лаборатории			Самсон - Мед	Полный день	Полная занятость	Более 6 лет		
-31426235	Начальник отдела информационной безопасности	https://hh.ru/vacancy/31426235	Начальник отдела/лаборатории	100000	100000	СПВБ	Полный день	Полная занятость	От 3 до 6 лет	Информационная безопасность, Средства криптографической защиты информации	
-31473983	Начальник отдела технического контроля (ведущий инженер)	https://hh.ru/vacancy/31473983	Начальник отдела/лаборатории	55000	55000	Технические Системы и Технологии	Полный день	Полная занятость	Более 6 лет		
+31440405	Chief Technology Officer (CTO)	https://hh.ru/vacancy/31440405	Начальник		460000	Arloid Group LLC	Полный день	Полная занятость	Более 6 лет	IT Technology, Business Management	
+31351798	Начальник отдела безопасности	https://hh.ru/vacancy/31351798	Начальник			БАНК СГБ	Полный день	Полная занятость	От 3 до 6 лет		
+31444391	Начальник отдела морской транспортировки СПГ	https://hh.ru/vacancy/31444391	Начальник			Газпром флот	Полный день	Полная занятость	От 3 до 6 лет		
+31342143	Начальник отдела ОМТС	https://hh.ru/vacancy/31342143	Начальник			ИЦ Буревестник	Полный день	Полная занятость	От 3 до 6 лет		
+31415054	Заместитель начальника отдела регистрации лекарственных средств	https://hh.ru/vacancy/31415054	Начальник			Самсон - Мед	Полный день	Полная занятость	Более 6 лет		
+31426235	Начальник отдела информационной безопасности	https://hh.ru/vacancy/31426235	Начальник	100000	100000	СПВБ	Полный день	Полная занятость	От 3 до 6 лет	Информационная безопасность, Средства криптографической защиты информации	
+31473983	Начальник отдела технического контроля (ведущий инженер)	https://hh.ru/vacancy/31473983	Начальник	55000	55000	Технические Системы и Технологии	Полный день	Полная занятость	Более 6 лет		
 31434112	Программист	https://hh.ru/vacancy/31434112	Программист	50000	50000	«Торговый дом «Амалтея»	Полный день	Полная занятость	От 1 года до 3 лет		
-31776277	Mobile developer (React Native)	https://hh.ru/vacancy/31776277	Программист			Actimind	Гибкий график	Полная занятость	От 1 года до 3 лет	"React Native, o	JavaScript, React"	
+31776277	Mobile developer (React Native)	https://hh.ru/vacancy/31776277	Frontend			Actimind	Гибкий график	Полная занятость	От 1 года до 3 лет	"React Native, o	JavaScript, React"	
 30922373	Software Engineer	https://hh.ru/vacancy/30922373	Программист	172000		ALM Works	Гибкий график	Полная занятость	От 1 года до 3 лет	Java, JavaScript	
 31558579	Программист игровой логики	https://hh.ru/vacancy/31558579	Программист			Aurora Games	Полный день	Полная занятость	Нет опыта	Lua, Git, Game Programming, Разработка компьютерных Игр	
 31026298	Web-программист	https://hh.ru/vacancy/31026298	Программист			BARONA	Полный день	Полная занятость	От 3 до 6 лет		
@@ -909,15 +902,15 @@ id	name	url	vac_type	from	to	employer_name	schedule	employment	experience	key_sk
 31475606	Junior Developer	https://hh.ru/vacancy/31475606	Программист	23000	23000	DDG	Полный день	Полная занятость	Нет опыта	ООП, SQL, Linux	
 31326123	Программист	https://hh.ru/vacancy/31326123	Программист	68000	324000	Dev in CZ	Полный день	Полная занятость	Нет опыта	C#, AngularJS, Java, CSS, C++, Vue, JSON, HTML, Node.js, React, Kotlin, Adobe Photoshop, TypeScript, jQuery, JavaScript, MySQL, PHP, Objective-C, API	
 31591989	Junior Developer	https://hh.ru/vacancy/31591989	Программист	58000	83000	Developer Soft	Полный день	Полная занятость	Нет опыта		
-29226184	Инженер-программист 1 категория (ПЛИС)	https://hh.ru/vacancy/29226184	Программист			Diakont	Полный день	Полная занятость	От 3 до 6 лет		
+29226184	Инженер-программист 1 категория (ПЛИС)	https://hh.ru/vacancy/29226184	FPGA			Diakont	Полный день	Полная занятость	От 3 до 6 лет		
 29902002	Senior C developer (Linux kernel space)	https://hh.ru/vacancy/29902002	Frontend			Digital Design	Полный день	Полная занятость	От 3 до 6 лет		
 29901813	Scala Developer (PlanIt)	https://hh.ru/vacancy/29901813	Программист			DINO Systems	Полный день	Полная занятость	От 1 года до 3 лет	SCALA, Akka, Cassandra, Kafka, Docker, Kubernetes, Protobuf, gRPC, Jenkins, ELK, Angular 7, TypeScript	
 30474498	Scala Developer (Live Reports)	https://hh.ru/vacancy/30474498	Программист			DINO Systems	Полный день	Полная занятость	От 3 до 6 лет	Java, SCALA, REST API, Docker, Websockets, RabbitMQ, Kafka, Reactive Streams, CQRS, Kubernetes, RocksDB, Cats	
 29816148	Scala developer (R&D)	https://hh.ru/vacancy/29816148	Программист			DINO Systems	Полный день	Полная занятость	От 1 года до 3 лет	SCALA, Java, Linux, MongoDB	
-31286830	UI Developer (SWAT)	https://hh.ru/vacancy/31286830	Программист			DINO Systems	Полный день	Полная занятость	От 1 года до 3 лет		
+31286830	UI Developer (SWAT)	https://hh.ru/vacancy/31286830	Frontend			DINO Systems	Полный день	Полная занятость	От 1 года до 3 лет		
 30946428	Senior Embedded systems Developer	https://hh.ru/vacancy/30946428	Программист			DSR, Группа Компаний	Гибкий график	Полная занятость	От 3 до 6 лет	MCU, Язык C, RTOS, ZigBee, Z-Wave	
 31560053	Программист 3D графики (Mac и консоли)	https://hh.ru/vacancy/31560053	Программист	115000	115000	Elverils.LLC	Полный день	Полная занятость	От 3 до 6 лет		
-31773041	HTML-Developer / UI Developer	https://hh.ru/vacancy/31773041	Программист			Emergn (ex. Return on Intelligence)	Гибкий график	Полная занятость	От 1 года до 3 лет	HTML, HTML5, CSS, CSS3, jQuery, React.js, Angular, Vue, Grunt, Gulp, Webpack, UI, Twig, Git	
+31773041	HTML-Developer / UI Developer	https://hh.ru/vacancy/31773041	Frontend			Emergn (ex. Return on Intelligence)	Гибкий график	Полная занятость	От 1 года до 3 лет	HTML, HTML5, CSS, CSS3, jQuery, React.js, Angular, Vue, Grunt, Gulp, Webpack, UI, Twig, Git	
 31517479	Senior RPA Developer	https://hh.ru/vacancy/31517479	Программист			EPAM Systems, Inc.	Полный день	Полная занятость	Более 6 лет	RPA, UiPath, Workfusion, BluePrism, Automation Anywhere, Java, .NET Framework	
 31606972	Senior Developer (NodeJS)	https://hh.ru/vacancy/31606972	Программист	221000	258000	Game of whales Ltd	Полный день	Полная занятость	От 3 до 6 лет		
 31755844	Staff Software Engineer	https://hh.ru/vacancy/31755844	Программист			Genesys	Полный день	Полная занятость	От 3 до 6 лет	C++, JavaScript, Python, Unix, Linux, Ubuntu Server, Node.js, SIP, RTP, Английский язык	
@@ -930,7 +923,7 @@ id	name	url	vac_type	from	to	employer_name	schedule	employment	experience	key_sk
 31780819	VoIP инженер-программист	https://hh.ru/vacancy/31780819	Программист			IQ Орtiоn Sоftwаre	Полный день	Полная занятость	От 1 года до 3 лет	VoIP, SIP, Asterisk	
 30396237	Software Developer (IntelliJ IDEA, VCS Integration)	https://hh.ru/vacancy/30396237	Программист	195000	195000	JetBrains	Гибкий график	Полная занятость	От 3 до 6 лет		
 18562648	Senior Software Developer (IntelliJ IDEA)	https://hh.ru/vacancy/18562648	Программист	200000	200000	JetBrains	Гибкий график	Полная занятость	От 3 до 6 лет		
-31445727	UI Developer (Rider)	https://hh.ru/vacancy/31445727	Программист	207000	207000	JetBrains	Полный день	Полная занятость	От 3 до 6 лет	UI, Swing, Java, C#	
+31445727	UI Developer (Rider)	https://hh.ru/vacancy/31445727	Frontend	207000	207000	JetBrains	Полный день	Полная занятость	От 3 до 6 лет	UI, Swing, Java, C#	
 27975423	Software Developer (AppCode)	https://hh.ru/vacancy/27975423	Программист	207000	207000	JetBrains	Гибкий график	Полная занятость	От 1 года до 3 лет		
 22056926	Senior Software Developer (PyCharm)	https://hh.ru/vacancy/22056926	Программист	207000	207000	JetBrains	Полный день	Полная занятость	От 3 до 6 лет	Java, Python	
 28302010	Senior Software Developer (dotCover)	https://hh.ru/vacancy/28302010	Программист	230000	230000	JetBrains	Гибкий график	Полная занятость	От 3 до 6 лет		
@@ -944,7 +937,7 @@ id	name	url	vac_type	from	to	employer_name	schedule	employment	experience	key_sk
 26448698	Senior Software Developer (ReSharper)	https://hh.ru/vacancy/26448698	Программист	230000	230000	JetBrains	Полный день	Полная занятость	От 3 до 6 лет		
 26949603	Software Engineer (IntelliJ IDEA: Profilers Support)	https://hh.ru/vacancy/26949603	Программист	230000	230000	JetBrains	Полный день	Полная занятость	От 3 до 6 лет		
 31332718	Старший программист (gamedev)	https://hh.ru/vacancy/31332718	Программист	207000	287000	JoyCraft Games	Полный день	Полная занятость	От 3 до 6 лет		
-31738521	Full Stack Developer	https://hh.ru/vacancy/31738521	Программист			Keycafe	Удаленная работа	Полная занятость	От 3 до 6 лет	Java, AngularJS, CSS, REST, Grails, JavaScript, Git, SQL	
+31738521	Full Stack Developer	https://hh.ru/vacancy/31738521	Full stack			Keycafe	Удаленная работа	Полная занятость	От 3 до 6 лет	Java, AngularJS, CSS, REST, Grails, JavaScript, Git, SQL	
 31726612	Senior BigData Developer	https://hh.ru/vacancy/31726612	Программист			Luxoft	Полный день	Полная занятость	От 3 до 6 лет		
 31764836	Embedded C Developer	https://hh.ru/vacancy/31764836	Программист			Luxoft	Полный день	Полная занятость	От 1 года до 3 лет		
 30508024	Instructional Designer (Training Content Developer)	https://hh.ru/vacancy/30508024	Программист			Netcracker Technology Corp.	Полный день	Полная занятость	От 1 года до 3 лет		
@@ -964,17 +957,17 @@ id	name	url	vac_type	from	to	employer_name	schedule	employment	experience	key_sk
 30150376	Gameplay Programmer	https://hh.ru/vacancy/30150376	Программист			Wargaming	Полный день	Полная занятость	От 1 года до 3 лет		
 29893303	Graphics Programmer	https://hh.ru/vacancy/29893303	Программист			Wargaming	Полный день	Полная занятость	От 1 года до 3 лет		
 31333042	UI Developer	https://hh.ru/vacancy/31333042	Frontend			Wargaming	Полный день	Полная занятость	От 3 до 6 лет		
-31556598	IT or Games developer	https://hh.ru/vacancy/31556598	Программист	216000		We Got Talent OY	Полный день	Полная занятость	От 3 до 6 лет	C#, Java, C++, OpenGL, 3D, 2D, Unity, JavaScript, Python, Английский язык, Game Programming, .NET Framework, Unreal Engine	
+31556598	IT and Games developer	https://hh.ru/vacancy/31556598	Программист	216000		We Got Talent OY	Полный день	Полная занятость	От 3 до 6 лет	C#, Java, C++, OpenGL, 3D, 2D, Unity, JavaScript, Python, Английский язык, Game Programming, .NET Framework, Unreal Engine	
 31809787	Программист-разработчик	https://hh.ru/vacancy/31809787	Программист	115000		АВТОЛИС ИНСТАЛЛ	Полный день	Полная занятость	От 3 до 6 лет		
 31328938	Инженер-программист АСУ ТП	https://hh.ru/vacancy/31328938	Программист	63000	69000	Армия Кадров	Полный день	Полная занятость	От 1 года до 3 лет		
-31711430	Программист-разработчик Yii2	https://hh.ru/vacancy/31711430	Программист			Банк Жилищных Решений	Полный день	Полная занятость	От 3 до 6 лет	PHP, HTML, JavaScript, MySQL, CSS, jQuery, Yii	
+31711430	Программист-разработчик Yii2	https://hh.ru/vacancy/31711430	Программист	60000	60000	Банк Жилищных Решений	Полный день	Полная занятость	От 1 года до 3 лет	PHP, HTML, JavaScript, MySQL, CSS, jQuery, Yii	
 31505616	Инженер-программист	https://hh.ru/vacancy/31505616	Программист	80000		БФК-Проект	Полный день	Полная занятость	Нет опыта		
-30933094	Инженер-программист (Разработчик ПО)	https://hh.ru/vacancy/30933094	Программист			Взлет, ГК	Полный день	Полная занятость	Нет опыта		
+30933094	Инженер-программист (Разработчик ПО)	https://hh.ru/vacancy/30933094	Программист			Взлет, ГК	Полный день	Полная занятость	От 1 года до 3 лет		
 31379706	Ведущий инженер-программист (Linux)	https://hh.ru/vacancy/31379706	Программист			ВНИИРА	Полный день	Полная занятость	От 3 до 6 лет	Linux, MySQL, C++, Qt, Unix, Bash, Разработка ПО	
 31379694	Инженер-программист (Linux)	https://hh.ru/vacancy/31379694	Программист	75000	85000	ВНИИРА	Полный день	Полная занятость	От 3 до 6 лет	C/C++, Qt, MySQL, Linux, Разработка ПО, Unix	
 31610816	Программист	https://hh.ru/vacancy/31610816	Программист			Газстройпром	Полный день	Полная занятость	От 3 до 6 лет		
 30674088	Junior software developer	https://hh.ru/vacancy/30674088	Программист			ГЕТ бизнес консалтинг	Гибкий график	Полная занятость	От 1 года до 3 лет	JavaScript, HTML, CSS, jQuery, HTML5, CSS3, MS SQL, Web Application Development, Разработка ПО	
-31816749	Программист	https://hh.ru/vacancy/31816749	Программист	40000	86000	Государственный научно-исследовательский институт прикладных проблем, ФГУП	Полный день	Полная занятость	От 1 года до 3 лет		
+31816749	Программист C/Python	https://hh.ru/vacancy/31816749	Python			Государственный научно-исследовательский институт прикладных проблем, ФГУП	Полный день	Полная занятость	От 1 года до 3 лет		
 31385210	Программист-разработчик	https://hh.ru/vacancy/31385210	Программист	100000		Евросиб	Полный день	Полная занятость	От 1 года до 3 лет		
 31429544	Инженер-программист АСУ ТП	https://hh.ru/vacancy/31429544	Программист	100000	100000	Единый Центр Кадров	Полный день	Полная занятость	От 3 до 6 лет	Simatic WinCC flexible, STEP-7, TIA-Portal, InTouch, Управление проектами, Английский язык	
 27941291	Инженер-программист микроконтроллеров	https://hh.ru/vacancy/27941291	Программист	57000		Институт телекоммуникаций	Полный день	Полная занятость	От 1 года до 3 лет		
@@ -987,7 +980,7 @@ id	name	url	vac_type	from	to	employer_name	schedule	employment	experience	key_sk
 31696574	Инженер-программист (разработчик БД)	https://hh.ru/vacancy/31696574	Программист	69000	69000	КАРАВАЙ, группа компаний	Полный день	Полная занятость	От 1 года до 3 лет		
 31746151	Инженер-программист	https://hh.ru/vacancy/31746151	Программист	40000		КБ Арсенал	Полный день	Полная занятость	От 1 года до 3 лет	C/C++, Qt, PostgreSQL, Linux, QT Creator	
 31748536	Инженер-программист	https://hh.ru/vacancy/31748536	Программист	40000		КБ Арсенал	Полный день	Полная занятость	От 1 года до 3 лет	C/C++, Visual Studio, Builder C++	
-31566835	Senior / Middle web developer (Yii2), WEB-разработчик (возможна удаленная работа)	https://hh.ru/vacancy/31566835	Программист	80000	149000	Колибри	Удаленная работа	Полная занятость	От 3 до 6 лет	Работа в команде, про-активность, PHP, Yii, PostgreSQL, Git, Linux, HTML, SQL, HTML5, Ориентация на результат, Redis	
+31566835	Senior / Middle web developer (Yii2), WEB-разработчик (возможна удаленная работа)	https://hh.ru/vacancy/31566835	Frontend	80000	149000	Колибри	Удаленная работа	Полная занятость	От 3 до 6 лет	Работа в команде, про-активность, PHP, Yii, PostgreSQL, Git, Linux, HTML, SQL, HTML5, Ориентация на результат, Redis	
 30870093	Программист-разработчик	https://hh.ru/vacancy/30870093	Программист			Конфидент	Полный день	Полная занятость	От 1 года до 3 лет		
 31297411	Инженер-программист	https://hh.ru/vacancy/31297411	Программист	50000	85000	Концерн НПО Аврора	Полный день	Полная занятость	От 3 до 6 лет	QNX, C/C++	
 31772651	Инженер-программист	https://hh.ru/vacancy/31772651	Программист		120000	Концерн НПО Аврора	Полный день	Полная занятость	От 3 до 6 лет	HTML, PHP, Python, Django Framework	
@@ -1006,7 +999,7 @@ id	name	url	vac_type	from	to	employer_name	schedule	employment	experience	key_sk
 31548582	Ведущий программист микроконтроллеров	https://hh.ru/vacancy/31548582	Программист	42000	80000	НИЦ Радиотехники	Полный день	Полная занятость	От 3 до 6 лет		
 31143827	Qt/QML Application Developer	https://hh.ru/vacancy/31143827	Программист			Новые Облачные Технологии	Полный день	Полная занятость	От 1 года до 3 лет	Qt, C/C++, QML	
 31143818	Senior Qt/QML Application Developer	https://hh.ru/vacancy/31143818	Программист			Новые Облачные Технологии	Полный день	Полная занятость	От 3 до 6 лет	C/C++, C++, Qt, QML	
-31712512	Golang Developer	https://hh.ru/vacancy/31712512	Программист			Новые Облачные Технологии	Полный день	Полная занятость	От 3 до 6 лет		
+31712512	Golang Developer	https://hh.ru/vacancy/31712512	golang			Новые Облачные Технологии	Полный день	Полная занятость	От 3 до 6 лет		
 31332684	Программист С#	https://hh.ru/vacancy/31332684	Программист	138000	138000	НПК Морсвязьавтоматика	Полный день	Полная занятость	От 1 года до 3 лет		
 15	программист	https://ru.indeed.com/salaries/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%81%D1%82-Salaries-at-%22%D0%BA%D0%BE%D0%BD%D1%86%D0%B5%D1%80%D0%BD-%22%D0%BD%D0%BF%D0%BE-%22%D0%B0%D0%B2%D1%80%D0%BE%D1%80%D0%B0%22	Программист	60000	60000	НПО Аврора	Полный день	Полная занятость			
 31707276	Системный программист Linux	https://hh.ru/vacancy/31707276	Программист	92000	149000	НТЦ Метротек	Гибкий график	Полная занятость	От 3 до 6 лет	Разработка ПО, Linux, Linux Kernel, Device Drivers, Networking, Python, Bash, Git	
@@ -1077,17 +1070,17 @@ id	name	url	vac_type	from	to	employer_name	schedule	employment	experience	key_sk
 31382303	Senior Go Developer в команду Core	https://hh.ru/vacancy/31382303	Программист			ЭдСервер	Полный день	Полная занятость	От 3 до 6 лет		
 31714247	Инженер-программист	https://hh.ru/vacancy/31714247	Программист		100000	Электронные системы	Полный день	Полная занятость	От 3 до 6 лет	T-SQL, С++, C#, TCP/IP, UDP, VCF, CLR	
 31334748	Программист	https://hh.ru/vacancy/31334748	Программист			ЭЛТИС	Полный день	Полная занятость	От 3 до 6 лет	C/C++, MS Office, Delphi	
-5	младший инженер по программному обеспечению	https://zarplatyinfo.ru/top_menedzherov/zarabotnaya-plata-v-yandekse-v-2015-2016-godu-po-specialnostyam.html	Программист	61000	69000	Яндекс	Полный день	Полная занятость	От 1 года до 3 лет		
-7	разработчик программного обеспечения	https://zarplatyinfo.ru/top_menedzherov/zarabotnaya-plata-v-yandekse-v-2015-2016-godu-po-specialnostyam.html	Программист	91383	91383	Яндекс	Полный день	Полная занятость	От 3 до 6 лет		
-9	инженер по программному обеспечению	https://zarplatyinfo.ru/top_menedzherov/zarabotnaya-plata-v-yandekse-v-2015-2016-godu-po-specialnostyam.html	Программист	103976	103976	Яндекс	Полный день	Полная занятость	От 3 до 6 лет		
-10	старший разработчик программного обеспечения	https://zarplatyinfo.ru/top_menedzherov/zarabotnaya-plata-v-yandekse-v-2015-2016-godu-po-specialnostyam.html	Программист	119600	119600	Яндекс	Полный день	Полная занятость	Более 6 лет		
-12	старший инженер по программному обеспечению	https://zarplatyinfo.ru/top_menedzherov/zarabotnaya-plata-v-yandekse-v-2015-2016-godu-po-specialnostyam.html	Программист	125667	125667	Яндекс	Полный день	Полная занятость	Более 6 лет		
+5	младший инженер по программному обеспечению	https://zarplatyinfo.ru/top_menedzherov/zarabotnaya-plata-v-yandekse-v-2015-2016-godu-po-specialnostyam.html	Инженер	61000	69000	Яндекс	Полный день	Полная занятость	От 1 года до 3 лет		
+7	разработчик программного обеспечения	https://zarplatyinfo.ru/top_menedzherov/zarabotnaya-plata-v-yandekse-v-2015-2016-godu-po-specialnostyam.html		91383	91383	Яндекс	Полный день	Полная занятость	От 3 до 6 лет		
+9	инженер по программному обеспечению	https://zarplatyinfo.ru/top_menedzherov/zarabotnaya-plata-v-yandekse-v-2015-2016-godu-po-specialnostyam.html	Инженер	103976	103976	Яндекс	Полный день	Полная занятость	От 3 до 6 лет		
+10	старший разработчик программного обеспечения	https://zarplatyinfo.ru/top_menedzherov/zarabotnaya-plata-v-yandekse-v-2015-2016-godu-po-specialnostyam.html		119600	119600	Яндекс	Полный день	Полная занятость	Более 6 лет		
+12	старший инженер по программному обеспечению	https://zarplatyinfo.ru/top_menedzherov/zarabotnaya-plata-v-yandekse-v-2015-2016-godu-po-specialnostyam.html	Инженер	125667	125667	Яндекс	Полный день	Полная занятость	Более 6 лет		
 31306009	Стажёр Python/Go	https://hh.ru/vacancy/31306009	Стажер	17000		Selectel	Гибкий график	Стажировка	От 1 года до 3 лет	Python, API, Git, CI/CD, Go, Golang, PostgreSQL, MySQL	
 31688864	Стажер в финансовую дирекцию	https://hh.ru/vacancy/31688864	Стажер			Tele2	Полный день	Стажировка	Нет опыта		
 31510948	Стажер производственного отдела	https://hh.ru/vacancy/31510948	Стажер	17000	17000	БСХ Бытовые Приборы	Гибкий график	Стажировка	Нет опыта		
 31753490	Стажер дирекции по информационным технологиям	https://hh.ru/vacancy/31753490	Стажер	20000	20000	Группа «Илим»	Полный день	Стажировка	Нет опыта		
 31132458	Исследователь-стажер	https://hh.ru/vacancy/31132458	Стажер	25000		Университет ИТМО	Гибкий график	Стажировка	Нет опыта		
-1	инженер-стажер	https://zarplatyinfo.ru/top_menedzherov/zarabotnaya-plata-v-yandekse-v-2015-2016-godu-po-specialnostyam.html	Стажёр	33875	33875	Яндекс	Полный день	Полная занятость	Нет опыта		
+1	инженер-стажер	https://zarplatyinfo.ru/top_menedzherov/zarabotnaya-plata-v-yandekse-v-2015-2016-godu-po-specialnostyam.html	Стажер	33875	33875	Яндекс	Полный день	Полная занятость	Нет опыта		
 31056675	Computer Vision/Deep Learning Engineer	https://hh.ru/vacancy/31056675	СТЗ			ARRIVAL LTD	Полный день	Полная занятость	От 3 до 6 лет	Computer Vision, Deep Learning, Images Processing, Machine Learning, OpenCV, Python, PyTorch, 3D geometry, Numerical Optimization	
 31056655	Computer Vision Engineer for ADAS	https://hh.ru/vacancy/31056655	СТЗ			ARRIVAL LTD	Полный день	Полная занятость	От 3 до 6 лет		
 30297910	Инженер-видеопрограммист	https://hh.ru/vacancy/30297910	СТЗ	60000	100000	InTheSmart	Полный день	Полная занятость	От 3 до 6 лет	IAR, Linux, C/C++, RTOS, SVN, Git, Управление проектами, Английский язык, Phyton, Lua	
@@ -1113,11 +1106,11 @@ id	name	url	vac_type	from	to	employer_name	schedule	employment	experience	key_sk
 31746992	QA Engineer	https://hh.ru/vacancy/31746992	Тестировщик	103000		4xxi	Удаленная работа	Полная занятость	От 1 года до 3 лет	Тестирование ПО, Контроль качества, Работа в команде, Scrum, Kanban, Автоматизация, тестирование мобильных приложений, Linux, Ubuntu, Git, Jenkins	
 31557585	QA Automation Python	https://hh.ru/vacancy/31557585	Тестировщик			Andersen	Полный день	Полная занятость	Нет опыта	QA, Python, PostgreSQL	
 31533322	Senior QA Engineer	https://hh.ru/vacancy/31533322	Тестировщик	130000		APPNESS	Полный день	Полная занятость	От 3 до 6 лет		
-31484947	Algorithm Test Engineer	https://hh.ru/vacancy/31484947	Тестировщик			ARRIVAL LTD	Полный день	Полная занятость	От 3 до 6 лет	Simulink, Алгоритмы, Тестирование	
+31484947	Разработчик тестового окружения для систем управления	https://hh.ru/vacancy/31484947				ARRIVAL LTD	Полный день	Полная занятость	От 3 до 6 лет	Simulink, Алгоритмы, Тестирование	
 31703328	Test Engineer for ADAS	https://hh.ru/vacancy/31703328	Тестировщик			ARRIVAL LTD	Полный день	Полная занятость	От 3 до 6 лет		
 31801216	Senior QA Automation Engineer (Cloud)	https://hh.ru/vacancy/31801216	Тестировщик			ARRIVAL LTD	Полный день	Полная занятость	Более 6 лет		
 31475114	Junior QA Engineer / Тестировщик ПО (Стажер)	https://hh.ru/vacancy/31475114	Тестировщик	50000		Avansoft	Полный день	Стажировка	Нет опыта		
-31455987	QA Engineer / Тестировщик ПО	https://hh.ru/vacancy/31455987	Тестировщик	75000	75000	Avansoft	Полный день	Полная занятость	От 1 года до 3 лет		
+31455987	QA Engineer / Тестировщик ПО	https://hh.ru/vacancy/31455987	Тестировщик	75000		Avansoft	Полный день	Полная занятость	От 1 года до 3 лет		
 31781374	QA Auto Engineer / Cпециалист по автоматизированному тестированию	https://hh.ru/vacancy/31781374	Тестировщик			AWG	Полный день	Полная занятость	От 1 года до 3 лет		
 31511101	Тестировщик / QA	https://hh.ru/vacancy/31511101	Тестировщик		80000	AxisPoint Consulting	Полный день	Полная занятость	От 1 года до 3 лет	QA, Тестирование	
 31278041	Ведущий инженер-тестировщик	https://hh.ru/vacancy/31278041	Тестировщик			Bercut	Полный день	Полная занятость	От 3 до 6 лет	Тестирование, SQL, Test case, SVN, тест-планы, Oracle Pl/SQL, Testrail, Регресионное тестирование, Функциональное тестирование	
@@ -1228,7 +1221,6 @@ id	name	url	vac_type	from	to	employer_name	schedule	employment	experience	key_sk
 31333043	Автоматизатор тестирования Phyton (QA Automation Engineer)	https://hh.ru/vacancy/31333043	Тестировщик		92000	Кошелек.Ру	Гибкий график	Полная занятость	От 1 года до 3 лет	Тестирование, Тестирование пользовательского интерфейса, Test case, JMeter, Apache, Selenium IDE, Jmeter, Black box testing, QA, Compatibility Testing, A/B тесты, Нагрузочное тестирование, Разработка тестов, опросников, Регресcионное тестирование, Beta-тестирования, blockchain, Bitcoin, Регресионное тестирование, Функциональное тестирование, Phyton, TestRails, Проведение тестирований, Atlassian Jira	
 30158867	QA Automation Engineer (Appium)	https://hh.ru/vacancy/30158867	Тестировщик			ЛАНИТ-ТЕРКОМ	Полный день	Полная занятость	От 3 до 6 лет		
 31754251	Ведущий инженер по тестированию	https://hh.ru/vacancy/31754251	Тестировщик			Лента, федеральная розничная сеть	Полный день	Полная занятость	Более 6 лет		
-31308955	Специалист отдела контроля качества	https://hh.ru/vacancy/31308955	Тестировщик	57000	69000	МИТ КИНГ	Полный день	Полная занятость	От 3 до 6 лет		
 31240412	Инженер-тестировщик	https://hh.ru/vacancy/31240412	Тестировщик			Морские неакустические комплексы и системы	Полный день	Полная занятость	От 1 года до 3 лет		
 31323912	QA Engineer / Инженер по тестированию	https://hh.ru/vacancy/31323912	Тестировщик			Мэйвен диджитал	Удаленная работа	Полная занятость	От 1 года до 3 лет	QA, HTML, CSS, Git, JavaScript, SQL, Black box testing, User Acceptance Testing	
 31351328	Инженер по тестированию	https://hh.ru/vacancy/31351328	Тестировщик	69000	103000	Наука	Полный день	Полная занятость	От 1 года до 3 лет	Тестирование, QA, jMeter, Arquillian, Selenium IDE	
@@ -1255,19 +1247,18 @@ id	name	url	vac_type	from	to	employer_name	schedule	employment	experience	key_sk
 30128313	Инженер по нагрузочному тестированию	https://hh.ru/vacancy/30128313	Тестировщик			Сбербанк	Полный день	Полная занятость	От 3 до 6 лет		
 31422526	Тестировщик ПО	https://hh.ru/vacancy/31422526	Тестировщик	83000	83000	Сбербанк	Полный день	Полная занятость	От 1 года до 3 лет		
 31439784	Специалист по тестированию ПО	https://hh.ru/vacancy/31439784	Тестировщик	123000	123000	Сбербанк	Полный день	Полная занятость	От 1 года до 3 лет		
-31805299	Ведущий инженер по нагрузочному тестированию	https://hh.ru/vacancy/31805299	Тестировщик			Сбербанк	Гибкий график	Полная занятость	От 3 до 6 лет	Нагрузочное тестирование, Java, Zabbix	
+31805299	Главный специалист по сопровождению	https://hh.ru/vacancy/31805299				Сбербанк	Гибкий график	Полная занятость	От 3 до 6 лет	Java, Zabbix	
 31472207	QA Engineer	https://hh.ru/vacancy/31472207	Тестировщик	69000		Сирокко Технолоджи	Полный день	Полная занятость	От 1 года до 3 лет	Функциональное тестирование, Регресcионное тестирование	
 31365776	Специалист по тестированию	https://hh.ru/vacancy/31365776	Тестировщик			СКБ Контур	Полный день	Полная занятость	От 1 года до 3 лет	Тестирование, Работа в команде, Ответственность, Инициативность, ООП, автоматизация тестирования, JavaScript, Git, C#, MS SQL	
 31771759	QA специалист	https://hh.ru/vacancy/31771759	Тестировщик			Слетать.ру	Полный день	Полная занятость	От 1 года до 3 лет	Тестирование, Функциональное тестирование, Тестирование пользовательского интерфейса, Регресcионное тестирование, QA, Atlassian Jira	
 31779329	QA специалист	https://hh.ru/vacancy/31779329	Тестировщик			Слетать.ру	Полный день	Полная занятость	От 1 года до 3 лет		
 30873113	QA Engineer / Тестировщик ПО Middle	https://hh.ru/vacancy/30873113	Тестировщик			Смарт Лайн	Гибкий график	Полная занятость	От 1 года до 3 лет	JavaScript, MS SQL, HTML, CSS, PHP, Test case, Unix, Тестирование, Регресcионное тестирование, Функциональное тестирование, Тестирование пользовательского интерфейса	
-31645620	Начальник отдела обеспечения качества	https://hh.ru/vacancy/31645620	Тестировщик			Сотекс, Фармацевтическая Фирма	Полный день	Полная занятость	От 1 года до 3 лет		
 31262747	Специалист по тестированию (QA специалист)	https://hh.ru/vacancy/31262747	Тестировщик			СПбИАЦ	Полный день	Полная занятость	От 1 года до 3 лет	User Acceptance Testing, Тестирование, Тестирование пользовательского интерфейса, Функциональное тестирование	
 30959085	Тестировщик ПО	https://hh.ru/vacancy/30959085	Тестировщик			Такском	Полный день	Полная занятость	От 1 года до 3 лет		
 31586449	Full stack QA engineer	https://hh.ru/vacancy/31586449	Тестировщик			Тинькофф	Полный день	Полная занятость	От 3 до 6 лет		
 31486302	Senior QA Automation Engineer	https://hh.ru/vacancy/31486302	Тестировщик	120000	120000	Транзас	Полный день	Полная занятость	От 3 до 6 лет	Selenium IDE, Robot Framework, Protractor, Cypress.io, NUnit, Тестирование, JavaScript, Python, C#, ReportPortal, Allure	
 30830128	Ведущий инженер по тестированию/Senior QA Engineer	https://hh.ru/vacancy/30830128	Тестировщик			Триколор	Полный день	Полная занятость	От 3 до 6 лет	Тестирование, Функциональное тестирование, Atlassian Jira, Redmine, Atlassian Confluence, Test case, iOS, Android, Python, PHP, QA	
-30602728	Инженер по тестированию/Junior QA Engineer	https://hh.ru/vacancy/30602728	Тестировщик			Триколор	Полный день	Полная занятость	От 1 года до 3 лет		
+30602728	Инженер по тестированию/ QA Engineer	https://hh.ru/vacancy/30602728	Тестировщик			Триколор	Полный день	Полная занятость	От 1 года до 3 лет		
 27322016	Инженер по тестированию ПО / QA Engineer	https://hh.ru/vacancy/27322016	Тестировщик			Умное пространство	Полный день	Полная занятость	От 1 года до 3 лет	Контроль качества, Тестирование пользовательского интерфейса, Функциональное тестирование, Разработка плана тестирования, Регрессионное тестирование, Ручное тестирование, Тестирование мобильных приложений	
 31677490	Тестировщик ПО (Junior)	https://hh.ru/vacancy/31677490	Тестировщик			Филиал ФКУ Налог-Сервис ФНС России по ЦОД в г.Москве	Сменный график	Полная занятость	От 1 года до 3 лет		
 31822894	Тестировщик ПО	https://hh.ru/vacancy/31822894	Тестировщик			Философия.ИТ	Полный день	Полная занятость	От 1 года до 3 лет		
@@ -1304,7 +1295,7 @@ id	name	url	vac_type	from	to	employer_name	schedule	employment	experience	key_sk
 30903519	UX Designer	https://hh.ru/vacancy/30903519	Frontend			Arkadium	Полный день	Полная занятость	От 3 до 6 лет	UX, Проектирование пользовательских интерфейсов, Web-дизайн, Прототипирование	
 31793238	Embedded SW Engineer (Embedded Linux)	https://hh.ru/vacancy/31793238				ARRIVAL LTD	Полный день	Полная занятость	От 3 до 6 лет	C/C++, Embedded Linux, Linux, Yokto, Buildroot, BLE, Embedded, Встраиваемые системы	
 31393911	Malware Analyst for Imunify Security project (Remote)	https://hh.ru/vacancy/31393911				Cloud Linux	Гибкий график	Полная занятость	От 3 до 6 лет	Linux, Python, PHP	
-31737230	Web-разработчик	https://hh.ru/vacancy/31737230				CookieSide	Удаленная работа	Частичная занятость	От 3 до 6 лет	CSS, JavaScript, HTML5, MySQL, Node.js	
+31737230	Web-разработчик	https://hh.ru/vacancy/31737230	Frontend			CookieSide	Удаленная работа	Частичная занятость	От 3 до 6 лет	CSS, JavaScript, HTML5, MySQL, Node.js	
 31342737	Software and Computer System Scientist	https://hh.ru/vacancy/31342737				Corning Optical Communications GmbH	Полный день	Полная занятость	От 1 года до 3 лет		
 31825013	Консультант CRM	https://hh.ru/vacancy/31825013				CSBI	Полный день	Полная занятость	От 1 года до 3 лет	microsoft dynamics crm, MS Dynamics CRM, MS SharePoint, Консультирование, CRM	
 31293261	Product owner	https://hh.ru/vacancy/31293261				CSI (Кристалл Сервис Интеграция)	Полный день	Полная занятость	От 3 до 6 лет	Scrum, Kanban, Agile Project Management, User story, Road map, QA, Highload, UX, UI, b2b исследования, Retail	
@@ -1312,14 +1303,14 @@ id	name	url	vac_type	from	to	employer_name	schedule	employment	experience	key_sk
 31618123	Project Coordinator, Financial System	https://hh.ru/vacancy/31618123				DataArt	Гибкий график	Полная занятость	От 1 года до 3 лет		
 31737378	Data Platform Engineer (Global Music Company)	https://hh.ru/vacancy/31737378				DataArt	Гибкий график	Полная занятость	От 1 года до 3 лет		
 31737400	Middle Site Reliability Engineer, Online Retailer (Poland/Bulgaria)	https://hh.ru/vacancy/31737400				DataArt	Гибкий график	Полная занятость	От 1 года до 3 лет		
-31456946	Database Administrator, Betting and Gaming Industry	https://hh.ru/vacancy/31456946				DataArt	Гибкий график	Полная занятость	От 3 до 6 лет		
-31647084	Фулл-стек разработчик	https://hh.ru/vacancy/31647084				DeliveryWEB	Гибкий график	Полная занятость	Нет опыта		
-31647078	Начинающий фулл-стек разработчик	https://hh.ru/vacancy/31647078				DeliveryWEB	Гибкий график	Полная занятость	Нет опыта		
+31456946	Database Administrator, Betting and Gaming Industry	https://hh.ru/vacancy/31456946	Базы данных			DataArt	Гибкий график	Полная занятость	От 3 до 6 лет		
+31647084	Фулл-стек разработчик	https://hh.ru/vacancy/31647084	Full stack			DeliveryWEB	Гибкий график	Полная занятость	Нет опыта		
+31647078	Начинающий фулл-стек разработчик	https://hh.ru/vacancy/31647078	Full stack			DeliveryWEB	Гибкий график	Полная занятость	Нет опыта		
 31533865	Senior Build & Release Engineer, IEO	https://hh.ru/vacancy/31533865				Dell EMC	Полный день	Полная занятость	От 3 до 6 лет		
 31822447	Entry-Level Specialist - Audit department	https://hh.ru/vacancy/31822447				Deloitte	Полный день	Полная занятость	Нет опыта		
 31100681	Веб-разработчик (junior+)	https://hh.ru/vacancy/31100681		46000	80000	Denero	Полный день	Полная занятость	Нет опыта	PHP, MySQL, PHP5, Git, HTML, HTML5, Ajax, ООП	
 31822871	MongoDB DBA/DBE (Collaboration Tool)	https://hh.ru/vacancy/31822871				DINO Systems	Полный день	Полная занятость	От 3 до 6 лет		
-31585409	Web-разработчик	https://hh.ru/vacancy/31585409				Edisoft	Полный день	Полная занятость	Нет опыта		
+31585409	Web-разработчик	https://hh.ru/vacancy/31585409	Frontend			Edisoft	Полный день	Полная занятость	Нет опыта		
 31409229	Senior software/System architect, Connectivity	https://hh.ru/vacancy/31409229				Electrolux	Полный день	Полная занятость	Более 6 лет		
 31459454	Web-мастер	https://hh.ru/vacancy/31459454				Emlid	Полный день	Полная занятость	От 1 года до 3 лет		
 31808355	Search Engine Expert	https://hh.ru/vacancy/31808355				EPAM Systems, Inc.	Полный день	Полная занятость	От 3 до 6 лет		
@@ -1329,29 +1320,27 @@ id	name	url	vac_type	from	to	employer_name	schedule	employment	experience	key_sk
 31726478	Консультант BI/DWH	https://hh.ru/vacancy/31726478				HEINEKEN Russia	Полный день	Полная занятость	От 1 года до 3 лет		
 31616953	Junior BI/DWH Consultant	https://hh.ru/vacancy/31616953				HEINEKEN Russia	Полный день	Полная занятость	От 1 года до 3 лет		
 31774139	Splunk Engineer	https://hh.ru/vacancy/31774139				Inca Digital Securities	Удаленная работа	Полная занятость	От 3 до 6 лет	Splunk, Kubernetes	
-30817362	Web-разработчик	https://hh.ru/vacancy/30817362				ITGLOBAL.COM	Полный день	Полная занятость	Нет опыта		
-28012794	Web-разработчик	https://hh.ru/vacancy/28012794		65000	110000	Mygento eCommerce Solutions	Полный день	Полная занятость	От 1 года до 3 лет	Magento, PHP, Git, HTML5, MVC, MySQL, jQuery, vue, AngularJS, react	
-29914326	Magento разработчик	https://hh.ru/vacancy/29914326		70000	200000	Mygento eCommerce Solutions	Полный день	Полная занятость	От 1 года до 3 лет	Magento	
+30817362	Web-разработчик	https://hh.ru/vacancy/30817362	Frontend			ITGLOBAL.COM	Полный день	Полная занятость	Нет опыта		
+28012794	Web-разработчик	https://hh.ru/vacancy/28012794	Frontend	65000	110000	Mygento eCommerce Solutions	Полный день	Полная занятость	От 1 года до 3 лет	Magento, PHP, Git, HTML5, MVC, MySQL, jQuery, vue, AngularJS, react	
+29914326	Magento разработчик	https://hh.ru/vacancy/29914326	Frontend	70000	200000	Mygento eCommerce Solutions	Полный день	Полная занятость	От 1 года до 3 лет	Magento	
 31022254	Information Security Specialist	https://hh.ru/vacancy/31022254				Netwrix Corporation	Полный день	Полная занятость	От 1 года до 3 лет		
-31045144	Технический директор	https://hh.ru/vacancy/31045144				NOVARDIS	Полный день	Полная занятость	От 3 до 6 лет	Java	
+31045144	Технический директор	https://hh.ru/vacancy/31045144	Начальник			NOVARDIS	Полный день	Полная занятость	От 3 до 6 лет	Java	
 30443840	Менеджер Lean	https://hh.ru/vacancy/30443840				PepsiCo	Полный день	Полная занятость	От 1 года до 3 лет		
 29318392	Веб-разработчик	https://hh.ru/vacancy/29318392				PMI Corporation	Полный день	Полная занятость	От 3 до 6 лет		
 31752221	Process Engineer, Saint Petersburg	https://hh.ru/vacancy/31752221		75000	75000	Procter & Gamble	Полный день	Полная занятость	Нет опыта		
-31311029	Senior Consultant (Infrastructure&Debt Advisory)	https://hh.ru/vacancy/31311029				PwC	Полный день	Полная занятость	От 3 до 6 лет		
-31677782	UX-дизайнер с переездом в Москву	https://hh.ru/vacancy/31677782				REDMADROBOT	Полный день	Полная занятость	От 1 года до 3 лет	UX, UI, Web-дизайн, Дизайн интерфейсов, Web Design, Графический дизайн, Git, Дизайн	
+31677782	UX-дизайнер с переездом в Москву	https://hh.ru/vacancy/31677782	Frontend			REDMADROBOT	Полный день	Полная занятость	От 1 года до 3 лет	UX, UI, Web-дизайн, Дизайн интерфейсов, Web Design, Графический дизайн, Git, Дизайн	
 31705746	Технический художник Unreal Engine 4	https://hh.ru/vacancy/31705746				Saber Interactive	Полный день	Полная занятость	От 1 года до 3 лет		
 31329518	UNIX разработчик	https://hh.ru/vacancy/31329518				Searchinform	Полный день	Полная занятость	Более 6 лет		
 31759872	Senior Node.js Engineer	https://hh.ru/vacancy/31759872		257000		Smartling	Удаленная работа	Полная занятость	От 3 до 6 лет	Node.js, JavaScript, React, Java	
 30849900	Senior R&D Engineer	https://hh.ru/vacancy/30849900				Synopsys	Гибкий график	Полная занятость	Нет опыта		
 30532150	Senior R & D Engineer	https://hh.ru/vacancy/30532150				Synopsys	Полный день	Полная занятость	От 3 до 6 лет	CNN Mapping Tools, Performance Analysis, Mapping, Benchmarking	
-31466349	Head of Engineering	https://hh.ru/vacancy/31466349		350000	400000	Tango Me	Полный день	Полная занятость	Более 6 лет		
+31466349	Head of Engineering	https://hh.ru/vacancy/31466349	Начальник	350000	400000	Tango Me	Полный день	Полная занятость	Более 6 лет		
 31230578	Специалист по пищевой безопасности	https://hh.ru/vacancy/31230578				Unilever	Полный день	Полная занятость	От 1 года до 3 лет		
 31444458	Operational Data Analyst	https://hh.ru/vacancy/31444458				Wargaming	Полный день	Полная занятость	От 1 года до 3 лет		
 31826737	3D Generalist/ 3D художник	https://hh.ru/vacancy/31826737				Wargaming	Полный день	Полная занятость	От 1 года до 3 лет		
-31226074	Реверс-инженер	https://hh.ru/vacancy/31226074		115000	230000	We are global Technology and Information Security Services provider.	Полный день	Полная занятость	От 1 года до 3 лет		
+31226074	Реверс-инженер	https://hh.ru/vacancy/31226074	Инженер	115000	230000	We are global Technology and Information Security Services provider.	Полный день	Полная занятость	От 1 года до 3 лет		
 30940277	Product Owner e-commerce проекта	https://hh.ru/vacancy/30940277				Webimatic	Полный день	Полная занятость	От 3 до 6 лет	Управление интернет-проектами, Проектный менеджмент, Запуск новых продуктов, Оптимизация бизнес-процессов, Бизнес-планирование, Бизнес-анализ, Стратегическое планирование, Менеджмент	
 27789130	Infrastructure Security Engineer	https://hh.ru/vacancy/27789130				Wrike	Гибкий график	Полная занятость	От 3 до 6 лет	application security, network, ansible, Puppet, Bash, Python, infrastructure	
-29342237	Customer Success Manager	https://hh.ru/vacancy/29342237				Wrike	Полный день	Полная занятость	От 3 до 6 лет		
 31523233	Senior Product Designer	https://hh.ru/vacancy/31523233				Wrike	Полный день	Полная занятость	От 3 до 6 лет	UX, UI, Design	
 31523347	UX Copywriter	https://hh.ru/vacancy/31523347	Frontend			Wrike	Полный день	Полная занятость	От 3 до 6 лет	UX, Copyrighting	
 31050261	Configuration Manager	https://hh.ru/vacancy/31050261				Zodiac Interactive	Полный день	Полная занятость	От 3 до 6 лет		
@@ -1359,12 +1348,12 @@ id	name	url	vac_type	from	to	employer_name	schedule	employment	experience	key_sk
 31416306	Специалист по безопасности программного обеспечения	https://hh.ru/vacancy/31416306		46000	46000	АКУТА	Полный день	Полная занятость	От 1 года до 3 лет	Тестирование, code review, компиляция, аудит кода, Linux, Microsoft Visual Studio, GCC	
 30446549	Младший разработчик BI	https://hh.ru/vacancy/30446549				Алерс Рус	Полный день	Полная занятость	От 1 года до 3 лет		
 31771964	Младший консультант SAP (модуль FI)	https://hh.ru/vacancy/31771964				Арка, Торговая компания	Полный день	Полная занятость	Нет опыта		
-31399544	Старший инженер разработки средств связи, гидрографии и навигации (сектор программного обеспечения)	https://hh.ru/vacancy/31399544		70000	75000	Арт-Рекрутинг	Полный день	Полная занятость	От 1 года до 3 лет		
+31399544	Старший инженер разработки средств связи, гидрографии и навигации (сектор программного обеспечения)	https://hh.ru/vacancy/31399544	Инженер	70000	75000	Арт-Рекрутинг	Полный день	Полная занятость	От 1 года до 3 лет		
 31765803	Разработчик интерфейсов	https://hh.ru/vacancy/31765803				БалтИнфоКом	Полный день	Полная занятость	От 3 до 6 лет	JavaScript, HTML5, Gulp, babel, Git, ООП, VUE, TypeScript	
-31231045	Разработчик (интеграционная шина)	https://hh.ru/vacancy/31231045		70000	70000	Банк Оранжевый	Полный день	Полная занятость	От 1 года до 3 лет	Разработка ПО, HTML, SQL, XML, JavaScript	
+31231045	Разработчик (интеграционная шина)	https://hh.ru/vacancy/31231045		70000		Банк Оранжевый	Полный день	Полная занятость	От 1 года до 3 лет	Разработка ПО, HTML, SQL, XML, JavaScript	
 31347480	IT-специалист	https://hh.ru/vacancy/31347480				Банк Санкт-Петербург	Полный день	Полная занятость	Нет опыта		
-30251162	Web-разработчик	https://hh.ru/vacancy/30251162				Буквоед	Полный день	Полная занятость	От 1 года до 3 лет		
-31716321	Системный архитектор	https://hh.ru/vacancy/31716321				Вандер Айти Рекрутмент	Полный день	Полная занятость	От 3 до 6 лет	php-fpm, Yii, Nginx, PHP, Python, go, PostgreSQL, MySQL, RabbitMQ, Node.js	
+30251162	Web-разработчик	https://hh.ru/vacancy/30251162	Frontend			Буквоед	Полный день	Полная занятость	От 1 года до 3 лет		
+31716321	Системный архитектор	https://hh.ru/vacancy/31716321	Архитектор IT			Вандер Айти Рекрутмент	Полный день	Полная занятость	От 3 до 6 лет	php-fpm, Yii, Nginx, PHP, Python, go, PostgreSQL, MySQL, RabbitMQ, Node.js	
 31795258	Специалист по управлению ИТ-рисками	https://hh.ru/vacancy/31795258				ВКонтакте	Полный день	Полная занятость	От 3 до 6 лет		
 30505287	Build engineer	https://hh.ru/vacancy/30505287				ВКонтакте	Полный день	Полная занятость	От 3 до 6 лет		
 31715039	Главный специалист по сопровождению проектов [id14017]	https://hh.ru/vacancy/31715039				Газпром нефть	Полный день	Полная занятость	От 3 до 6 лет		
@@ -1381,24 +1370,23 @@ id	name	url	vac_type	from	to	employer_name	schedule	employment	experience	key_sk
 31283740	Разработчик (JR) финансового программного обеспечения (SDJR04.1)	https://hh.ru/vacancy/31283740		40000	80000	ИнфоСтрой	Полный день	Полная занятость	От 1 года до 3 лет	Аналитическое мышление, Деловая коммуникация	
 31778360	Ведущий специалист Управления внешней кооперации	https://hh.ru/vacancy/31778360		40000	40000	Климов	Полный день	Полная занятость	От 3 до 6 лет	Закупки, 1С: Предприятие, Ведение переговоров, Претензионная работа	
 31660275	Junior analyst / junior data analyst	https://hh.ru/vacancy/31660275				КОМПЛИТ	Полный день	Полная занятость	От 1 года до 3 лет	автоматизация бизнес-процессов, SQL, аналитика	
-31785487	Директор по развитию новых направлений	https://hh.ru/vacancy/31785487				КОМПЛИТ	Полный день	Полная занятость	Более 6 лет		
+31785487	Директор по развитию новых направлений	https://hh.ru/vacancy/31785487	Начальник			КОМПЛИТ	Полный день	Полная занятость	Более 6 лет		
 29874340	Ведущий специалист группы внедрения	https://hh.ru/vacancy/29874340				Конфидент	Полный день	Полная занятость	От 1 года до 3 лет	Внедрение систем информационной безопасности, SIEM, DLP, FW/VPN, IDS/IPS, ФЗ-149, ФЗ-152	
-31680574	Начальник технологического бюро	https://hh.ru/vacancy/31680574			70000	Красный октябрь	Полный день	Полная занятость	От 3 до 6 лет		
+31680574	Начальник технологического бюро	https://hh.ru/vacancy/31680574	Начальник		70000	Красный октябрь	Полный день	Полная занятость	От 3 до 6 лет		
 31475018	Специалист по геоинформационной системе	https://hh.ru/vacancy/31475018				Лента, федеральная розничная сеть	Полный день	Полная занятость	От 1 года до 3 лет		
-31336665	Web-разработчик	https://hh.ru/vacancy/31336665				Ловител	Удаленная работа	Полная занятость	От 1 года до 3 лет	JavaScript, jQuery, Frontend, laravel, Git, Web-дизайн, Google API, MVC/MVVM/MVP, JS-фреймворк, CSS, Less, кроссбраузерная адаптивная верстка, Bootstrap	
+31336665	Web-разработчик	https://hh.ru/vacancy/31336665	Frontend			Ловител	Удаленная работа	Полная занятость	От 1 года до 3 лет	JavaScript, jQuery, Frontend, laravel, Git, Web-дизайн, Google API, MVC/MVVM/MVP, JS-фреймворк, CSS, Less, кроссбраузерная адаптивная верстка, Bootstrap	
 31710279	Производственный менеджер	https://hh.ru/vacancy/31710279				Лэм Уэстон Белая Дача	Полный день	Полная занятость	От 3 до 6 лет	Бережливое производство, Управление персоналом, Производственное планирование, Управление производством, Управление проектами, Lean Production, Управление качеством, Организаторские навыки, Обучение персонала, Мотивация персонала	
 29864789	Специалист по внедрению и сопровождению информационных систем	https://hh.ru/vacancy/29864789			70000	Машиностроительный завод «Арсенал»	Полный день	Полная занятость	От 1 года до 3 лет		
-29677912	Архитектор по системам автоматизированного рабочего места (SAP)	https://hh.ru/vacancy/29677912				МегаФон	Полный день	Полная занятость	Более 6 лет		
+29677912	Архитектор по системам автоматизированного рабочего места (SAP)	https://hh.ru/vacancy/29677912	Архитектор IT			МегаФон	Полный день	Полная занятость	Более 6 лет		
 30159785	Старший специалист по информационной безопасности	https://hh.ru/vacancy/30159785				МегаФон Ритейл	Полный день	Полная занятость	От 1 года до 3 лет		
 31567221	Ведущий IT-специалист	https://hh.ru/vacancy/31567221				Медико-фармацевтическое объединение малого бизнеса	Полный день	Полная занятость	От 3 до 6 лет	1С: Управление Торговлей, CSS, 1С: Комплексная автоматизация, Автоматизация процессов, Веб-программирование, MySQL, HTML5, PHP, Администрирование сайтов, Управление проектами	
 31533244	Ведущий разработчик (в отдел разработки средств связи )	https://hh.ru/vacancy/31533244		60000	80000	Международный Кадровый Центр	Полный день	Полная занятость	От 1 года до 3 лет	Borland C++, C++, MS Visual C++, Linux, Разработка ПО, TCP/IP, C	
-31795116	Начальник договорного отдела	https://hh.ru/vacancy/31795116				Модуль	Полный день	Полная занятость	От 3 до 6 лет		
 29488573	Главный специалист отдела информационной безопасности	https://hh.ru/vacancy/29488573		80000	103000	НИИ МАСШТАБ	Полный день	Полная занятость	От 3 до 6 лет		
-31360161	Web-разработчик	https://hh.ru/vacancy/31360161		138000	172000	Нмаркет.ПРО	Полный день	Полная занятость	От 1 года до 3 лет	HTML, CSS, jQuery, C#, MS SQL, JavaScript, ASP.NET	
-31455092	React разработчик	https://hh.ru/vacancy/31455092		69000	138000	Новые технологии	Удаленная работа	Полная занятость	От 1 года до 3 лет	React, Redux, Socket.io, Mocha, TypeScript, Next.js	
+31360161	Web-разработчик	https://hh.ru/vacancy/31360161	Frontend	138000	172000	Нмаркет.ПРО	Полный день	Полная занятость	От 1 года до 3 лет	HTML, CSS, jQuery, C#, MS SQL, JavaScript, ASP.NET	
+31455092	React разработчик	https://hh.ru/vacancy/31455092	Frontend	69000	138000	Новые технологии	Удаленная работа	Полная занятость	От 1 года до 3 лет	React, Redux, Socket.io, Mocha, TypeScript, Next.js	
 31707385	Разработчик драйверов Linux	https://hh.ru/vacancy/31707385		138000	138000	НТЦ Метротек	Гибкий график	Полная занятость	От 3 до 6 лет	Разработка ПО, Linux, Linux Kernel, Device Drivers, Networking, Python, Bash, Git	
-31702578	Разработчик FPGA (ПЛИС)	https://hh.ru/vacancy/31702578		92000	149000	НТЦ Метротек	Гибкий график	Полная занятость	От 3 до 6 лет	FPGA, ПЛИС, Networking	
-31707936	Разработчик драйверов Linux (Junior)	https://hh.ru/vacancy/31707936		69000	103000	НТЦ Метротек	Гибкий график	Полная занятость	От 1 года до 3 лет	Разработка ПО, Linux, Linux Kernel, Device Drivers, Networking, Python, Bash, Git	
+31702578	Разработчик FPGA (ПЛИС)	https://hh.ru/vacancy/31702578	FPGA	92000	149000	НТЦ Метротек	Гибкий график	Полная занятость	От 3 до 6 лет	FPGA, ПЛИС, Networking	
+31707936	Разработчик драйверов Linux (Junior)	https://hh.ru/vacancy/31707936	Frontend	69000	103000	НТЦ Метротек	Гибкий график	Полная занятость	От 1 года до 3 лет	Разработка ПО, Linux, Linux Kernel, Device Drivers, Networking, Python, Bash, Git	
 31623568	Главный специалист Отдела развития автоматизированных банковских систем	https://hh.ru/vacancy/31623568				РОССИЯ, Акционерный банк	Полный день	Полная занятость	От 1 года до 3 лет	Oracle Pl/SQL, XML, Разработка ПО	
 30695597	Разработчик BPMOnline CRM	https://hh.ru/vacancy/30695597				РОССИЯ, Акционерный банк	Полный день	Полная занятость	От 1 года до 3 лет	Разработка ПО, SQL, C#, JavaScript, Oracle Pl/SQL, BPMN, Oracle CRM	
 31731468	Solution IT Architect	https://hh.ru/vacancy/31731468				Русатом Энерго Интернешнл	Полный день	Полная занятость	Более 6 лет		
@@ -1406,18 +1394,18 @@ id	name	url	vac_type	from	to	employer_name	schedule	employment	experience	key_sk
 27518645	Специалист по построению цифрового производства	https://hh.ru/vacancy/27518645				Севкабель	Полный день	Полная занятость	От 3 до 6 лет		
 31381109	Специалист отдела внедрения и сопровождения информационных систем	https://hh.ru/vacancy/31381109		40000	40000	Система управления мероприятием №1	Полный день	Полная занятость	От 1 года до 3 лет	HTML, CSS, SQL, CRM, Постановка задач разработчикам, Тестирование, ООП, MS Office	
 31755131	Product Owner (SPA)	https://hh.ru/vacancy/31755131				Сити лайф	Гибкий график	Полная занятость	От 3 до 6 лет	Реферальные системы, affilate marketing, PO, Roadmap, Product Owner, SPA	
-31630951	Web-разработчик	https://hh.ru/vacancy/31630951		69000		Ставрос	Полный день	Полная занятость	От 1 года до 3 лет		
+31630951	Web-разработчик	https://hh.ru/vacancy/31630951	Frontend	69000		Ставрос	Полный день	Полная занятость	От 1 года до 3 лет		
 31785830	Старший/Ведущий консультант SAP BW	https://hh.ru/vacancy/31785830				Стримлайн консалтинг	Полный день	Полная занятость	От 3 до 6 лет	SAP BW, SAP BI, SAP BOBJ, SAP HANA, SAP Analytics Cloud, SAP Cloud Platform, HANA, XS JavaScript, ABAP, SAP PCM, ANSI SQL	
-30068952	Системный архитектор	https://hh.ru/vacancy/30068952				Триколор	Полный день	Полная занятость	От 1 года до 3 лет	Linux, MySQL, PHP, Nginx, Python, PostgreSQL, OTT	
+30068952	Системный архитектор	https://hh.ru/vacancy/30068952	Архитектор IT			Триколор	Полный день	Полная занятость	От 1 года до 3 лет	Linux, MySQL, PHP, Nginx, Python, PostgreSQL, OTT	
 27942038	Разработчик распределенных систем хранения данных	https://hh.ru/vacancy/27942038		80000	80000	Университет ИТМО	Полный день	Полная занятость	От 1 года до 3 лет		
 31383495	Разработчик распределенных систем	https://hh.ru/vacancy/31383495		100000		Университет ИТМО	Полный день	Полная занятость	От 1 года до 3 лет		
 31765154	Специалист в области информационных технологий	https://hh.ru/vacancy/31765154				Федеральный испытательный центр	Полный день	Полная занятость	От 1 года до 3 лет	Python, SQL, TensorFlow, PyTorch	
-100	Программист	https://orabote.top/feedback/show/id/534930		50000	70000	Центр Речевых Технологий		Полная занятость	От 1 года до 3 лет		
-31284267	HBase/Hadoop administrator	https://hh.ru/vacancy/31284267				ЦРПТ (Центр развития перспективных технологий)	Полный день	Полная занятость	От 3 до 6 лет	Git, Linux, Hadoop, Hbase, Kubernetes	
+100	Программист	https://orabote.top/feedback/show/id/534930	Программист	50000	70000	Центр Речевых Технологий		Полная занятость	От 1 года до 3 лет		
+31284267	HBase/Hadoop administrator	https://hh.ru/vacancy/31284267	DevOps/DBA			ЦРПТ (Центр развития перспективных технологий)	Полный день	Полная занятость	От 3 до 6 лет	Git, Linux, Hadoop, Hbase, Kubernetes	
 31530356	Специалист по автоматизации	https://hh.ru/vacancy/31530356				ЦРТ | Группа компаний	Полный день	Полная занятость	От 1 года до 3 лет	Java, JavaScript, Spring Framework, PostgreSQL, Linux, SQL, ООП, Intellij IDEA, Atlassian Jira	
-29808360	Системный архитектор / System architect	https://hh.ru/vacancy/29808360				ЦРТ | Группа компаний	Полный день	Полная занятость	Более 6 лет	Java, C#, Постановка задач разработчикам, Разработка ПО, Управление разработкой, .NET Framework, C++, ООП, MS SQL, SQL, Управление проектами, Управление командой, Multithread Programming	
+29808360	Системный архитектор / System architect	https://hh.ru/vacancy/29808360	Архитектор IT			ЦРТ | Группа компаний	Полный день	Полная занятость	Более 6 лет	Java, C#, Постановка задач разработчикам, Разработка ПО, Управление разработкой, .NET Framework, C++, ООП, MS SQL, SQL, Управление проектами, Управление командой, Multithread Programming	
 31097287	Специалист по цифровой/программной обработке аудио-сигнала	https://hh.ru/vacancy/31097287		69000	126000	ЭВРИКА, Санкт-Петербург	Полный день	Полная занятость	От 3 до 6 лет		
-31780372	UI/UX-дизайнер	https://hh.ru/vacancy/31780372				ЮТЕКА	Полный день	Полная занятость	От 1 года до 3 лет	UI-Design, Figma, Иллюстрация, Sketch 3, Adobe CC, Коммуникабельность	
+31780372	UI/UX-дизайнер	https://hh.ru/vacancy/31780372	Frontend			ЮТЕКА	Полный день	Полная занятость	От 1 года до 3 лет	UI-Design, Figma, Иллюстрация, Sketch 3, Adobe CC, Коммуникабельность	
 4	ИТ-рекрут	https://zarplatyinfo.ru/top_menedzherov/zarabotnaya-plata-v-yandekse-v-2015-2016-godu-po-specialnostyam.html		52618	52618	Яндекс	Полный день	Полная занятость	Нет опыта		
 31832088	Data Architect, Global Music Company	https://hh.ru/vacancy/31832088				DataArt	Гибкий график	Полная занятость	От 3 до 6 лет		
 31832061	Node.js Engineer, Parcel Delivery App	https://hh.ru/vacancy/31832061				DataArt	Гибкий график	Полная занятость	От 1 года до 3 лет		
@@ -1430,3 +1418,73 @@ id	name	url	vac_type	from	to	employer_name	schedule	employment	experience	key_sk
 31832621	Java developer	https://hh.ru/vacancy/31832621	Java			Noveo	Полный день	Полная занятость	От 3 до 6 лет	Java, PostgreSQL, Spring Framework, Hibernate ORM	
 31832844	Senior Java Developer	https://hh.ru/vacancy/31832844	Java	287000	345000	Altruist Corp	Полный день	Полная занятость	Более 6 лет	Java, RDS Aurora, Git, PostgreSQL, Atlassian Jira, Kafka, Spring Framework, Redis, Spring Boot, SQL	
 102	Программист Python		Python	80000	120000	Группа «Кронштадт»	Полный день	Полная занятость	От 1 года до 3 лет	Python на уровне Middle	
+31838673	Ведущий программист (Отдел сопровождения систем управления ресурсами)	https://hh.ru/vacancy/31838673	Программист			Аэропорт Пулково (ООО Воздушные Ворота Северной Столицы)	Полный день	Полная занятость	От 3 до 6 лет	SAP, ABAP, JavaScript, Разработка ПО	
+31841652	QA Team Lead	https://hh.ru/vacancy/31841652	Тестировщик			Selecty	Полный день	Полная занятость	От 3 до 6 лет		
+31843633	Java Team Lead	https://hh.ru/vacancy/31843633	Team lead			Selecty	Полный день	Полная занятость	От 3 до 6 лет		
+31848951	Junior Data Scientist	https://hh.ru/vacancy/31848951	Data scientist			РЕД БРИКС ДЕВЕЛОПМЕНТ	Полный день	Полная занятость	Нет опыта		
+31849146	Python / Django - Разработчик	https://hh.ru/vacancy/31849146	Python		150000	Когорта-М	Полный день	Полная занятость	От 3 до 6 лет	Python, Django Framework, Ext JS, JavaScript	
+31852626	Ведущий Python разработчик облачной платформы Selectel	https://hh.ru/vacancy/31852626	Python			Selectel	Гибкий график	Полная занятость	От 3 до 6 лет	Python, PostgreSQL, MySQL, Git, Linux, ORM, Golang, Go	
+31847352	Программист C/С++/ARM	https://hh.ru/vacancy/31847352	C/C++			Мастерская инструментов разработки	Полный день	Полная занятость	От 1 года до 3 лет	C/C++	
+31842648	Начальник отдела бюджетирования	https://hh.ru/vacancy/31842648	Начальник			ТИТАН-2, холдинг	Полный день	Полная занятость	От 3 до 6 лет		
+31847214	C&B manager/Главный специалист по компенсациям и льготам	https://hh.ru/vacancy/31847214				Kelly Services	Полный день	Полная занятость	От 1 года до 3 лет		
+31849821	Android разработчик	https://hh.ru/vacancy/31849821	Android	92000		АКМЭ сервис	Удаленная работа	Полная занятость	От 1 года до 3 лет	Java, Android, Git	
+31348834	Младший разработчик под Android (Java/Kotlin)	https://hh.ru/vacancy/31348834	Java	46000	92000	Екассир	Гибкий график	Полная занятость	От 1 года до 3 лет	Android, Java, Kotlin, ООП, Git, Android SDK, Rx, Unit Testing, Atlassian Jira, TFS	
+30092690	Senior C++ Developer (Autonomous driving: Path Planning)	https://hh.ru/vacancy/30092690	C/C++			ARRIVAL LTD	Полный день	Полная занятость	От 3 до 6 лет	OpenCL, CUDA, C/C++, Algorithm development, Path Planning, Autonomous driving, Self-driving	
+31850861	Инженер-программист JAVA	https://hh.ru/vacancy/31850861	Java			Группа компаний ТЕЛРОС	Полный день	Полная занятость	От 1 года до 3 лет		
+31533588	Application Security Engineer	https://hh.ru/vacancy/31533588				DINO Systems	Полный день	Полная занятость	Нет опыта		
+31837117	IT Project Manager	https://hh.ru/vacancy/31837117	Team lead	60000		Ритейл Навигатор	Полный день	Полная занятость	От 1 года до 3 лет		
+31460933	Старший инженер-программист Java	https://hh.ru/vacancy/31460933	Java			АНТ-Цифровые Сервисы	Полный день	Полная занятость	От 1 года до 3 лет		
+31844781	Xamarin developer	https://hh.ru/vacancy/31844781	Программист			Балта	Полный день	Полная занятость	От 1 года до 3 лет		
+30008631	Middle/Senior Java Developer (Exchange)	https://hh.ru/vacancy/30008631	Java			Devexperts (Российский бренд Эксперт-Система)	Гибкий график	Полная занятость	От 3 до 6 лет		
+31845709	Automotive Developer С/С++	https://hh.ru/vacancy/31845709	C/C++			Мастерская инструментов разработки	Гибкий график	Полная занятость	От 1 года до 3 лет		
+31851803	Web разработчик (full stack)	https://hh.ru/vacancy/31851803	Full stack		172000	Family Train Inc	Удаленная работа	Полная занятость	От 3 до 6 лет	CSS, Git, JavaScript, MySQL, Django Framework, HTML, Python	
+31838162	Senior Developer	https://hh.ru/vacancy/31838162	Программист			АНТ-Цифровые Сервисы	Полный день	Полная занятость	Более 6 лет		
+31838967	Ведущий инженер по разработке	https://hh.ru/vacancy/31838967	Инженер			Сбербанк	Полный день	Полная занятость	Нет опыта		
+28954874	Junior Java Developer	https://hh.ru/vacancy/28954874	Java			Devexperts (Российский бренд Эксперт-Система)	Полный день	Полная занятость	От 1 года до 3 лет		
+31344476	QA Engineer / Специалист по контролю качества	https://hh.ru/vacancy/31344476	Тестировщик			Actimind	Полный день	Полная занятость	От 1 года до 3 лет		
+31852928	Java developer trainee	https://hh.ru/vacancy/31852928	Java			T-Systems RUS	Полный день	Полная занятость	Нет опыта		
+28891203	Automation QA Engineer (Mobile Team)	https://hh.ru/vacancy/28891203	Тестировщик			Intermedia	Полный день	Полная занятость	От 1 года до 3 лет		
+31191792	PHP Developer (PHP-разработчик)	https://hh.ru/vacancy/31191792	PHP	92000	161000	Новые Технологии	Полный день	Полная занятость	От 1 года до 3 лет	PHP, SQL, Python, MySQL, Redis, ElasticSearch, Golang, Git, HTML, JavaScript	
+30154079	Разработчик SQL	https://hh.ru/vacancy/30154079	Базы данных			Группа ЛСР	Полный день	Полная занятость	От 1 года до 3 лет		
+31841050	Тестировщик	https://hh.ru/vacancy/31841050	Тестировщик			Сбербанк	Полный день	Полная занятость	От 1 года до 3 лет		
+31281864	Инженер мониторинга	https://hh.ru/vacancy/31281864	Инженер			Kelly	Полный день	Полная занятость	От 1 года до 3 лет		
+31851559	Инженер по автоматизации	https://hh.ru/vacancy/31851559	Инженер			GS Group	Полный день	Полная занятость	От 1 года до 3 лет	Linux, Python, MySQL, docker	
+30329620	Junior Business Analyst	https://hh.ru/vacancy/30329620				Devexperts (Российский бренд Эксперт-Система)	Полный день	Полная занятость	От 1 года до 3 лет		
+22794787	Senior Software Developer Kotlin (New Product)	https://hh.ru/vacancy/22794787	Программист	230000		JetBrains	Полный день	Полная занятость	От 3 до 6 лет		
+29344265	Automation QA Engineer (VoIP)	https://hh.ru/vacancy/29344265	Тестировщик			Intermedia	Гибкий график	Полная занятость	От 1 года до 3 лет		
+19112733	Системный архитектор (Java)	https://hh.ru/vacancy/19112733	Java			НИЦ СПб ЭТУ (Научно-инженерный центр Санкт-Петербургского электротехнического университета)	Полный день	Полная занятость	От 3 до 6 лет		
+31848485	Senior C++ Developer	https://hh.ru/vacancy/31848485	C/C++			Zodiac Interactive	Полный день	Полная занятость	От 3 до 6 лет		
+31851392	Senior PHP developer	https://hh.ru/vacancy/31851392	PHP	96000	212000	Hostaway	Гибкий график	Полная занятость	От 3 до 6 лет		
+31851204	Суперинтендант	https://hh.ru/vacancy/31851204				ИНОК ТМ	Полный день	Полная занятость	От 3 до 6 лет		
+31308702	IOS Developer	https://hh.ru/vacancy/31308702	iOS			Intermedia	Полный день	Полная занятость	От 1 года до 3 лет	iOS, Objective-C, Xcode, ООП, Swift	
+31846432	QA Engineer	https://hh.ru/vacancy/31846432	Тестировщик			the_covert	Гибкий график	Полная занятость	От 1 года до 3 лет	QA, Тестирование, Регресионное тестирование, Jira, Test case	
+31849685	QA Automation Engineer / Инженер по тестированию	https://hh.ru/vacancy/31849685	Тестировщик	138000		Риал Тайм Технологии	Полный день	Полная занятость	От 1 года до 3 лет	Python, Java, Тестирование, API, QA	
+31311390	Инженер по автоматизации тестирования (QA)	https://hh.ru/vacancy/31311390	Тестировщик			Сбербанк	Полный день	Полная занятость	От 1 года до 3 лет		
+31839202	Эксперт по радарным технологиям	https://hh.ru/vacancy/31839202				Транзас	Полный день	Полная занятость	От 3 до 6 лет		
+30044082	Ведущий QA-инженер	https://hh.ru/vacancy/30044082	Тестировщик			Сбербанк	Полный день	Полная занятость	От 3 до 6 лет		
+30099967	Environment (Middleware) Operations Engineer	https://hh.ru/vacancy/30099967				Netcracker Technology Corp.	Полный день	Полная занятость	От 1 года до 3 лет		
+31096156	Java EE developer	https://hh.ru/vacancy/31096156	Java	115000		НТЦ АРГУС	Гибкий график	Полная занятость	От 1 года до 3 лет	JSF, JPA, Git, PostgreSQL, Hibernate ORM, Java EE, CDI	
+26740399	Operations Controlling Manager	https://hh.ru/vacancy/26740399				ANCOR Consumer Goods	Полный день	Полная занятость	Нет опыта		
+29983840	React-разработчик	https://hh.ru/vacancy/29983840	Frontend			IQ Орtiоn Sоftwаre	Полный день	Полная занятость	От 1 года до 3 лет		
+29270904	Специалист по безопасности ОС Android	https://hh.ru/vacancy/29270904	Android			НеоБИТ	Полный день	Полная занятость	От 1 года до 3 лет	GCC, reverse engineering, Android, Git, Android SDK, Java, Linux, Assembler, C#	
+31111127	Senior QA Automation Engineer (Санкт-Петербург, Прага)	https://hh.ru/vacancy/31111127	Тестировщик			Veeam Software	Гибкий график	Полная занятость	От 3 до 6 лет	PowerShell, SQL, C#, Selenium WebDriver, FitNesse, TestCafe, Pester, Jenkins, TeamCity, GitLab, TFS, QA Automation	
+31846456	Инженер тестирования	https://hh.ru/vacancy/31846456	Тестировщик			ANCOR FinTech	Полный день	Полная занятость	От 3 до 6 лет		
+31846618	Head of PR/PR Manager	https://hh.ru/vacancy/31846618	Начальник			Сити лайф	Полный день	Полная занятость	От 3 до 6 лет	Управление командой, тактический - PR, Политический PR, GR, Организаторские навыки, Управление персоналом, Проведение презентаций	
+31836678	IOS developer	https://hh.ru/vacancy/31836678	iOS			ZiMAD	Полный день	Полная занятость	От 1 года до 3 лет	Objective-C, Autolayout, Core data, iOS, ARC, MRC, OpenGL, Git	
+31843224	Middle Go Developer	https://hh.ru/vacancy/31843224	Программист	115000		Софт-Эксперты	Полный день	Полная занятость	От 1 года до 3 лет	golang go backend	
+31414839	Главный специалист (вибродиагностика)	https://hh.ru/vacancy/31414839				Силовые машины, Управляющая компания	Полный день	Полная занятость	От 3 до 6 лет	Вибродиагностика, ТЭС, Тепловые электростанции, Паровые турбины	
+30591560	Fullstack (Java/ JS) developer	https://hh.ru/vacancy/30591560	Java			Murano Software	Полный день	Полная занятость	От 1 года до 3 лет	Java, Spring Framework, PostgreSQL, Английский язык	
+31843560	Заместитель Руководителя Группы 3D измерительных систем	https://hh.ru/vacancy/31843560		150000		КАМАДИ	Полный день	Полная занятость	От 1 года до 3 лет		
+31837307	DevOPS engineer (Contact Center integration)	https://hh.ru/vacancy/31837307	DevOps/DBA			DINO Systems	Полный день	Полная занятость	От 1 года до 3 лет		
+31841824	Разработчик JavaScript	https://hh.ru/vacancy/31841824	Java	60000		АЙТИ ТЕСТ	Полный день	Полная занятость	От 1 года до 3 лет		
+31841850	Senior PHP Developer	https://hh.ru/vacancy/31841850	PHP			VirtualHealth	Удаленная работа	Полная занятость	От 3 до 6 лет	Yii, MySQL, Backend, JavaScript, Ajax, jQuery, HTML5, CSS3, Bootstrap, Git, ООП, MVC, Nginx, PHP	
+31839342	QA Engineer / Инженер по тестированию	https://hh.ru/vacancy/31839342	Тестировщик			Мэйвен диджитал	Удаленная работа	Полная занятость	От 1 года до 3 лет	QA, HTML, CSS, Git, JavaScript, SQL, Black box testing, User Acceptance Testing	
+30491247	Quantitative Risk Analyst	https://hh.ru/vacancy/30491247				Санкт-Петербургский филиал компании ГАЗПРОМ Германия ГмбХ	Полный день	Полная занятость	От 3 до 6 лет	Python, C#, Mathematical Modeling, Analytical skills, VaR, Quantitative analysis, Английский язык	
+31840617	Senior QA Engineer (z/OS), PowerMax	https://hh.ru/vacancy/31840617	Тестировщик			Dell EMC	Полный день	Полная занятость	От 1 года до 3 лет	z/OS	
+31827124	Тестировщик	https://hh.ru/vacancy/31827124	Тестировщик	40000		Кадровое агентство Юнити	Полный день	Полная занятость	От 1 года до 3 лет	Selenium Web Drive, автоматическое тестирование, программирование, XML, SQL, Rational Functional Tester, Jira, WinRunner	
+31838411	Golang developer	https://hh.ru/vacancy/31838411	golang			EPAM Systems, Inc.	Гибкий график	Полная занятость	От 1 года до 3 лет		
+25651119	Старший QA инженер	https://hh.ru/vacancy/25651119	Тестировщик			OpenWay Group	Полный день	Полная занятость	От 3 до 6 лет		
+31458414	Android -разработчик	https://hh.ru/vacancy/31458414	Android			Банк Оранжевый	Полный день	Полная занятость	От 3 до 6 лет	Java EE, Java, XML, Spring Framework, Audatex AudaPad Web, kotlin	
+31231025	Разработчик Java (IBM Integration Bus)	https://hh.ru/vacancy/31231025	Java	70000		Банк Оранжевый	Полный день	Полная занятость	От 1 года до 3 лет		
+28833947	Старший инженер по развитию функциональности проектного управления SAP	https://hh.ru/vacancy/28833947	Инженер			МегаФон	Полный день	Полная занятость	От 1 года до 3 лет	SAP PM, SAP	
+31580929	Специалист по банковским операциям и валютному контролю	https://hh.ru/vacancy/31580929				Hyundai GLOVIS	Полный день	Полная занятость	От 3 до 6 лет	Английский язык, Банк-клиент, Казначейство, 1C, MS Excel, Валютный контроль	
