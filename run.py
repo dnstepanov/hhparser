@@ -18,7 +18,7 @@ from gspread_formatting import set_frozen
 from hh_stats import get_stats_type, get_stats_exp
 
 # Confiet_suration
-DEBUG_RUN = True
+DEBUG_RUN = False
 if DEBUG_RUN:
     print('ВНИМАНИЕ! ВКЛЮЧЕНА ОТЛАДКА, ЗАГРУЗИТСЯ ОДИН ЛИСТ!')
 
@@ -29,6 +29,13 @@ vac_base_url = 'https://api.hh.ru/vacancies/'  # Базовый URL для за�
 delay = 3600  # Перезапускать скрипт раз в час
 ndfl = 0.13   # Величина НДФЛ
 c = CurrencyConverter()  # Преобразователь валют
+
+# Определение параметров подключения по http
+# (User-Agent, включить проверку сертификатов)
+user_agent = {'user-agent': 'Mozilla/5.0 (Windows NT 6.3; rv:36.0) ..'}
+http = urllib3.PoolManager(cert_reqs='CERT_REQUIRED',
+                           ca_certs=certifi.where(),
+                           headers=user_agent)
 
 # Проверка начальной настройки и определение наличия docker
 gapiok = False
@@ -137,22 +144,17 @@ def load_badlist_from_tsv(filename):
     return lst
 
 
-def save_to_google(filename, bad_list, exp_from, exp_to, type_from, type_to):
-    """ Выгружает список вакансий в google-таблицу с известным ID, полностью затирая таблицу """
-    # Create scope
-    scope = ['https://www.googleapis.com/auth/drive']
-    # create some credential using that scope and content of startup_funding.json
-    creds = ServiceAccountCredentials.from_json_keyfile_name(gapijson, scope)
-    # create gspread authorize using that credential
-    client = gspread.authorize(creds)
-    # Now will can access our google sheets we call client.open on StartupName
-    content = open(filename, 'r', newline='', encoding='utf-8').read()
-    sh = client.open(google_table_name)
-    client.import_csv(sh.id, content.encode('utf-8'))
-    # Закрепить первую строку, иначе сортировка и фильтрация будут ломать таблицу
-    sheet = sh.sheet1
-    set_frozen(sheet, rows=1)
+def fill_stats_row(k, a):
+    row = []
+    row.append(str(k))
+    row.append(a['min'])
+    row.append(a['max'])
+    row.append(a['median'])
+    row.append(a['samples'])
+    return row
 
+
+def fill_bad_sheet(sh, bad_list):
     worksheet = sh.add_worksheet(title="Bad", rows=len(bad_list), cols="1")
     start_letter = 'A'
     start_row = 1
@@ -164,21 +166,22 @@ def save_to_google(filename, bad_list, exp_from, exp_to, type_from, type_to):
         cell_list[i].value = val
     worksheet.update_cells(cell_list)
 
-    worksheet = sh.add_worksheet(title="Stats", rows=4*(len(exp_from['Нет опыта'])+2), cols=len(type_from.keys))
-    # TODO: решить, как записать статистику в лист Stats
-    # start_letter = 'A'
-    # start_row = 1
-    # end_letter = 'A'
-    # end_row = len(bad_list)
-    # crange = "%s%d:%s%d" % (start_letter, start_row, end_letter, end_row)
-    # cell_list = worksheet.range(crange)
-    # for i, val in enumerate(bad_list):
-    #     cell_list[i].value = val
-    # worksheet.update_cells(cell_list)
+
+def fill_stats_sheet(sh, exp_from, exp_to):
+    worksheet = sh.add_worksheet(title="Stats", rows=1, cols=5)
+    head = ['Зарплата от', 'min', 'max', 'median', 'samples']
+    worksheet.append_row(head)
+    for k, a in exp_from.items():
+        row = fill_stats_row(k, a)
+        worksheet.append_row(row)
+    head = ['Зарплата до', 'min', 'max', 'median', 'samples']
+    worksheet.append_row(head)
+    for k, a in exp_to.items():
+        row = fill_stats_row(k, a)
+        worksheet.append_row(row)
 
 
-def load_from_google():
-    """ Загружает список вакансий из таблицы """
+def connect_to_google():
     # Create scope
     scope = ['https://www.googleapis.com/auth/drive']
     # create some credential using that scope and content of startup_funding.json
@@ -187,7 +190,28 @@ def load_from_google():
     client = gspread.authorize(creds)
     # Now will can access our google sheets we call client.open on StartupName
     sh = client.open(google_table_name)
+    return sh, client
+
+
+def save_to_google(filename, bad_list, exp_from, exp_to, type_from, type_to):
+    """ Выгружает список вакансий в google-таблицу с известным ID, полностью затирая таблицу """
+    sh, client = connect_to_google()
+    # Записать таблицу из tsv в первый лист
+    content = open(filename, 'r', newline='', encoding='utf-8').read()
+    client.import_csv(sh.id, content.encode('utf-8'))
+    # Закрепить первую строку, иначе сортировка и фильтрация будут ломать таблицу
     sheet = sh.sheet1
+    set_frozen(sheet, rows=1)
+
+    fill_bad_sheet(sh, bad_list)
+    fill_stats_sheet(sh, exp_from, exp_to)
+
+
+def load_from_google():
+    """ Загружает список вакансий из таблицы """
+    sh, client = connect_to_google()
+    # Загрузка таблицы вакансий с первого листа
+    sheet = sh.worksheet(google_table_name)
     list_of_lists = sheet.get_all_values()
     old_items = {}
     count = 0
@@ -200,6 +224,7 @@ def load_from_google():
             ID = row['id']
             old_items[ID] = row
 
+    # Загрузка списка "плохих вакансий"
     try:
         sheet = sh.worksheet("Bad")
         bad_list = sheet.col_values(1)
@@ -225,13 +250,6 @@ def form_hh_url(wordlist, notlist):
 
 
 def main(sc):
-    # Определение параметров подключения по http
-    # (User-Agent, включить проверку сертификатов)
-    user_agent = {'user-agent': 'Mozilla/5.0 (Windows NT 6.3; rv:36.0) ..'}
-    http = urllib3.PoolManager(cert_reqs='CERT_REQUIRED',
-                               ca_certs=certifi.where(),
-                               headers=user_agent)
-
     # Запросить первый (i=0) лист данных от HH
     url = form_hh_url(wordlist, notlist)
     response = http.request('GET', url+str(0))
