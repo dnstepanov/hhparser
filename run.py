@@ -176,20 +176,34 @@ def fill_stats_sheets(sh, stats_from, stats_to):
     vac_types_ext.extend(vac_types)
     for vac_type in vac_types_ext:
         vt = vac_type[0]
-        worksheet = sh.add_worksheet(title=vt, rows=1, cols=5)
+        worksheet = sh.add_worksheet(title=vt, rows=10, cols=5)
+        cell_list = worksheet.range('A1:E10')
+        t = 0
         head = ['Зарплата от', 'min', 'max', 'median', 'samples']
-        worksheet.append_row(head)
+        for v in head:
+            cell_list[t].value = v
+            t = t + 1
+        # worksheet.append_row(head)
         exp_from = stats_from[vt]
         exp_to = stats_to[vt]
         for k, a in exp_from.items():
             row = fill_stats_row(k, a)
-            worksheet.append_row(row)
+            for v in row:
+                cell_list[t].value = v
+                t = t + 1
+            # worksheet.append_row(row)
         head = ['Зарплата до', 'min', 'max', 'median', 'samples']
-        worksheet.append_row(head)
+        for v in head:
+            cell_list[t].value = v
+            t = t + 1
+        # worksheet.append_row(head)
         for k, a in exp_to.items():
             row = fill_stats_row(k, a)
-            worksheet.append_row(row)
-        # worksheet.append_row(['', '', '', '', ''])
+            for i, v in enumerate(row):
+                cell_list[t].value = v
+                t = t + 1
+            # worksheet.append_row(row)
+        worksheet.update_cells(cell_list)
 
 
 def connect_to_google():
