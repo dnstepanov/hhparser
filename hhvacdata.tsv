@@ -1167,7 +1167,7 @@ id	name	url	vac_type	from	to	employer_name	schedule	employment	experience	key_sk
 31548582	Ведущий программист микроконтроллеров	https://hh.ru/vacancy/31548582	Программист	42000	80000	НИЦ Радиотехники	Полный день	Полная занятость	От 3 до 6 лет		
 31551014	Инженер-программист 3 категории	https://hh.ru/vacancy/31551014	Программист	34000	34000	Петербургский Метрополитен, государственное унитарное предприятие	Полный день	Полная занятость	От 1 года до 3 лет		
 31551821	Ведущий инженер-программист	https://hh.ru/vacancy/31551821	Программист	57000	57000	Петербургский Метрополитен, государственное унитарное предприятие	Полный день	Полная занятость	От 1 года до 3 лет		
-31552544	Senior Unreal Engine Developer	https://hh.ru/vacancy/31552544	Программист			ТРА РОБОТИКС	Полный день	Полная занятость	От 3 до 6 лет	Linux, Python, C++, Unreal Engine	
+31552544	С++ Developer (UE)	https://hh.ru/vacancy/31552544	C/C++			ТРА РОБОТИКС	Полный день	Полная занятость	От 1 года до 3 лет	Linux, Python, C++, Unreal Engine	
 31556598	IT and Games developer	https://hh.ru/vacancy/31556598	Программист	216000		We Got Talent OY	Полный день	Полная занятость	От 3 до 6 лет	C#, Java, C++, OpenGL, 3D, 2D, Unity, JavaScript, Python, Английский язык, Game Programming, .NET Framework, Unreal Engine	
 31558579	Программист игровой логики	https://hh.ru/vacancy/31558579	Программист			Aurora Games	Полный день	Полная занятость	Нет опыта	Lua, Git, Game Programming, Разработка компьютерных Игр	
 31560053	Программист 3D графики (Mac и консоли)	https://hh.ru/vacancy/31560053	Программист	115000	115000	Elverils.LLC	Полный день	Полная занятость	От 3 до 6 лет		
@@ -1653,3 +1653,13 @@ id	name	url	vac_type	from	to	employer_name	schedule	employment	experience	key_sk
 31891985	Проектировщик интерфейсов	https://hh.ru/vacancy/31891985				IQ Орtiоn Sоftwаre	Полный день	Полная занятость	От 3 до 6 лет		
 27220286	Разработчик iOS	https://hh.ru/vacancy/27220286	iOS			Mail.Ru Group	Полный день	Полная занятость	От 3 до 6 лет		
 31892451	Senior Android Engineer	https://hh.ru/vacancy/31892451	Android		287000	TIGER	Полный день	Полная занятость	Более 6 лет	Android, Kotlin	
+31893389	PHP программист / PHP programmer	https://hh.ru/vacancy/31893389	PHP	96000	167000	Red Rift	Полный день	Полная занятость	От 3 до 6 лет	PHP, JavaScript, SQL, Git, Laravel, HTML5, ООП, Web Application Development	
+22111248	Специалист по информационной безопасности	https://hh.ru/vacancy/22111248				Специальный Технологический Центр	Полный день	Полная занятость	От 3 до 6 лет		
+27293641	DevOps инженер	https://hh.ru/vacancy/27293641	DevOps/DBA			Специальный Технологический Центр	Полный день	Полная занятость	От 3 до 6 лет		
+31893511	Разработчик умного дома	https://hh.ru/vacancy/31893511		63000	92000	Асгард	Полный день	Полная занятость	Нет опыта	Разработка электросхем, Разработка инженерных систем, Схемотехника электронного оборудования, Разработка ПО	
+31894008	Product Owner e-commerce проекта	https://hh.ru/vacancy/31894008				Webimatic	Полный день	Полная занятость	От 3 до 6 лет	Управление интернет-проектами, Проектный менеджмент, Запуск новых продуктов, Оптимизация бизнес-процессов, Бизнес-планирование, Бизнес-анализ, Стратегическое планирование, Менеджмент	
+31894180	Разработчик .NET	https://hh.ru/vacancy/31894180	C#	125000		UnivIntel	Удаленная работа	Полная занятость	От 3 до 6 лет	C#, MS Visual Studio, ASP.NET, JavaScript, .NET Framework, HTML, Entity Framework, jQuery, Git, SQL, AngularJS, PostgreSQL, VueJS, HTML5, CSS	
+31894356	Разработчик Unreal Engine / С++	https://hh.ru/vacancy/31894356	C/C++			ТРА РОБОТИКС	Полный день	Полная занятость	От 3 до 6 лет	Linux, Python, C++, Unreal Engine	
+31894436	Senior Ruby on Rails Developer	https://hh.ru/vacancy/31894436	Ruby	172000	184000	UAB Softeka	Удаленная работа	Полная занятость	От 3 до 6 лет	Vue.js, Rspec, Capybara, ClickHouse, Ruby On Rails, MySQL, Redis, Ruby, Sidekiq, Elixir	
+31894651	Data Scientist / NLP Engineer	https://hh.ru/vacancy/31894651	Data scientist			WorldQuant	Полный день	Полная занятость	Более 6 лет	Data Analysis, Data Mining, Software Development, Information Technology, Information retrieval, Natural language processing	
+31894637	DevOps инженер	https://hh.ru/vacancy/31894637	DevOps/DBA			Газпром нефть	Полный день	Полная занятость	От 1 года до 3 лет		

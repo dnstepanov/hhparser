@@ -15,10 +15,10 @@ from oauth2client.service_account import ServiceAccountCredentials
 # Слова для поиска определены в words.py
 from words import wordlist, notlist, banned_employers, banned_jobs, vac_types
 from gspread_formatting import set_frozen
-from hh_stats import get_stats_type, get_stats_exp
+from hh_stats import get_stats_exp
 
 # Confiet_suration
-DEBUG_RUN = False
+DEBUG_RUN = True
 if DEBUG_RUN:
     print('ВНИМАНИЕ! ВКЛЮЧЕНА ОТЛАДКА, ЗАГРУЗИТСЯ ОДИН ЛИСТ!')
 
@@ -145,16 +145,20 @@ def load_badlist_from_tsv(filename):
 
 
 def fill_stats_row(k, a):
+    """ Заполнение одного ряда листа статистики """
+    stat_keys = ['min', 'max', 'median', 'samples']
     row = []
     row.append(str(k))
-    row.append(a['min'])
-    row.append(a['max'])
-    row.append(a['median'])
-    row.append(a['samples'])
+    for key in stat_keys:
+        if key in a.keys():
+            row.append(a[key])
+        else:
+            row.append('--')
     return row
 
 
 def fill_bad_sheet(sh, bad_list):
+    """ Заполнение данных листа с плохими вакансиями """
     worksheet = sh.add_worksheet(title="Bad", rows=len(bad_list), cols="1")
     start_letter = 'A'
     start_row = 1
@@ -167,18 +171,25 @@ def fill_bad_sheet(sh, bad_list):
     worksheet.update_cells(cell_list)
 
 
-def fill_stats_sheet(sh, exp_from, exp_to):
-    worksheet = sh.add_worksheet(title="Stats", rows=1, cols=5)
-    head = ['Зарплата от', 'min', 'max', 'median', 'samples']
-    worksheet.append_row(head)
-    for k, a in exp_from.items():
-        row = fill_stats_row(k, a)
-        worksheet.append_row(row)
-    head = ['Зарплата до', 'min', 'max', 'median', 'samples']
-    worksheet.append_row(head)
-    for k, a in exp_to.items():
-        row = fill_stats_row(k, a)
-        worksheet.append_row(row)
+def fill_stats_sheets(sh, stats_from, stats_to):
+    vac_types_ext = [('All', [])]
+    vac_types_ext.extend(vac_types)
+    for vac_type in vac_types_ext:
+        vt = vac_type[0]
+        worksheet = sh.add_worksheet(title=vt, rows=1, cols=5)
+        head = ['Зарплата от', 'min', 'max', 'median', 'samples']
+        worksheet.append_row(head)
+        exp_from = stats_from[vt]
+        exp_to = stats_to[vt]
+        for k, a in exp_from.items():
+            row = fill_stats_row(k, a)
+            worksheet.append_row(row)
+        head = ['Зарплата до', 'min', 'max', 'median', 'samples']
+        worksheet.append_row(head)
+        for k, a in exp_to.items():
+            row = fill_stats_row(k, a)
+            worksheet.append_row(row)
+        # worksheet.append_row(['', '', '', '', ''])
 
 
 def connect_to_google():
@@ -193,7 +204,7 @@ def connect_to_google():
     return sh, client
 
 
-def save_to_google(filename, bad_list, exp_from, exp_to, type_from, type_to):
+def save_to_google(filename, bad_list, exp_from, exp_to):
     """ Выгружает список вакансий в google-таблицу с известным ID, полностью затирая таблицу """
     sh, client = connect_to_google()
     # Записать таблицу из tsv в первый лист
@@ -204,7 +215,7 @@ def save_to_google(filename, bad_list, exp_from, exp_to, type_from, type_to):
     set_frozen(sheet, rows=1)
 
     fill_bad_sheet(sh, bad_list)
-    fill_stats_sheet(sh, exp_from, exp_to)
+    fill_stats_sheets(sh, exp_from, exp_to)
 
 
 def load_from_google():
@@ -404,14 +415,22 @@ def main(sc):
     filtered_items = old_items.values()
 
     exp_stats_from, exp_stats_to = get_stats_exp(filtered_items)
-    type_stats_from, type_stats_to = get_stats_type(filtered_items)
+    stats_from = {'All': exp_stats_from}
+    stats_to = {'All': exp_stats_to}
+    # type_stats_from, type_stats_to = get_stats_type(filtered_items)
+
+    for val in vac_types:
+        vt = val[0]
+        exp_stats_from, exp_stats_to = get_stats_exp(filtered_items, vt)
+        stats_from[vt] = exp_stats_from
+        stats_to[vt] = exp_stats_to
+
     print("Экспорт в tsv")
     # Экспортировать список в csv и в google-таблицу
     save_vaclist_to_tsv(vac_data_fname, filtered_items)
     print("Экспорт в google через загрузку нашего tvs!")
     save_to_google(vac_data_fname, bad_vac,
-                   exp_stats_from, exp_stats_to,
-                   type_stats_from, type_stats_to)
+                   stats_from, stats_to)
 
     print("Done!")
 
