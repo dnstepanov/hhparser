@@ -18,7 +18,7 @@ from gspread_formatting import set_frozen
 from hh_stats import get_stats_exp
 
 # Confiet_suration
-DEBUG_RUN = True
+DEBUG_RUN = False
 if DEBUG_RUN:
     print('ВНИМАНИЕ! ВКЛЮЧЕНА ОТЛАДКА, ЗАГРУЗИТСЯ ОДИН ЛИСТ!')
 
@@ -172,6 +172,7 @@ def fill_bad_sheet(sh, bad_list):
 
 
 def fill_stats_sheets(sh, stats_from, stats_to):
+    """ Заполненене листов статистики по профессиям """
     vac_types_ext = [('All', [])]
     vac_types_ext.extend(vac_types)
     for vac_type in vac_types_ext:
@@ -207,6 +208,7 @@ def fill_stats_sheets(sh, stats_from, stats_to):
 
 
 def connect_to_google():
+    """ Подключения к google api """
     # Create scope
     scope = ['https://www.googleapis.com/auth/drive']
     # create some credential using that scope and content of startup_funding.json
@@ -275,6 +277,7 @@ def form_hh_url(wordlist, notlist):
 
 
 def main(sc):
+    """ Главная функция, повторяет сама себя """
     # Запросить первый (i=0) лист данных от HH
     url = form_hh_url(wordlist, notlist)
     response = http.request('GET', url+str(0))
@@ -395,12 +398,6 @@ def main(sc):
     for item in old_items.values():
         item['vac_type'] = get_vac_type(item)
 
-    # Объединить старые и новые вакансии
-    for item in filtered_items:
-        old_items[item['id']] = item
-
-    print("После объединения получилось " + str(len(old_items)) + " вакансий")
-
     # Обновить список плохих вакансий (bad = True)
     print('Обновление списка ID плохих вакансий')
     # Загрузка старого списка плохих вакансий (из tsv, если не загружен из таблицы)
@@ -420,6 +417,11 @@ def main(sc):
     # Сохранить обновленный список
     save_list_to_file(bad_vac_fname, bad_vac)
     print('После удаления дубликатов в списке плохих вакансий ' + str(len(bad_vac)) + ' вакансий')
+
+    # Объединить старые и новые вакансии
+    for item in filtered_items:
+        old_items[item['id']] = item
+    print("После объединения старых и новых получилось " + str(len(old_items)) + " вакансий")
 
     cnt = len(old_items)
     # Фильтрация объединенного перечня по списку ID плохих вакансий
