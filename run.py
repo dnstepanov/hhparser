@@ -17,7 +17,7 @@ from words import wordlist, notlist, banned_employers, banned_jobs, vac_types
 from gspread_formatting import set_frozen
 from hh_stats import get_stats_type, get_stats_exp
 
-# Confiet_suration
+# Configuration
 DEBUG_RUN = False
 if DEBUG_RUN:
     print('ВНИМАНИЕ! ВКЛЮЧЕНА ОТЛАДКА, ЗАГРУЗИТСЯ ОДИН ЛИСТ!')
