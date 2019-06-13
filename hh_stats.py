@@ -38,8 +38,9 @@ def get_stats_type(items):
     return vac_type_stats_from, vac_type_stats_to
 
 
-def get_stats_exp(items):
+def get_stats_exp(items, vac_type=''):
     """ Собрать статистику по требуемому опыту """
+    """ Входные параметры: список вакансий, тип вакансий """
     exp_list_from = {}
     exp_list_to = {}
     for v in exp_types:
@@ -47,6 +48,8 @@ def get_stats_exp(items):
         exp_list_to[v] = []
     for item in items:
         if item['experience'] == '':
+            continue
+        if vac_type != '' and item['vac_type'] != vac_type:
             continue
         if item['from'] != '':
             exp_list_from[item['experience']].append(int(item['from']))
@@ -58,12 +61,14 @@ def get_stats_exp(items):
     for v in exp_types:
         exp_stats_from[v] = {}
         exp_stats_to[v] = {}
-        exp_stats_from[v]['max'] = max(exp_list_from[v])
-        exp_stats_to[v]['max'] = max(exp_list_to[v])
-        exp_stats_from[v]['min'] = min(exp_list_from[v])
-        exp_stats_to[v]['min'] = min(exp_list_to[v])
-        exp_stats_from[v]['median'] = statistics.median(exp_list_from[v])
-        exp_stats_to[v]['median'] = statistics.median(exp_list_to[v])
-        exp_stats_from[v]['samples'] = len(exp_list_from[v])
-        exp_stats_to[v]['samples'] = len(exp_list_to[v])
+        if exp_list_from[v]:
+            exp_stats_from[v]['max'] = max(exp_list_from[v])
+            exp_stats_from[v]['min'] = min(exp_list_from[v])
+            exp_stats_from[v]['median'] = statistics.median(exp_list_from[v])
+            exp_stats_from[v]['samples'] = len(exp_list_from[v])
+        if exp_list_to[v]:
+            exp_stats_to[v]['max'] = max(exp_list_to[v])
+            exp_stats_to[v]['min'] = min(exp_list_to[v])
+            exp_stats_to[v]['median'] = statistics.median(exp_list_to[v])
+            exp_stats_to[v]['samples'] = len(exp_list_to[v])
     return exp_stats_from, exp_stats_to
