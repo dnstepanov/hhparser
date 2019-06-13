@@ -325,6 +325,9 @@ def main(sc):
         data = json.loads(response.data.decode('utf-8'))
 
         if data['salary'] is not None:
+            # Валюта UAH не поддерживается, вакансии в гривнах не интересны - пропускаем
+            if data['salary']['currency'] == 'UAH':
+                continue
             # Обработка зарплат
             salary_from = data['salary']['from']
             salary_to = data['salary']['to']
