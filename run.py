@@ -430,11 +430,15 @@ def main(sc):
 
     filtered_items = old_items.values()
 
+    # Расчет статистических данных
+    print("Считаем статистику")
+    # По всем вакансиям:
     exp_stats_from, exp_stats_to = get_stats_exp(filtered_items)
     stats_from = {'All': exp_stats_from}
     stats_to = {'All': exp_stats_to}
     # type_stats_from, type_stats_to = get_stats_type(filtered_items)
 
+    # По каждому типу вакансии в отдельности:
     for val in vac_types:
         vt = val[0]
         exp_stats_from, exp_stats_to = get_stats_exp(filtered_items, vt)
