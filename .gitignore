@@ -2,3 +2,4 @@ hhvacdata.tsv
 **/.vscode
 **/__pycache__
 gapi_auth.json
+hhaccess.json
