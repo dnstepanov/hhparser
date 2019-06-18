@@ -15,6 +15,7 @@ currencyconverter = "*"
 progress = "*"
 oauth2client = "*"
 gspread-formatting = "*"
+feedparser = "*"
 
 [requires]
 python_version = "3.7"
