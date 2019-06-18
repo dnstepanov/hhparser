@@ -1,4 +1,4 @@
-Скрипт для парсинга вакансий с HeadHunter и выгрузки данных в таблицу Google
+Скрипт для парсинга вакансий с HeadHunter и "Мой круг", выгрузки данных в таблицу Google и расчёта статистики по профессиям.
 Для работы с Google API необходимо получить .json-файл с ключами OAuth2:
 https://gspread.readthedocs.io/en/latest/oauth2.html
 
