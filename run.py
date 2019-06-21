@@ -16,6 +16,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 from words import wordlist, notlist, banned_employers, banned_jobs, vac_types
 from gspread_formatting import set_frozen
 from hh_stats import get_stats_exp
+from moikrug import load_moikrug_rss
 
 # Configuration
 DEBUG_RUN = False
@@ -248,6 +249,7 @@ def load_from_google():
             count += 1
         else:
             row = dict(zip(header, vac))
+            row['actual'] = ''
             ID = row['id']
             old_items[ID] = row
 
@@ -375,11 +377,11 @@ def main(sc):
         # Добавление информации в словарь
         temp.extend(['name', 'url', 'vac_type', 'from', 'to', 'employer_name',
                      'schedule', 'employment', 'experience', 'key_skills',
-                     'bad'])
+                     'bad', 'actual'])
         res.extend([item['name'], item['alternate_url'], vac_type, salary_from, salary_to,
                     data['employer']['name'], data['schedule']['name'],
                     data['employment']['name'], data['experience']['name'],
-                    skills, ''])
+                    skills, '', 'True'])
         filtered_items.append(dict(zip(temp, res)))
         bar.next()
 
@@ -387,6 +389,19 @@ def main(sc):
     print("После фильтрации по работодателям и словам осталось "
           + str(len(filtered_items)) + " вакансий")
 
+    # загрузка данных из "Мой круг"
+    print('Загрузка данных из Мой круг')
+    krug_items = load_moikrug_rss()
+
+    # Выполнить очистку ваканский "Мой круг" по актуальным правилам
+    krug_filtered = []
+    for v in krug_items.values():
+        if v['employer_name'] in banned_employers:
+            continue
+        if not not_banned_item(v):
+            continue
+        v['vac_type'] = get_vac_type(v)
+        krug_filtered.append(v)
     old_items = {}
     print('Загружаем старые записи')
     old_items, bad_vac_google = load_from_google()
@@ -412,7 +427,7 @@ def main(sc):
     print('Загружено ' + str(len(bad_vac)) + ' плохих вакансий, поиск новых в таблице')
     for k, v in old_items.items():
         if v['bad'] != '':
-            print(v['id']+"="+v['bad'])
+            # print(v['id']+"="+v['bad'])
             bad_vac.append(k)
     print('После проверки столбца bad стало ' + str(len(bad_vac)) + ' плохих вакансий')
     # Удалить дубликаты ID плохих вакансий
@@ -421,9 +436,23 @@ def main(sc):
     save_list_to_file(bad_vac_fname, bad_vac)
     print('После удаления дубликатов в списке плохих вакансий ' + str(len(bad_vac)) + ' вакансий')
 
-    # Объединить старые и новые вакансии
+    # Объединить старые и новые вакансии, перезаписывая новыми
     for item in filtered_items:
         old_items[item['id']] = item
+
+    # составим список хэш-вакансий
+    keys = []
+    for v in old_items.values():
+        if v['actual'] == 'True':
+            keys.append(v['employer_name'].upper() + v['name'].upper())
+
+    for v in krug_filtered:
+        # Удаление вакансий, которые уже есть в старом списке, но актуальные
+        key = v['employer_name'].upper() + v['name'].upper()
+        if (key in keys):
+            continue
+        old_items[v['id']] = v
+
     print("После объединения старых и новых получилось " + str(len(old_items)) + " вакансий")
 
     cnt = len(old_items)
@@ -451,7 +480,7 @@ def main(sc):
     print("Экспорт в tsv")
     # Экспортировать список в csv и в google-таблицу
     save_vaclist_to_tsv(vac_data_fname, filtered_items)
-    print("Экспорт в google через загрузку нашего tvs!")
+    print("Экспорт в google через загрузку нашего tsv!")
     save_to_google(vac_data_fname, bad_vac,
                    stats_from, stats_to)
 
